@@ -52,21 +52,24 @@
             </div>
             <div class="col-6">
               Năm sản xuất
-              <select class="form-select form-select" id="">
+              <select class="form-select form-select" id="nsx">
                 <option selected>Chọn năm sản xuất</option>
               </select>
             </div>
             <div class="col-6">
               Số km đã đi
-              <input class="form-control form-control" type="number" placeholder="Nhập số km đã đi">
+              <input class="form-control form-control" type="number" placeholder="Nhập số km đã đi" value=""
+                id="kilometer">
             </div>
             <div class="col-6">
               Số điện thoại
-              <input class="form-control form-control" type="number" placeholder="096xxxxxxx">
+              <input class="form-control form-control" type="number" placeholder="096xxxxxxx" id="phone"
+                oninput="button()">
             </div>
           </div>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-primary w-100 p-3" disabled>Định giá và bán xe ngay</button>
+            <button class="btn btn-primary w-100 p-3" disabled id="btn">Định giá và bán xe
+              ngay</button>
           </div>
           <p class="w-100">Để tiếp tục, tôi đồng ý với
             <a href="">Chính sách quyền riêng tư</a>,<a href=""> Điều khoản sử dụng</a> &
