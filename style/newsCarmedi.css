@@ -8,114 +8,6 @@ body{
     width: 100%;
 }
 
-.controllbtn{
-    background-color:rgb(203, 203, 203);
-    height: 30px;
-    width: 30px;
-    top: 50%;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-}
-
-.iconControll{
-    color: black;
-}
-
-.nav-link{
-    padding: 8px 10px;
-    margin-left: 10px;
-}
-
-.title a{
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.newCard{
-    margin: 0;
-    padding: 30px;
-    background-color: rgba(246,126,18,.2);
-    overflow: hidden;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.listfoot{
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-}
-
-.mostCar{
-    margin-top: 10px;
-}
-
-.referenceCar{
-    margin-top: 10px;
-}
-
-
-
-.backgroud{
-    background-color: #051625;
-    border-radius: 10px;
-}
-
-a.video{
-    color: white;
-}
-
-
-.backgroudCard{
-    background-color: #051625;
-    margin-left: 20px;
-}
-
-.contentCard{
-    color: #a5b7c6;
-}
-
-.newAndReadCard{
-    margin-top: 10px;
-}
-
-.itemTitle{
-    display: flex;
-}
-
-.title_new a{
-    font-weight: bold;
-    font-size: 16px;
-    margin-right: 10px;
-    color: #222;
-}
-
-.saleCar{
-    margin-left: 500px;
-}
-
-#listSaleCars{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.popularCar{
-    margin-top: 100px;
-}
-
-.companyCar{
-    background-color: #f0f1f5;
-    padding-bottom: 50px;
-    padding-top: 20px;
-    padding-left: 100px;
-    padding-right: 200px;
-    font-size: 14px;
-}
-
 #iconOil{
     height: 54px;
     width: 54px;
@@ -132,7 +24,6 @@ a.video{
 }
 
 #backToTop {
-    /* CSS của nút */
     height: 50px;
     width: 50px;
     background-color: #0095f9;

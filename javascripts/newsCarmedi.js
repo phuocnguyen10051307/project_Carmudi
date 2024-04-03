@@ -21,7 +21,7 @@ const card = [{
 let cardItem = '';
 for(let i=0;i<card.length;i++){
     if(card[i].isObject){
-        cardItem += `<div class="card mb-3" style="max-width: 100%;">
+        cardItem += `<div class="card mb-3 p-0" style="max-width: 100%; margin: 0px 12px;">
         <div class="row g-0">
         <div class="col-md-4">
             <img src="${card[i].image}" class="img-fluid rounded-start" alt="...">
@@ -36,15 +36,15 @@ for(let i=0;i<card.length;i++){
     </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-            <div class="card mb-3" style = "height:500px; with:200px">
-            <img src="${card[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
-            <div class="card-body">
+        <div class="card mb-3 " style="height: 500px;">
+            <img src="${card[i].image}" class="card-img-top" style="width: 100%; height: 250px;" alt="...">
+            <div class="card-body px-3 py-3">
                 <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text">${card[i].review}
-                </p>
+                <p class="card-text">${card[i].review}</p>
             </div>
-            </div>
-        </div>`;
+        </div>
+    </div>
+    `;
     }
 }
 // console.log(cardItem);
@@ -107,11 +107,12 @@ const newCard = [{
 let cardCarousel = '';
 for (let i = 0; i < newCard.length; i += 4) {
     cardCarousel += `<div class="carousel-item${i === 0 ? ' active' : ''}">
-        <div class="row">`;
+        <div class="row mb-md-4 mb-sm-3">`;
+
     for (let j = i; j < i + 4 && j < newCard.length; j++) {
         cardCarousel += `<div class="col-md-3">
-            <div class="card mb-3" style="height: 300px; width: 300px;">
-                <img src="${newCard[j].image}" class="card-img-top" style="width: 300px; height: 150px;" alt="..." />
+            <div class="card" style="height: 300px; width: 300px;">
+                <img src="${newCard[j].image}" class="card-img-top" style="width: 100%; height: 150px;" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title">${newCard[j].title}</h5>
                     <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap">${newCard[j].content}</p>
@@ -124,6 +125,8 @@ for (let i = 0; i < newCard.length; i += 4) {
 }
 
 document.getElementById("carouselItem").innerHTML = cardCarousel;
+
+
 
 //optioncard
 
