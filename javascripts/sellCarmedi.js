@@ -1,3 +1,4 @@
+//set option for CarCompany
 let getCarCompany = document.getElementById("carCompany");
 let values = ["VinFast", "Toyota", "Ford", "BMW"];
 values.forEach(function (value) {
@@ -6,7 +7,6 @@ values.forEach(function (value) {
   option.value = value;
   getCarCompany.add(option);
 });
-
 //set option for Vehicles select
 let getVehicles = document.getElementById("vehicles");
 const vinfast = ["Fadil", "VF3", "VF4"];
@@ -85,13 +85,13 @@ function vehicles(value) {
     if (value == "Fadil" || value == "VF3" || value == "VF4") {
       printfOptionVersion(vinfastVersion);
     }
-    if (x == "Allex" || x == "Allion" || x == "Alphard") {
+    if (value == "Allex" || value == "Allion" || value == "Alphard") {
       printfOptionVersion(toyotaVersion);
     }
-    if (x == "Artic" || x == "Capri" || x == "Cargo") {
+    if (value == "Artic" || value == "Capri" || value == "Cargo") {
       printfOptionVersion(fordVersion);
     }
-    if (x == "1600" || x == "1800" || x == "2000") {
+    if (value == "1600" || value == "1800" || value == "2000") {
       printfOptionVersion(bmwVersion);
     }
   } else {
@@ -113,13 +113,110 @@ value.forEach(function (value) {
   yearProduce.add(option);
 });
 
+//set option for Designs
+{
+  let getDesign = document.getElementById("Designs");
+  let values = [
+    "Couple",
+    "Wagon",
+    "Minivan",
+    "Pick-up",
+    "Hatchback",
+    "MPV",
+    "SUV",
+    "Sedan",
+  ];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getDesign.add(option);
+  });
+}
+
+//set option for foamBox
+{
+  let getFoamBox = document.getElementById("foamBox");
+  let values = ["Số tự động", "Số sàn"];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getFoamBox.add(option);
+  });
+}
+
+//set option for fuel
+{
+  let getFule = document.getElementById("fuel");
+  let values = ["Xăng", "Dầu", "Điện", "Hybrid", "Plug - in Hybrid"];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getFule.add(option);
+  });
+}
+
+//set option for color
+{
+  let getColor = document.getElementById("color");
+  let values = [
+    "Đen",
+    "Đỏ",
+    "Vàng",
+    "Trắng",
+    "Nâu",
+    "Cam",
+    "Bạc",
+    "Xám",
+    "Vàng đồng",
+    "Xanh dương",
+    "Xanh lá",
+    "Tím",
+    "Hồng",
+    "Đồng",
+    "Vàng cát",
+    "Cam đất",
+  ];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getColor.add(option);
+  });
+}
+
+//set option for chair
+{
+  let getChair = document.getElementById("chair");
+  let values = ["4", "5", "6", "7", "8"];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getChair.add(option);
+  });
+}
+
+//set option for origin
+{
+  let getOrigin = document.getElementById("origin");
+  let values = ["Trong nước", "Ngoài nước"];
+  values.forEach(function (value) {
+    let option = document.createElement("option");
+    option.value = value;
+    option.text = value;
+    getOrigin.add(option);
+  });
+}
+
 function button() {
   let Vehicles = document.getElementById("vehicles").value;
   let Version = document.getElementById("carVersion").value;
   let Year = document.getElementById("year").value;
   let Kilometer = document.getElementById("kilometer").value;
   let Phone = document.getElementById("phone").value;
-  let btn = document.getElementById("btn");
   if (
     Vehicles != " " &&
     Version != " " &&
@@ -127,6 +224,85 @@ function button() {
     Kilometer != " " &&
     Phone > 10 ** 8
   ) {
+    let btn = document.getElementById("btn");
     btn.disabled = false;
-  } else btn.disabled = true;;
+  } else btn.disabled = true;
+}
+//fetch API province, districts
+const callAPIProvince = async () => {
+  const response = await fetch("http://localhost:4000/provinces");
+  const callProvince = await response.json();
+  // console.log(callProvince.data.data);
+  const provinceSelect = document.getElementById("province");
+  callProvince.data.data.forEach((el) => {
+    const option = document.createElement("option");
+    option.text = el.name;
+    option.value = el.code;
+    provinceSelect.appendChild(option);
+  });
+};
+const callAPIDistrict = async () => {
+  let codeProvince = document.getElementById("province").value;
+  const response = await fetch("http://localhost:4000/districts");
+  const callDistrict = await response.json();
+  const districtSelect = document.getElementById("district");
+  districtSelect.innerHTML = "";
+  let firstOption = document.createElement("option");
+  firstOption.text = "Chọn quận/huyện";
+  districtSelect.add(firstOption);
+  callDistrict.data.data.forEach((el) => {
+    const option = document.createElement("option");
+    option.text = el.name;
+    option.value = el.parent_code;
+    if (option.value == codeProvince) {
+      districtSelect.add(option);
+    }
+  });
+};
+callAPIProvince();
+
+function showData() {
+  let carCompany = document.getElementById("carCompany").value;
+  let Vehicles = document.getElementById("vehicles").value;
+  let Version = document.getElementById("carVersion").value;
+  let Year = document.getElementById("year").value;
+  let Kilometer = document.getElementById("kilometer").value;
+  let Phone = document.getElementById("phone").value;
+  let Money = document.getElementById("money").value;
+  let Designs = document.getElementById("Designs").value;
+  let foamBox = document.getElementById("foamBox").value;
+  let fuel = document.getElementById("fuel").value;
+  let color = document.getElementById("color").value;
+  let chair = document.getElementById("chair").value;
+  let Name = document.getElementById("name").value;
+  let origin = document.getElementById("origin").value;
+  let nameCar = document.getElementById("nameCar").value;
+  let Province = document.getElementById("province");
+  let valueProvince = Province.options[Province.selectedIndex].text;
+  let District = document.getElementById("district");
+  let valueDistrict = District.options[District.selectedIndex].text;
+  let getData = [
+    {
+      Address: {
+        Province: valueProvince,
+        Districts: valueDistrict,
+      },
+      Personal: Name,
+      Phone: Phone,
+      CarType: carCompany,
+      Vehicles: Vehicles,
+      Version: Version,
+      Year: Year,
+      Kilometer: Kilometer,
+      Price: Money,
+      Style: Designs,
+      Transmission: foamBox,
+      Fuel: fuel,
+      Color: color,
+      Seats: chair,
+      Origin: origin,
+      Title: nameCar,
+    },
+  ];
+  console.log(getData);
 }

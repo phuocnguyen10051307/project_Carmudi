@@ -23,13 +23,13 @@
     </span>
   </div>
 
-  <div class="header position-relative">
+  <div class="headerSellCard position-relative">
     <div class="header-img">
       <img src="./assets/desktop-11.12.2023.webp" alt="">
     </div>
-    <div class="header-sell position-absolute">
+    <div class="header-sell position-absolute cardSell">
       <div class="card p-3">
-        <div class="card-body ">
+        <div class="card-body">
           <h5 class="card-title">Nhập thông tin chi tiết của bạn và nhận giá xe của bạn ngay lập tức</h5>
           <div class="row">
             <div class="col-6">
@@ -65,18 +65,102 @@
               <input class="form-control form-control" type="number" placeholder="096xxxxxxx" id="phone"
                 oninput="button()">
             </div>
+            <div class="d-flex justify-content-center mt-3">
+              <button class="btn btn-primary w-100 p-3" id="btn" disabled value="" onclick="" data-bs-toggle="modal"
+                data-bs-target="#formSell">Định giá và bán xe
+                ngay</button>
+            </div>
+            <p class="w-100">Để tiếp tục, tôi đồng ý với
+              <a href="">Chính sách quyền riêng tư</a>,<a href=""> Điều khoản sử dụng</a> &
+              <a href="">Điều khoản</a> & <a href="">điều kiện niêm yết.</a>
+            </p>
           </div>
-          <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-primary w-100 p-3" disabled id="btn" value="">Định giá và bán xe
-              ngay</button>
-          </div>
-          <p class="w-100">Để tiếp tục, tôi đồng ý với
-            <a href="">Chính sách quyền riêng tư</a>,<a href=""> Điều khoản sử dụng</a> &
-            <a href="">Điều khoản</a> & <a href="">điều kiện niêm yết.</a>
-          </p>
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="formSell" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 d-flex">
+              <div class="col-6 pe-2">
+                Tỉnh/Thành
+                <select class="form-select form-select" id="province" onchange="callAPIDistrict()">
+                  <option selected>Chọn tỉnh/thành</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Quận/Huyện
+                <select class="form-select form-select" id="district" onchange="">
+                  <option selected>Chọn quận/huyện</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                Nhập giá tiền
+                <input class="form-control form-control" type="number" max="5000000000" min="5000000"
+                  placeholder="Giá tiền muốn bán" id="money">
+              </div>
+              <div class="col-6">
+                Kiểu dáng
+                <select class="form-select form-select" id="Designs" onchange="">
+                  <option selected>Chọn kiểu dáng</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Hộp số
+                <select class="form-select form-select" id="foamBox" onchange="">
+                  <option selected>Chọn hộp số</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Nhiên liệu
+                <select class="form-select form-select" id="fuel" onchange="">
+                  <option selected>Chọn loại nhiên liệu</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Màu sắc
+                <select class="form-select form-select" id="color" onchange="">
+                  <option selected>Chọn màu xe</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Số chỗ ngồi
+                <select class="form-select form-select" id="chair" onchange="">
+                  <option selected>Chọn số ghế</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Tên người bán
+                <input class="form-control form-control" type="text" placeholder="Tên người bán..." id="name">
+              </div>
+              <div class="col-6">
+                Xuất xứ
+                <select class="form-select form-select" id="origin" onchange="">
+                  <option selected>Chọn xuất xứ</option>
+                </select>
+              </div>
+              <div class="col-12">
+                Tên của xe
+                <input class="form-control form-control" type="text" placeholder="Tên xe..." id="nameCar">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="showData()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="carSelling-Steps">
@@ -88,7 +172,7 @@
         <div class="col">
           <div class="card cardInfo">
             <div class="card-body">
-              <div class="position-absolute top-0 end-0"><img src="../assets/corner.svg" alt=""></div>
+              <div class="position-absolute top-0 end-0"><img src="./assets/corner.svg" alt=""></div>
               <span class="position-absolute text-white fw-bold">1</span>
               <div class="p-5 ps-0"><img src="../assets/calendar.svg" alt=""></div>
               <b class="card-text">1.Định giá và đặt lịch kiểm tra xe miễn phí</b>
@@ -98,7 +182,7 @@
         <div class="col">
           <div class="card cardInfo">
             <div class="card-body cardi">
-              <div class="position-absolute top-0 end-0"><img src="/.assets/corner.svg" alt=""></div>
+              <div class="position-absolute top-0 end-0"><img src="./assets/corner.svg" alt=""></div>
               <span class="position-absolute text-white fw-bold">2</span>
               <div class="p-5 ps-0"><img src="../assets/mail.svg" alt=""></div>
               <b class="card-text">2. Nhận kết quả tình trạng xe và giá đề xuất</b>
