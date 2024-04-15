@@ -53,6 +53,21 @@ body{
     pointer-events: auto;
 }
 
+.navbar {
+    transition: top 0.3s; 
+}
+
+.navbar.fixed-top {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.title{
+    padding-top: 100px;
+}
+
 
 
 
