@@ -1,0 +1,22 @@
+{
+  "car": [
+    {
+      "Id": "i",
+      "Tittle": "TOYOTA COROLLA ALTIS 1.8V SIÊU LƯỚT 2022",
+      " Tear": 2022,
+      "Km": "20000",
+      "Fuel": "Xăng",
+      "Gear": "Tự động",
+      "Money": "435 Triệu",
+      "Address": "Hồ Chí Minh - Thủ đức",
+      "specificAddress": "638A Quốc Lộ 13, Hiệp Bình Phước Thủ Đức Hồ Chí Minh",
+      "origin": "Nhập khẩu",
+      "carCompany": "Toyota",
+      "vehicles": "Fortuner",
+      "version": "2.7 AT 4x2",
+      "color": "No data",
+      "style": "No data",
+      "numberOfSeats": "5"
+    }
+  ]
+}

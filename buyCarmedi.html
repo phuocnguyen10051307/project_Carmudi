@@ -25,6 +25,184 @@
 
   <body>
     <div class="slider-buy-max">
+      <div class="slider-min w-100 d-flex">
+        <img
+          src="./assets/a647860a-641e-465c-8507-0559c96e2499.jpg"
+          class="mt-2 me-2"
+          alt=""
+        />
+        <img
+          src="./assets/8b97c899-e28a-4165-ad21-5f0adf8e443b.jpg"
+          class="mt-2 me-2"
+          alt=""
+        />
+        <img
+          src="./assets/90b2fe99-2016-4eb8-a250-f279d4761e92.jpg"
+          class="mt-2 me-2"
+          alt=""
+        />
+        <img
+          src="./assets/835f2bfa-534d-4290-ba31-fb4ec3cf3972.jpg"
+          class="mt-2 me-2"
+          alt=""
+        />
+        <img
+          src="./assets/066a2adf-be19-4671-acda-d8e8ea5904e3.jpg"
+          class="mt-2 me-2"
+          alt=""
+        />
+      </div>
+      <div class="infor-search mt-3 d-flex">
+        <!-- Bộ lọc -->
+        <ul
+          class="list-group text-lowercase border border-1 border-dark rounded-1 h-50"
+          id="li-tag"
+        >
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  <i class="bi bi-building-check"></i>
+                  Hãng xe, dòng xe
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body d-flex flex-column">
+                  <input type="text" placeholder="Tìm kiếm" />
+                  <div class="boxCarCompany">
+                    <input type="checkbox">Acura</ipnut>
+                    <input type="checkbox" >Audi</ipnut>
+                    <input type="checkbox" >Baic</ipnut>
+                    <input type="checkbox" >Bentley</ipnut>
+                    <input type="checkbox" >Bmw</ipnut>
+                    <input type="checkbox" >Chery</ipnut>
+                    <input type="checkbox" >Chevrolet</ipnut>
+                    <input type="checkbox" >Daihatsu</ipnut>
+                    <input type="checkbox" >Fiat</ipnut>
+                    <input type="checkbox" >Ford</ipnut>
+                    <input type="checkbox" >Foton</ipnut>
+                    <input type="checkbox" >Gaz</ipnut>
+                    <input type="checkbox" >Haval</ipnut>
+                    <input type="checkbox" >Hino</ipnut>
+                    <input type="checkbox" >Honda</ipnut>
+                    <input type="checkbox" >Huyndai</ipnut>
+                    <input type="checkbox" >Infiniti</ipnut>
+                    <input type="checkbox" >Isuzu</ipnut>
+                    <input type="checkbox" >Jaguar</ipnut>
+                    <input type="checkbox" >Kia</ipnut>
+                    <input type="checkbox" >Land Rover</ipnut>
+                    <input type="checkbox" >Lexus</ipnut>
+                    <input type="checkbox" >Luxgen</ipnut>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  <i class="bi bi-geo-alt"></i> Địa điểm
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <input type="text" placeholder="Tìm kiếm" />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  <i class="bi bi-cash"></i>Giá
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <div class="wrapper">
+                    <div class="slider">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                      <input
+                        type="range"
+                        class="range-min"
+                        min="0"
+                        max="10000"
+                        value="00"
+                        step="100"
+                      />
+                      <input
+                        type="range"
+                        class="range-max"
+                        min="0"
+                        max="10000"
+                        value="10000"
+                        step="100"
+                      />
+                    </div>
+                    <div class="price-input">
+                      <div class="field">
+                        <span>Min</span>
+                        <input type="number" class="input-min" value="2500" />
+                      </div>
+                      <div class="separator">-</div>
+                      <div class="field">
+                        <span>Max</span>
+                        <input type="number" class="input-max" value="7500" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFour"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseFour"
+                >
+                  <i class="bi bi-calendar-event-fill"></i>Năm sản xuất
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseFour"
+    <div class="slider-buy-max">
       <div class="slider-min">
         <img src="./assets/a647860a-641e-465c-8507-0559c96e2499.jpg" alt="" />
         <img src="./assets/8b97c899-e28a-4165-ad21-5f0adf8e443b.jpg" alt="" />
