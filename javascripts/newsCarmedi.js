@@ -21,10 +21,11 @@ const card = [{
 let cardItem = '';
 for(let i=0;i<card.length;i++){
     if(card[i].isObject){
-        cardItem += `<div class="card mb-3 p-0" style="max-width: 100%; margin: 0px 12px;">
+        cardItem +=  `<div class="row">
+        <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
         <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start" alt="...">
+            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -33,7 +34,8 @@ for(let i=0;i<card.length;i++){
             </div>
         </div>
         </div>
-    </div>`;
+    </div>
+        </div>`;
     }else{
         cardItem += `<div class="col-md-4">
         <div class="card mb-3 " style="height: 500px;">

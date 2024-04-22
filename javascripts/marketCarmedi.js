@@ -21,10 +21,11 @@ const card = [{
 let cardItem = '';
 for(let i=0;i<card.length;i++){
     if(card[i].status){
-        cardItem += `<div class="card mb-3 p-0" style="max-width: 100%; margin: 0px 0px;">
+        cardItem += `<div class="row">
+        <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
         <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start" alt="...">
+            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -34,7 +35,8 @@ for(let i=0;i<card.length;i++){
             </div>
         </div>
         </div>
-    </div>`;
+    </div>
+        </div>`;
     }else{
         cardItem += `<div class="col-md-4">
         <div class="card mb-3" style="height: 350px;">
@@ -477,6 +479,26 @@ const inforSaleCar = () =>{
     document.getElementById("telephone").value = "";
     document.getElementById("address").selectedIndex = 0;
 }
+
+// // Lắng nghe sự kiện cuộn trang
+// window.addEventListener('scroll', function() {
+//     // Lấy vị trí hiện tại của khối di chuyển và footer
+//     var block = document.querySelector('.moving-block');
+//     var footer = document.querySelector('footer');
+//     var blockRect = block.getBoundingClientRect();
+//     var footerRect = footer.getBoundingClientRect();
+
+//     // Tính toán khoảng cách giữa đáy của khối di chuyển và đỉnh của footer
+//     var distanceToFooter = footerRect.top - blockRect.bottom;
+
+//     // Kiểm tra xem người dùng đã cuộn đủ khoảng cách không
+//     if (distanceToFooter > 100) { // Đổi giá trị 100 thành khoảng cách mong muốn
+//         block.style.top = window.scrollY + 100 + 'px'; // Di chuyển khối với khoảng cách 100px
+//     } else {
+//         block.style.top = ''; // Đặt lại vị trí cố định khi đến gần footer
+//     }
+// });
+
 
 
 
