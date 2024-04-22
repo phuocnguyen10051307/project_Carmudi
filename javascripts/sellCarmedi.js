@@ -1,12 +1,95 @@
 //set option for CarCompany
 let getCarCompany = document.getElementById("carCompany");
+//set option for CarCompany
+let getCarCompany = document.getElementById("carCompany");
 let values = ["VinFast", "Toyota", "Ford", "BMW"];
 values.forEach(function (value) {
   let option = document.createElement("option");
   option.text = value;
   option.value = value;
   getCarCompany.add(option);
+  getCarCompany.add(option);
 });
+//set option for Vehicles select
+let getVehicles = document.getElementById("vehicles");
+const vinfast = ["Fadil", "VF3", "VF4"];
+const toyota = ["Allex", "Allion", "Alphard"];
+const ford = ["Artic", "Capri", "Cargo"];
+const bmw = ["1600", "1800", "2000"];
+const printfOptionVehicles = (arr) => {
+  // làm rỗng option
+  getVehicles.innerHTML = " ";
+  // create 1 option
+  let firstOption = document.createElement("option");
+  firstOption.text = "Chọn dòng xe";
+  getVehicles.add(firstOption);
+  // push option được chọn
+  arr.forEach(function (value) {
+    let option = document.createElement("option");
+    option.text = value;
+    option.value = value;
+    getVehicles.add(option);
+  });
+};
+function carCompany(value) {
+  if (value != "Chọn hãng xe") {
+    //turn on option
+    getVehicles.disabled = false;
+    switch (value) {
+      case "VinFast":
+        printfOptionVehicles(vinfast);
+        break;
+      case "Toyota":
+        printfOptionVehicles(toyota);
+        break;
+      case "Ford":
+        printfOptionVehicles(ford);
+        break;
+      case "BMW":
+        printfOptionVehicles(bmw);
+        break;
+      default:
+        break;
+    }
+  } else {
+    getVehicles.innerHTML = " ";
+    let firstOption = document.createElement("option");
+    firstOption.text = "Chọn dòng xe";
+    getVehicles.add(firstOption);
+    //turn off option
+    getVehicles.disabled = true;
+  }
+}
+
+//Set option for Version Select
+let getCarVersion = document.getElementById("carVersion");
+const vinfastVersion = ["Cao cấp", "Nâng cao", "Tiêu chuẩn", "Plus"];
+const toyotaVersion = ["Khác", "VT3", "3.0 Sedan (FWD)"];
+const fordVersion = ["Khác", "1.0 Coupe", "1.4 Van (FWD)"];
+const bmwVersion = ["Khác", "VT 300"];
+const printfOptionVersion = (arr) => {
+  // làm rỗng option
+  getCarVersion.innerHTML = " ";
+  // create 1 option
+  let firstOption = document.createElement("option");
+  firstOption.text = "Chọn phiên bản xe";
+  getCarVersion.add(firstOption);
+  // push option được chọn
+  arr.forEach(function (value) {
+    let option = document.createElement("option");
+    option.text = value;
+    option.value = value;
+    getCarVersion.add(option);
+  });
+};
+function vehicles(value) {
+  if (value != "Chọn dòng xe") {
+    getCarVersion.disabled = false;
+    if (value == "Fadil" || value == "VF3" || value == "VF4") {
+      printfOptionVersion(vinfastVersion);
+    }
+    if (value == "Allex" || value == "Allion" || value == "Alphard") {
+      printfOptionVersion(toyotaVersion);
 //set option for Vehicles select
 let getVehicles = document.getElementById("vehicles");
 const vinfast = ["Fadil", "VF3", "VF4"];
