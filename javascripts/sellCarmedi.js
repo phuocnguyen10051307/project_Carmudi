@@ -303,7 +303,56 @@ function showData() {
       Origin: origin,
       Title: nameCar,
       ImageUrl: imageUrl,
+      icon1: '<i class="bi bi-calendar-event-fill"></i>',
+      icon2: '<i class="bi bi-speedometer"></i>',
+      icon3: '<i class="bi bi-fuel-pump"></i>',
+      icon4: '<i class="bi bi-bezier2"></i>',
+      icon5: '<i class="bi bi-geo-alt"></i>',
+      Province: valueProvince,
     },
   ];
+  showInfor.push(...getData);
   console.log(getData);
 }
+const showInfor = [];
+
+// const categories = [...new Set(showInfor.map((item) => item.category))];
+
+// const displayItem = (items) => {
+//   document.getElementById("show").innerHTML = items
+//     .map((item) => {
+//       var {
+//         Version,
+//         Year,
+//         Kilometer,
+//         Price,
+//         Fuel,
+//         Color,
+//         Title,
+//         ImageUrl,
+//         icon1,
+//         icon2,
+//         icon3,
+//         icon4,
+//         icon5,
+//         Province,
+//       } = item;
+//       return `
+//       <div class="card">
+//         <img src="${ImageUrl}" class="card-img-top">
+//         <div class="card-body">
+//           <h5 class="card-title">${Title}</h5>
+//           <p class="card-text">${icon1} ${Year}</p>
+//           <p class="card-text">${icon2} ${Kilometer} km</p>
+//           <p class="card-text">${icon3} ${Fuel}</p>
+//           <p class="card-text">${icon4} ${Version}</p>
+//         </div>
+//         <div class="card-footer">
+//           <p class="card-text" style="font-size:20px; color:red;">${Price}</p>
+//           <p class="card-text" style="font-size:12px;">${icon5} ${Province}</p>
+//         </div>
+//       </div>
+//     `;
+//     })
+//     .join("");
+// };

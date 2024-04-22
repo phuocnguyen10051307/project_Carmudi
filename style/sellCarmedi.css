@@ -321,3 +321,55 @@ li a {
 .text-sz {
   font-size: 12px;
 }
+
+.imgOfCar > .fileText {
+  margin-bottom: 10px;
+}
+.imgOfCar > .inputFile {
+  display: none;
+}
+.imgOfCar > label {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  margin-bottom: 10px;
+  font-size: 100px;
+  background: linear-gradient(45deg, blue, red);
+  cursor: pointer;
+}
+.imgOfCar > button {
+  padding: 20px 25px;
+  background: rgb(41, 100, 209);
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+}
+.imgOfCar > .bar {
+  height: 50px;
+  width: 500px;
+  background-color: #0000003d;
+  margin-bottom: 10px;
+}
+.imgOfCar > .progress {
+  background: linear-gradient(12deg, red, blue);
+  height: 100%;
+  width: 0px;
+}
+.imgOfCar > .uploadPercentage {
+  font-size: 25px;
+}
+.imgOfCar > img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  display: none;
+}
+.imgOfCar > .imageUploaded {
+  margin-top: 10px;
+}
