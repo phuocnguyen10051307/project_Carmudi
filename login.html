@@ -20,6 +20,141 @@
     />
   </head>
   <body>
+    <div class="background_img">
+      <img src="assets/background.png" alt="" />
+      <div class="form_login">
+        <form>
+          <fieldset>
+            <legend
+              class="d-flex justify-content-center fw-bold"
+              style="font-size: 24px"
+            >
+              Đăng nhập
+            </legend>
+            <label
+              class="d-flex justify-content-center"
+              style="font-size: 14px"
+              for="comment"
+              >Trang đăng nhập để trở thành đối tác của Carmudi</label
+            >
+            <div class="mb-3">
+              <label
+                for="disabledTextInput"
+                class="form-label mt-3"
+                style="font-size: 14px"
+                >Số điện thoại</label
+              >
+              <input
+                type="text"
+                id="disabledTextInput"
+                class="form-control"
+                placeholder="Vd: 09071234567"
+              />
+            </div>
+            <div class="mb-3">
+              <label
+                for="disabledTextInput"
+                class="form-label"
+                style="font-size: 14px"
+                >Mật khẩu</label
+              >
+              <input
+                type="text"
+                id="disabledTextInput"
+                class="form-control"
+                placeholder="Nhập mật khẩu có ít nhất 10 ký tự"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              Đăng nhập
+            </button>
+            <div class="footer_login">
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none"
+                    style="font-size: 14px"
+                    >Quên mật khẩu</a
+                  >
+                </li>
+                <li style="font-size: 14px">
+                  Chưa có tài khoản?<span
+                    ><a
+                      href=""
+                      class="text-decoration-none"
+                      style="font-size: 14px"
+                      >Đăng ký ngay</a
+                    ></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-light footer p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Toyota</h3>
+              <div id="toyotaCompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe KIA</h3>
+              <div id="KIACompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Huyndai</h3>
+              <div id="huyndaiCompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Honda</h3>
+              <div id="hondaCompare"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Mazda</h3>
+              <div id="mazdaCompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Ford</h3>
+              <div id="FordCompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3 class="fs-4">Xe Mitsubishi</h3>
+              <div id="mitsubishiCompare"></div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div>
+              <h3>Xe BMW</h3>
+              <div id="bmwCompare"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./javascripts/login.js"></script>
   </body>
 </html>
