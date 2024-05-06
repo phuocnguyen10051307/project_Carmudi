@@ -3,86 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>upload image</title>
-    <link rel="stylesheet" href="test.css" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
-    <input
-      type="file"
-      class="inputFile"
-      id="fileInp"
-      onchange="getFile(event)"
-      accept="img/png, img.jpeg"
-    />
-    <label for="fileInp">+</label>
-    <span class="fileText"></span>
-    <button onclick="uploadImage()">UPLOAD IMAGE</button>
-    <div class="bar">
-      <div class="progress"></div>
-    </div>
-    <div class="uploadPercentage">0%</div>
-    <div class="imageUploaded">
-      <img alt="" class="img" />
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
     <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyC3i8RjDeB0D0HkDVVD5DTORt4V5JFAvAk",
-        authDomain: "carmudiproject-1005.firebaseapp.com",
-        projectId: "carmudiproject-1005",
-        storageBucket: "carmudiproject-1005.appspot.com",
-        messagingSenderId: "437787651497",
-        appId: "1:437787651497:web:76a1a784020227d5b328b8",
-        measurementId: "G-Y7HY4GLYDT",
-      };
-      firebase.initializeApp(firebaseConfig);
-
-      var fileText = document.querySelector(".fileText");
-      var uploadPercentage = document.querySelector(".uploadPercentage");
-      var progress = document.querySelector(".progress");
-      var percentVal;
-      var fileItem;
-      var fileName;
-      var img = document.querySelector(".img");
-
-      function getFile(e) {
-        fileItem = e.target.files[0];
-        fileName = fileItem.name;
-        fileText.innerHTML = fileName;
-      }
-
-      function uploadImage() {
-        let storageRef = firebase.storage().ref("images/" + fileName);
-        let uploadTask = storageRef.put(fileItem);
-        uploadTask.on(
-          "state_changed",
-          (snapshot) => {
-            console.log(snapshot);
-            percentVal = Math.floor(
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            );
-            console.log(percentVal);
-            uploadPercentage.innerHTML = percentVal + "%";
-            progress.style.width = percentVal + "%";
-          },
-          (error) => {
-            console.log("Error is ", error);
-          },
-          () => {
-            uploadTask.snapshot.ref.getDownloadURL().then((url) => {
-              console.log("URL", url);
-
-              if (url != "") {
-                img.setAttribute("src", url);
-                img.style.display = "block";
-              }
-            });
-          }
-        );
-      }
+      axios.get("https://reqres.in/api/users?page=2")
+        .then((res) => console.log(res.data.data))
+        .catch((err) => console.log(err));
+      // axios.post("https://reqres.in/api/users", {
+      //   name: "John",
+      //   job: "Developer"
+      // }).then((res) => console.log(res)).catch((err) => console.log(err));
     </script>
   </body>
 </html>
