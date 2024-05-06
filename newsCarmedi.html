@@ -20,298 +20,223 @@
     <link rel="stylesheet" href="./style/newsCarmedi.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><img
-            loading="lazy"
-            id="headerLogo"
-            style="margin: auto; padding: 11% 0"
-            class="cmd-header-logo"
-            height="60"
-            width="112"
-            alt="Carmudi Việt Nam - Trang rao vặt mua bán xe ô tô toàn quốc"
-            src="https://static.carmudi.vn/templates/auto_flatty/img/carmudi-logo-color.svg"
-        /></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                ><img
-                  loading="lazy"
-                  id="headerLogo"
-                  style="margin: auto; padding: 5% 5% 25% 10%"
-                  class="cmd-header-logo back-to-home lazyloaded"
-                  width="25"
-                  height="30"
-                  alt="Carmudi Việt Nam - Trang rao vặt mua bán xe ô tô toàn quốc"
-                  data-src="https://www.carmudi.vn/blog-xe-hoi/img/icon_home.svg"
-                  src="https://www.carmudi.vn/blog-xe-hoi/img/icon_home.svg"
-              /></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                style="color: black"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Tư vấn
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Hỏi đáp</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Tư vấn kinh nghiệm</a>
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"
+              ><img
+                loading="lazy"
+                id="headerLogo"
+                style="margin: auto; padding: 11% 0"
+                class="cmd-header-logo"
+                height="60"
+                width="112"
+                alt="Carmudi Việt Nam - Trang rao vặt mua bán xe ô tô toàn quốc"
+                src="https://static.carmudi.vn/templates/auto_flatty/img/carmudi-logo-color.svg"
+            /></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    ><img
+                      loading="lazy"
+                      id="headerLogo"
+                      style="margin: auto; padding: 5% 5% 25% 10%"
+                      class="cmd-header-logo back-to-home lazyloaded"
+                      width="25"
+                      height="30"
+                      alt="Carmudi Việt Nam - Trang rao vặt mua bán xe ô tô toàn quốc"
+                      data-src="https://www.carmudi.vn/blog-xe-hoi/img/icon_home.svg"
+                      src="https://www.carmudi.vn/blog-xe-hoi/img/icon_home.svg"
+                  /></a>
                 </li>
-                <li>
-                  <a class="dropdown-item" href="#">Tư vấn luật</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Tư vấn mua xe</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">So sánh xe</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">Đánh giá xe</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                style="color: black"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Tin tức
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Tin trong nước</a></li>
-                <li><a class="dropdown-item" href="#">Tin nước ngoài</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Tin xe mới</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Tin khuyến mãi</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">Thị trường</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">Bảng giá xe</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">Thư viện ảnh</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color: black" href="#">Video</a>
-            </li>
-          </ul>
-        </div>
-        <div class="search">
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <div class="content">
-      <div class="container">
-        <h2 class="title">
-          <span style="color: orange">I</span>
-          <a href="#" title="Tin tức nổi bật">Tin tức nổi bật</a>
-        </h2>
-
-        <!-- card -->
-        <div id="infoCard" class="row"></div>
-        <!-- tin đề xuất -->
-        <div class="newCard">
-          <div
-            id="carouselExampleControls"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <h2 class="title">
-                <span style="color: orange">I</span>
-                <a href="#" title="Tin tức nổi bật">Tin đề xuất cho bạn</a>
-              </h2>
-              <div id="carouselItem"></div>
-            </div>
-            <button
-              class="carousel-control-prev controllbtn"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next controllbtn"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-8">
-            <!-- content left -->
-            <!-- title -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#">Tư vấn</a>
-                  </h2>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarText">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
-                        >Hỏi đáp</a
-                      >
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    style="color: black"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Tư vấn
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Hỏi đáp</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Tư vấn kinh nghiệm</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tư vấn kinh nghiệm</a>
+                    <li>
+                      <a class="dropdown-item" href="#">Tư vấn luật</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tư vấn luật</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tư vấn mua xe</a>
+                    <li>
+                      <a class="dropdown-item" href="#">Tư vấn mua xe</a>
                     </li>
                   </ul>
-                  <span
-                    class="navbar-text"
-                    style="color: #1d70b8; font-weight: bold"
-                    >Xem tất cả</span
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">So sánh xe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">Đánh giá xe</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    style="color: black"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                   >
-                </div>
-              </div>
-            </nav>
-            <!-- nội dung nhỏ bên trong -->
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card">
-                  <img
-                    src="./assets/img13.webp"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Mách bạn 7 kinh nghiệm sử dụng ô tô bền đẹp đúc kết từ bác
-                      tài "cứng'
-                    </h5>
-                    <p class="card-text">
-                      Sử dụng ô tô sao cho bền luôn là quan tâm hàng đầu của mỗi
-                      bác tài. Từ những bác tài dày dặn kinh nghiệm truyền lại,
-                      Carmudi xin tổng hợp 7 kinh nghiệm sử dụng ô tô giúp "xế
-                      cưng" của bạn luôn bền đẹp.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div id="optionCard"></div>
-              </div>
+                    Tin tức
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Tin trong nước</a></li>
+                    <li><a class="dropdown-item" href="#">Tin nước ngoài</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Tin xe mới</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Tin khuyến mãi</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">Thị trường</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">Bảng giá xe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">Thư viện ảnh</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: black" href="#">Video</a>
+                </li>
+              </ul>
             </div>
-            <!-- nhận xét chung như so sánh và đánh giá xe -->
-            <div class="row referenceCar">
-              <div class="col-md-6">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                      <h2 class="title">
-                        <span style="color: orange">I</span>
-                        <a href="#" title="Tin tức nổi bật">So sánh xe</a>
-                      </h2>
-                    </a>
-                    <div
-                      class="collapse navbar-collapse"
-                      id="navbarText"
-                      style="margin-left: 100px"
-                    >
-                      <span
-                        class="navbar-text"
-                        style="color: #1d70b8; font-weight: bold"
-                        >Xem tất cả</span
-                      >
-                    </div>
+            <div class="search">
+              <form class="d-flex">
+                  <div class="position-relative">
+                      <input class="form-control border-0 outline-0" style="background-color: #d9d9d9;" type="search" placeholder="Search" aria-label="Search" />
+                      <i class="fa-solid fa-magnifying-glass position-absolute top-50 translate-middle-y" style="right: 10px;"></i>
                   </div>
-                </nav>
-                <div id="viewCard1"></div>
-              </div>
-              <div class="col-md-6">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                      <h2 class="title">
-                        <span style="color: orange">I</span>
-                        <a href="#" title="Tin tức nổi bật">Đánh giá xe</a>
-                      </h2>
-                    </a>
-                    <div
-                      class="collapse navbar-collapse"
-                      id="navbarText"
-                      style="margin-left: 100px"
-                    >
-                      <span
-                        class="navbar-text"
-                        style="color: #1d70b8; font-weight: bold"
-                        >Xem tất cả</span
-                      >
-                    </div>
-                  </div>
-                </nav>
-                <div id="viewCard2"></div>
-              </div>
+              </form>
             </div>
-            <!-- video -->
-            <div class="backgroud">
-              <nav class="navbar navbar-expand-lg navbar-light">
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="content container" style="margin-top: 100px;">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            <span style="color: orange; font-size: 30px">I</span>
+            <a
+              href="#"
+              class="text-decoration-none fs-5 fw-bold"
+              style="color: black"
+              >Tin tức nổi bật</a
+            >
+          </h2>
+        </div>
+  
+        <!-- card -->
+        <div class="row">
+          <div class="col-12">
+            <div id="infoCard" class="row"></div>
+          </div>
+        </div>
+      </div>
+      <!-- tin đề xuất -->
+      <div class="row">
+        <div class="col-12">
+            <div
+            class="newCard p-3 bg-opacity-20 overflow-hidden mt-3 mb-3"
+            style="background-color: rgba(246, 126, 18, 0.2)"
+            >
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <h2 >
+                  <span style="color: orange; font-size: 30px">I</span>
+                  <a
+                    href="#"
+                    class="text-decoration-none fs-4 fw-bold"
+                    style="color: black"
+                    >Tin đề xuất cho bạn</a
+                  >
+                </h2>
+                <div id="carouselItem"></div>
+              </div>
+              <button
+                class="carousel-control-prev bg-secondary top-50 d-flex align-items-center rounded-circle"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+                style="height: 30px; width: 30px"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next bg-secondary h-30 w-30 top-50 d-flex align-items-center rounded-circle"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+                style="height: 30px; width: 30px"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <!-- content left -->
+          <!-- title -->
+          <div class="row">
+            <div class="col-12">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">
-                    <h2 class="title">
-                      <span style="color: orange">I</span>
-                      <a href="#" class="video">Video</a>
+                    <h2 >
+                      <span style="color: orange; font-size: 30px">I</span>
+                      <a
+                        href="#"
+                        class="text-decoration-none fs-5 fw-bold"
+                        style="color: black"
+                        >Tư vấn</a
+                      >
                     </h2>
                   </a>
-                  <div
-                    class="collapse navbar-collapse"
-                    style="margin-left: 600px"
-                    id="navbarText"
-                  >
+                  <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"
+                          >Hỏi đáp</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tư vấn kinh nghiệm</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tư vấn luật</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tư vấn mua xe</a>
+                      </li>
+                    </ul>
                     <span
                       class="navbar-text"
                       style="color: #1d70b8; font-weight: bold"
@@ -320,12 +245,124 @@
                   </div>
                 </div>
               </nav>
+            </div>
+          </div>
+          <!-- nội dung nhỏ bên trong -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <img src="./assets/img13.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title fs-4">
+                    Mách bạn 7 kinh nghiệm sử dụng ô tô bền đẹp đúc kết từ bác
+                    tài "cứng'
+                  </h5>
+                  <p class="card-text fs-6">
+                    Sử dụng ô tô sao cho bền luôn là quan tâm hàng đầu của mỗi
+                    bác tài. Từ những bác tài dày dặn kinh nghiệm truyền lại,
+                    Carmudi xin tổng hợp 7 kinh nghiệm sử dụng ô tô giúp "xế
+                    cưng" của bạn luôn bền đẹp.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div id="optionCard"></div>
+            </div>
+          </div>
+          <!-- nhận xét chung như so sánh và đánh giá xe -->
+          <div class="row">
+            <div class="col-12">
+              <div class="row mt-2">
+                <div class="col-md-6">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <h2 >
+                          <span style="color: orange; font-size: 30px">I</span>
+                          <a
+                            href="#"
+                            class="text-decoration-none fs-5 fw-bold text-dark"
+                            >So sánh xe</a
+                          >
+                        </h2>
+                      </a>
+                      <div
+                        class="collapse navbar-collapse "
+                        id="navbarText"
+                        style="margin-left: 60px;"
+                      >
+                        <span
+                          class="navbar-text"
+                          style="color: #1d70b8; font-weight: bold;"
+                          >Xem tất cả</span
+                        >
+                      </div>
+                    </div>
+                  </nav>
+                  <div id="viewCard1"></div>
+                </div>
+                <div class="col-md-6">
+                  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <h2 >
+                          <span style="color: orange; font-size: 30px">I</span>
+                          <a
+                            href="#"
+                            class="text-decoration-none fs-5 fw-bold"
+                            style="color: black"
+                            >Đánh giá xe</a
+                          >
+                        </h2>
+                      </a>
+                      <div
+                        class="collapse navbar-collapse"
+                        id="navbarText"
+                        style="margin-left: 60px"
+                      >
+                        <span
+                          class="navbar-text"
+                          style="color: #1d70b8; font-weight: bold"
+                          >Xem tất cả</span
+                        >
+                      </div>
+                    </div>
+                  </nav>
+                  <div id="viewCard2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- video -->
+          <div class="row">
+            <div class="col-12 bg-dark rounded-3">
+              <div class="row">
+                <div class="col-12">
+                  <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <h2 >
+                                <span class="fs-3" style="color: orange;">I</span>
+                                <a href="#" class="text-decoration-none fs-4 fw-bold text-white">Video</a>
+                            </h2>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <span class="navbar-text text-primary fw-bold ms-auto">Xem tất cả</span>
+                        </div>
+                    </div>
+                </nav>
+                </div>
+              </div>
               <!-- nội dung nhỏ bên trong -->
               <div class="row">
                 <div class="col-md-6">
-                  <div class="card backgroudCard">
+                  <div class="card bg-dark ms-3">
                     <img src="assets/img36.webp" class="card-img-top" />
-                    <div class="card-body contentCard">
+                    <div class="card-body" style="color: #a5b7c6">
                       <h5 class="card-title">
                         Tại sao Ford Focus "ế vẫn hoàn ế" tại Việt Nam?
                       </h5>
@@ -342,175 +379,232 @@
                 </div>
               </div>
             </div>
-            <!-- tin tức -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#" title="Tin tức nổi bật">Tin tức</a>
-                  </h2>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarText">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#"
-                        >Tin trong nước</a
+          </div>
+          <!-- tin tức -->
+          <div class="row mt-2">
+            <div class="col-12">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <h2 >
+                      <span style="color: orange; font-size: 30px">I</span>
+                      <a
+                        href="#"
+                        class="text-decoration-none fs-4 fw-bold"
+                        style="color: black"
+                        >Tin tức</a
                       >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tin nước ngoài</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tin xe mới</a>
-                    </li>
-                  </ul>
-                  <span
-                    class="navbar-text"
-                    style="color: #1d70b8; font-weight: bold"
-                    >Xem tất cả</span
-                  >
-                </div>
-              </div>
-            </nav>
-            <!-- nội dung nhỏ bên trong -->
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card">
-                  <img src="assets/img43.webp" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Honda e:Ny1: Crossover điện đầy tiềm năng từ Honda
-                    </h5>
-                    <p class="card-text">
-                      Honda có thể đã gia nhập phân khúc xe điện một chút muộn
-                      so với một số đối thủ cạnh tranh. Tuy nhiên, những kế
-                      hoạch gần đây của hãng đã chứng tỏ sự tăng cường tập trung
-                      mạnh mẽ vào việc phát triển danh mục sản phẩm xe điện trên
-                      thị trường toàn cầu.
-                    </p>
+                    </h2>
+                  </a>
+                  <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"
+                          >Tin trong nước</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tin nước ngoài</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tin xe mới</a>
+                      </li>
+                    </ul>
+                    <span
+                      class="navbar-text"
+                      style="color: #1d70b8; font-weight: bold"
+                      >Xem tất cả</span
+                    >
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div id="listCar"></div>
+              </nav>
+            </div>
+          </div>
+          <!-- nội dung nhỏ bên trong -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <img src="assets/img43.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Honda e:Ny1: Crossover điện đầy tiềm năng từ Honda
+                  </h5>
+                  <p class="card-text">
+                    Honda có thể đã gia nhập phân khúc xe điện một chút muộn so
+                    với một số đối thủ cạnh tranh. Tuy nhiên, những kế hoạch gần
+                    đây của hãng đã chứng tỏ sự tăng cường tập trung mạnh mẽ vào
+                    việc phát triển danh mục sản phẩm xe điện trên thị trường
+                    toàn cầu.
+                  </p>
+                </div>
               </div>
             </div>
-            <!-- new sale car -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#" title="Tin tức nổi bật">Tin bán xe</a>
-                  </h2>
-                </a>
-                <div class="collapse navbar-collapse saleCar" id="navbarText">
-                  <span
-                    class="navbar-text"
-                    style="color: #1d70b8; font-weight: bold"
-                    >Xem tất cả</span
-                  >
-                </div>
-              </div>
-            </nav>
-            <!-- nội dung nhỏ bên trong -->
-            <div class="row" id="listSaleCars"></div>
+            <div class="col-md-6">
+              <div id="listCar"></div>
+            </div>
           </div>
+          <!-- new sale car -->
+          <div class="row mt-2">
+            <div class="col-12">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <h2 >
+                            <span class="fs-3" style="color: orange;">I</span>
+                            <a href="#" class="text-decoration-none fs-4 fw-bold text-dark">Tin bán xe</a>
+                        </h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <span class="navbar-text text-primary fw-bold ms-auto">Xem tất cả</span>
+                    </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        
+          <!-- nội dung nhỏ bên trong -->
+          <div
+            class="row d-flex justify-content-between flex-wrap"
+            id="listSaleCars"
+          ></div>
+        </div>
 
-          <div class="col-md-4">
-            <!-- Nội dung của class col-md-4 -->
-            <form class="border p-3">
-              <fieldset>
-                <legend class="border-bottom">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#">Bạn có xe cần bán</a>
-                  </h2>
-                </legend>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    id="name"
-                    class="form-control"
-                    placeholder="Họ tên"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    id="telephone"
-                    class="form-control"
-                    placeholder="Số điện thoại"
-                  />
-                </div>
-                <div class="mb-3">
-                  <select id="address" class="form-select"></select>
-                </div>
-                <button class="btn btn-primary w-100" onclick="inforSaleCar()">
-                  Gửi thông tin
-                </button>
-              </fieldset>
-            </form>
-            <!-- top 10 most car -->
-            <form class="border p-3 mostCar">
-              <fieldset disabled>
-                <legend class="border-bottom">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#">Top 10 xe bán chạy nhất</a>
-                  </h2>
-                </legend>
-                <div id="mostSale"></div>
-                <legend class="border-top">
-                  <p class="listfoot">
-                    Số liệu theo báo cáo
-                    <span style="font-weight: bold">VAMA 02-2024</span>
-                  </p>
-                </legend>
-              </fieldset>
-            </form>
-            <!-- new and read -->
-            <form class="border p-3 newAndReadCard">
-              <fieldset disabled>
-                <legend class="border-bottom itemTitle">
-                  <h2 class="title title_new">
-                    <a href="#">Mới nhất</a>
-                  </h2>
-                  <h2 class="title title_new">
-                    <a href="#">Đọc nhiều</a>
-                  </h2>
-                </legend>
-                <div id="newInfor"></div>
-              </fieldset>
-            </form>
-            <!-- promotion -->
-            <form class="border p-3 mostCar">
-              <fieldset disabled>
-                <legend class="border-bottom">
-                  <h2 class="title">
-                    <span style="color: orange">I</span>
-                    <a href="#">Tin khuyến mãi</a>
-                  </h2>
-                </legend>
-                <div id="listPromotion"></div>
-              </fieldset>
-            </form>
+        <div class="col-md-4">
+          <!-- Nội dung của class col-md-4 -->
+          <div class="row">
+            <div class="col-12">
+              <form class="border p-3">
+                <fieldset>
+                  <legend class="border-bottom">
+                    <h2 >
+                      <span style="color: orange; font-size: 30px">I</span>
+                      <a
+                        href="#"
+                        class="text-decoration-none fs-4 fw-bold"
+                        style="color: black"
+                        >Xe cần bán</a
+                      >
+                    </h2>
+                  </legend>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      placeholder="Họ tên"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      id="telephone"
+                      class="form-control"
+                      placeholder="Số điện thoại"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <select id="address" class="form-select"></select>
+                  </div>
+                  <button class="btn btn-primary w-100" onclick="inforSaleCar()">
+                    Gửi thông tin
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- top 10 most car -->
+          <div class="row">
+            <div class="col-12">
+              <form class="border p-3 mostCar">
+                <fieldset disabled>
+                  <legend class="border-bottom">
+                    <h2 >
+                      <span style="color: orange; font-size: 30px">I</span>
+                      <a
+                        href="#"
+                        class="text-decoration-none fs-4 fw-bold"
+                        style="color: black"
+                        >Top 10 xe bán chạy nhất</a
+                      >
+                    </h2>
+                  </legend>
+                  <div id="mostSale"></div>
+                  <legend class="border-top">
+                    <div class="listfoot d-flex justify-content-center">
+                      <p class="fs-6">
+                        Số liệu theo báo cáo
+                        <span class="fw-bold ml-2">VAMA 02-2024</span>
+                      </p>
+                    </div>
+                  </legend>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- new and read -->
+          <div class="row">
+            <div class="col-12">
+              <form class="border p-3 mt-1">
+                <fieldset disabled>
+                  <legend class="border-bottom d-flex">
+                    <h2 class=" me-3">
+                      <a
+                        href="#"
+                        class="fw-bold fs-6 text-decoration-none"
+                        style="color: #222"
+                        >Mới nhất</a
+                      >
+                    </h2>
+                    <h2 class="me-3">
+                      <a
+                        href="#"
+                        class="fw-bold fs-6 text-decoration-none"
+                        style="color: #222"
+                        >Đọc nhiều</a
+                      >
+                    </h2>
+                  </legend>
+                  <div id="newInfor"></div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <!-- promotion -->
+          <div class="row">
+            <div class="col-12">
+              <form class="border p-3 mt-2">
+                <fieldset disabled>
+                  <legend class="border-bottom">
+                    <h2 >
+                      <span style="color: orange; font-size: 30px">I</span>
+                      <a
+                        href="#"
+                        class="text-decoration-none fs-4 fw-bold"
+                        style="color: black"
+                        >Tin khuyến mãi</a
+                      >
+                    </h2>
+                  </legend>
+                  <div id="listPromotion"></div>
+                </fieldset>
+              </form>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- hãng xe -->
-      <div class="container-fluid popularCar">
-        <div class="row companyCar">
+    <!-- hãng xe -->
+    <div class="container-fluid bg-light p-5">
+      <div class="container">
+        <div class="row">
           <div class="col-3">
             <div>
               <h3>Xe Toyota</h3>
               <div id="toyota"></div>
-            </div>
-            <div>
-              <h3>Xe Mazda</h3>
-              <div id="mazda"></div>
             </div>
           </div>
           <div class="col-3">
@@ -518,19 +612,11 @@
               <h3>Xe KIA</h3>
               <div id="KIA"></div>
             </div>
-            <div>
-              <h3>Xe Ford</h3>
-              <div id="Ford"></div>
-            </div>
           </div>
           <div class="col-3">
             <div>
               <h3>Xe Huyndai</h3>
               <div id="huyndai"></div>
-            </div>
-            <div>
-              <h3>Xe Mitsubishi</h3>
-              <div id="mitsubishi"></div>
             </div>
           </div>
           <div class="col-3">
@@ -538,9 +624,35 @@
               <h3>Xe Honda</h3>
               <div id="honda"></div>
             </div>
-            <div>
-              <h3>Xe BMW</h3>
-              <div id="bmw"></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <div>
+                <h3>Xe Mazda</h3>
+                <div id="mazda"></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <h3>Xe Ford</h3>
+                <div id="Ford"></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <h3>Xe Mitsubishi</h3>
+                <div id="mitsubishi"></div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div>
+                <h3>Xe BMW</h3>
+                <div id="bmw"></div>
+              </div>
             </div>
           </div>
         </div>

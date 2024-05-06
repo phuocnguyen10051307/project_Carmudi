@@ -21,10 +21,11 @@ const card = [{
 let cardItem = '';
 for(let i=0;i<card.length;i++){
     if(card[i].isObject){
-        cardItem += `<div class="card mb-3" style="max-width: 100%;">
+        cardItem +=  `<div class="row">
+        <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
         <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start" alt="...">
+            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -33,18 +34,19 @@ for(let i=0;i<card.length;i++){
             </div>
         </div>
         </div>
-    </div>`;
+    </div>
+        </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-            <div class="card mb-3" style = "height:500px; with:200px">
-            <img src="${card[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
-            <div class="card-body">
+        <div class="card mb-3 " style="height: 500px;">
+            <img src="${card[i].image}" class="card-img-top" style="width: 100%; height: 250px;" alt="...">
+            <div class="card-body px-3 py-3">
                 <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text">${card[i].review}
-                </p>
+                <p class="card-text">${card[i].review}</p>
             </div>
-            </div>
-        </div>`;
+        </div>
+    </div>
+    `;
     }
 }
 // console.log(cardItem);
@@ -107,14 +109,15 @@ const newCard = [{
 let cardCarousel = '';
 for (let i = 0; i < newCard.length; i += 4) {
     cardCarousel += `<div class="carousel-item${i === 0 ? ' active' : ''}">
-        <div class="row">`;
+        <div class="row mb-md-4 mb-sm-3">`;
+
     for (let j = i; j < i + 4 && j < newCard.length; j++) {
         cardCarousel += `<div class="col-md-3">
-            <div class="card mb-3" style="height: 300px; width: 300px;">
-                <img src="${newCard[j].image}" class="card-img-top" style="width: 300px; height: 150px;" alt="..." />
+            <div class="card" style="height: 300px; width: 250px;">
+                <img src="${newCard[j].image}" class="card-img-top" style="width: 100%; height: 150px;" alt="..." />
                 <div class="card-body">
-                    <h5 class="card-title">${newCard[j].title}</h5>
-                    <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap">${newCard[j].content}</p>
+                    <h5 class="card-title fs-6 fw-bold">${newCard[j].title}</h5>
+                    <p class="card-text fs-6" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap">${newCard[j].content}</p>
                 </div>
             </div>
         </div>`;
@@ -124,6 +127,8 @@ for (let i = 0; i < newCard.length; i += 4) {
 }
 
 document.getElementById("carouselItem").innerHTML = cardCarousel;
+
+
 
 //optioncard
 
@@ -151,7 +156,7 @@ for (let i = 0; i < option.length; i++) {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title">${option[i].content}</h5>
+                <h5 class="card-title fs-5">${option[i].content}</h5>
                 </div>
             </div>
             </div>
@@ -186,8 +191,8 @@ for(let i=0; i<viewCard.length;i++){
             <div class="card mb-3">
             <img src="${viewCard[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
             <div class="card-body">
-                <h5 class="card-title">${viewCard[i].title}</h5>
-                <p class="card-text">${viewCard[i].content}
+                <h5 class="card-title fs-4">${viewCard[i].title}</h5>
+                <p class="card-text fs-6">${viewCard[i].content}
                 </p>
             </div>
             </div>
@@ -200,7 +205,7 @@ for(let i=0; i<viewCard.length;i++){
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title">${viewCard[i].title}</h5>
+                        <h5 class="card-title fs-6">${viewCard[i].title}</h5>
                         </div>
                     </div>
                     </div>
@@ -236,10 +241,10 @@ for (let i = 0; i < commentCar.length; i++) {
     if(commentCar[i].content){
         comment += `<div class="col-md-12">
             <div class="card mb-3">
-            <img src="${commentCar[i].image}" class="card-img-top" style = "with:100px; height:300px" alt="..." />
+            <img src="${commentCar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
             <div class="card-body">
-                <h5 class="card-title">${commentCar[i].title}</h5>
-                <p class="card-text">${commentCar[i].content}
+                <h5 class="card-title fs-4">${commentCar[i].title}</h5>
+                <p class="card-text fs-6">${commentCar[i].content}
                 </p>
             </div>
             </div>
@@ -252,7 +257,7 @@ for (let i = 0; i < commentCar.length; i++) {
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title">${commentCar[i].title}</h5>
+                        <h5 class="card-title fs-6">${commentCar[i].title}</h5>
                         </div>
                     </div>
                     </div>
@@ -324,12 +329,12 @@ for(let i=0;i<listSellCar.length;i++){
         <div class="row g-0">
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${listSellCar[i].namecar}</h5>
-            <p class="card-text">
+            <h5 class="card-title fs-5">${listSellCar[i].namecar}</h5>
+            <p class="card-text fs-6">
                 ${listSellCar[i].price}
             </p>
             <p class="card-text">
-                <small class="text-muted">${listSellCar[i].sales}</small>
+                <small class="text-muted fs-6">${listSellCar[i].sales}</small>
             </p>
             </div>
         </div>
@@ -366,7 +371,7 @@ for(let i=0;i<video.length;i++){
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title" style="color:#a5b7c6">${video[i].content}</h5>
+                <h5 class="card-title fs-6" style="color:#a5b7c6">${video[i].content}</h5>
                 </div>
             </div>
             </div>
@@ -424,7 +429,7 @@ for(let i=0;i<newRead.length;i++){
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
-                        <h5 class="card-title">${newRead[i].title}</h5>
+                        <h5 class="card-title fs-6">${newRead[i].title}</h5>
                         </div>
                     </div>
                     </div>
@@ -458,7 +463,7 @@ for(let i =0;i<car.length;i++){
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                    <h5 class="card-title">${car[i].title}</h5>
+                    <h5 class="card-title fs-6">${car[i].title}</h5>
                     </div>
                 </div>
                 </div>
@@ -513,7 +518,7 @@ for(let  i = 0; i<promotion.length;i++){
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${promotion[i].title}</h5>
+            <h5 class="card-title fs-6">${promotion[i].title}</h5>
             </div>
         </div>
         </div>
@@ -572,7 +577,7 @@ const saleCar = [{
     price:'120 triệu'
 },{
     image:'assets/img65.webp',
-    name: 'ban cx5 2019 fom 2020 sieu mới',
+    name: 'Bán cx5 2019 fom 2020 sieu mới',
     trip: '58,000 km',
     price: '680 triệu'
 },{
@@ -593,9 +598,9 @@ for(let i=0;i<saleCar.length;i++){
     <div class="card mb-3 d-flex" style="flex-basis: calc(33.33% - 20px); flex-direction: column; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <img src="${saleCar[i].image}" class="card-img-top" alt="..." style="width: 100%; height: 170px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
         <div class="card-body" style="padding: 15px;">
-            <h5 class="card-title">${saleCar[i].name}</h5>
-            <p class="card-text"><small class="text-muted">${saleCar[i].trip}</small></p>
-            <p class="card-text" style="color:red; font-weight: bold;">${saleCar[i].price}</p>
+            <h5 class="card-title fs-6">${saleCar[i].name}</h5>
+            <p class="card-text"><small class="text-muted fs-6">${saleCar[i].trip}</small></p>
+            <p class="card-text fs-6" style="color:red; font-weight: bold;">${saleCar[i].price}</p>
         </div>
     </div>`;
 

@@ -42,7 +42,7 @@ body{
     background-color: orange;
     cursor: pointer;
 }
-/* 
+
 .hidden {
     opacity: 0; 
     pointer-events: none; 
@@ -51,7 +51,7 @@ body{
 .visible {
     opacity: 1; 
     pointer-events: auto;
-} */
+}
 
 .navbar {
     transition: top 0.3s; 
@@ -64,9 +64,11 @@ body{
     z-index: 1000; 
 }
 
-/* .title{
+.title{
     padding-top: 100px;
-} */
+}
+
+
 
 
 
