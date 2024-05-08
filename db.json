@@ -45,6 +45,52 @@
       "Title": "",
       "ImageUrl": "",
       "id": 2
+    },
+    {
+      "Address": {
+        "Province": "Chọn tỉnh/thành",
+        "Districts": "Chọn quận/huyện"
+      },
+      "Personal": "",
+      "Phone": "1231321321",
+      "CarType": "VinFast",
+      "Vehicles": "Fadil",
+      "Version": "Cao cấp",
+      "Year": "2016",
+      "Kilometer": "123132213",
+      "Price": "",
+      "Style": "Chọn kiểu dáng",
+      "Transmission": "Chọn hộp số",
+      "Fuel": "Chọn loại nhiên liệu",
+      "Color": "Chọn màu xe",
+      "Seats": "Chọn số ghế",
+      "Origin": "Chọn xuất xứ",
+      "Title": "",
+      "ImageUrl": "C:\\fakepath\\OIP.jpg",
+      "id": 3
+    },
+    {
+      "Address": {
+        "Province": "An Giang",
+        "Districts": "Chọn quận/huyện"
+      },
+      "Personal": "",
+      "Phone": "12313123132",
+      "CarType": "Toyota",
+      "Vehicles": "Allion",
+      "Version": "Khác",
+      "Year": "2015",
+      "Kilometer": "123132",
+      "Price": "",
+      "Style": "Chọn kiểu dáng",
+      "Transmission": "Chọn hộp số",
+      "Fuel": "Chọn loại nhiên liệu",
+      "Color": "Chọn màu xe",
+      "Seats": "Chọn số ghế",
+      "Origin": "Chọn xuất xứ",
+      "Title": "",
+      "ImageUrl": "C:\\fakepath\\OIP.jpg",
+      "id": 4
     }
   ],
   "districts": {
