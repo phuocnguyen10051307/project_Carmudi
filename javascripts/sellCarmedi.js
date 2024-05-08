@@ -230,9 +230,9 @@ function button() {
 }
 //fetch API province, districts
 const callAPIProvince = async () => {
-  const response = await fetch("http://localhost:4000/provinces");
+  const response = await fetch("http://localhost:5000/province");
   const callProvince = await response.json();
-  // console.log(callProvince.data.data);
+  // console.log(callProvince.data);
   const provinceSelect = document.getElementById("province");
   callProvince.data.data.forEach((el) => {
     const option = document.createElement("option");
@@ -241,9 +241,10 @@ const callAPIProvince = async () => {
     provinceSelect.appendChild(option);
   });
 };
+callAPIProvince();
 const callAPIDistrict = async () => {
   let codeProvince = document.getElementById("province").value;
-  const response = await fetch("http://localhost:4000/districts");
+  const response = await fetch("http://localhost:5000/districts");
   const callDistrict = await response.json();
   const districtSelect = document.getElementById("district");
   districtSelect.innerHTML = "";
@@ -259,30 +260,33 @@ const callAPIDistrict = async () => {
     }
   });
 };
-callAPIProvince();
 
-function showData() {
-  let carCompany = document.getElementById("carCompany").value;
-  let Vehicles = document.getElementById("vehicles").value;
-  let Version = document.getElementById("carVersion").value;
-  let Year = document.getElementById("year").value;
-  let Kilometer = document.getElementById("kilometer").value;
-  let Phone = document.getElementById("phone").value;
-  let Money = document.getElementById("money").value;
-  let Designs = document.getElementById("Designs").value;
-  let foamBox = document.getElementById("foamBox").value;
-  let fuel = document.getElementById("fuel").value;
-  let color = document.getElementById("color").value;
-  let chair = document.getElementById("chair").value;
-  let Name = document.getElementById("name").value;
-  let origin = document.getElementById("origin").value;
-  let nameCar = document.getElementById("nameCar").value;
-  let Province = document.getElementById("province");
-  let valueProvince = Province.options[Province.selectedIndex].text;
-  let District = document.getElementById("district");
-  let valueDistrict = District.options[District.selectedIndex].text;
-  let getData = [
-    {
+const showData = async () => {
+  try {
+    const carCompany = document.getElementById("carCompany").value;
+    const Vehicles = document.getElementById("vehicles").value;
+    const Version = document.getElementById("carVersion").value;
+    const Year = document.getElementById("year").value;
+    const Kilometer = document.getElementById("kilometer").value;
+    const Phone = document.getElementById("phone").value;
+    const Money = document.getElementById("money").value;
+    const Designs = document.getElementById("Designs").value;
+    const foamBox = document.getElementById("foamBox").value;
+    const fuel = document.getElementById("fuel").value;
+    const color = document.getElementById("color").value;
+    const chair = document.getElementById("chair").value;
+    const Name = document.getElementById("name").value;
+    const origin = document.getElementById("origin").value;
+    const nameCar = document.getElementById("nameCar").value;
+    const ImageURL = document.getElementById("fileInp").value;
+    const Province = document.getElementById("province");
+    const valueProvince = Province.options[Province.selectedIndex]?.text;
+    const District = document.getElementById("district");
+    const valueDistrict = District.options[District.selectedIndex]?.text;
+
+  
+    const url = "http://localhost:5000/car";
+    const getData = {
       Address: {
         Province: valueProvince,
         Districts: valueDistrict,
@@ -302,7 +306,31 @@ function showData() {
       Seats: chair,
       Origin: origin,
       Title: nameCar,
-    },
-  ];
-  console.log(getData);
-}
+      ImageUrl: ImageURL,
+    };
+
+    const response = await axios.post(url, getData);
+    console.log("Data posted successfully:", response.data);
+
+    Toastify({
+      text: "Nhận thông tin thành công",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      }
+    }).showToast();
+
+    return response.data;
+  } catch (error) {
+    console.error("Lỗi khi gửi dữ liệu:", error.message);
+
+    Toastify({
+      text: "Đã xảy ra lỗi",
+      className: "infor",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      }
+    }).showToast();
+    throw error;
+  }
+};

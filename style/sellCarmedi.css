@@ -12,10 +12,10 @@ ol {
 }
 .header-sell {
   width: 700px;
-  height: 100%;
 }
 .cardSell {
-  top: 5%;
+  position: absolute;
+  top: 1%;
   right: 10%;
 }
 /*⁡⁣⁢⁣ C2 style⁡ */
@@ -91,16 +91,18 @@ ol {
 }
 @media only screen and (max-width: 740px) {
   .headerSellCard {
-    height: 700px;
+    height: 800px;
   }
   .header-img img {
     height: 300px;
     width: 100%;
   }
-  .header-sell {
+  .cardSell {
     width: 100%;
+    height: auto;
     top: auto;
     right: auto;
+    position: unset;
   }
   .carSelling-Steps .row {
     display: flex;
@@ -118,3 +120,4 @@ ol {
     margin-top: 20px;
   }
 }
+
