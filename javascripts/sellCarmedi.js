@@ -306,7 +306,25 @@ const showData= ()=> {
   //   Province: valueProvince,
   // };
   try {
-   axios.post("  http://localhost:3000/dataCar",getData, {
+   axios.post("  http://localhost:3000/dataCar", {
+    Address:valueProvince,
+    Personal: Name,
+    Phone: Phone,
+    CarType: carCompany,
+    Vehicles: Vehicles,
+    Version: Version,
+    Year: Year,
+    Kilometer: Kilometer,
+    Price: Money,
+    Style: Designs,
+    Transmission: foamBox,
+    Fuel: fuel,
+    Color: color,
+    Seats: chair,
+    Origin: origin,
+    Title: nameCar,
+    ImageUrl: imageUrl,
+    Province: valueProvince,
       headers: { "Content-type": "application/json; charset= UTF-8"}
     })
     Toastify({
@@ -317,6 +335,7 @@ const showData= ()=> {
       }})
     
   } catch (error) {
+    console.log(error.massage);
     Toastify({
       text: "Error",
       className: "infor",
