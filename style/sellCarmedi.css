@@ -12,10 +12,10 @@ ol {
 }
 .header-sell {
   width: 700px;
-  height: 100%;
 }
 .cardSell {
-  top: 5%;
+  position: absolute;
+  top: 1%;
   right: 10%;
 }
 /*⁡⁣⁢⁣ C2 style⁡ */
@@ -91,16 +91,18 @@ ol {
 }
 @media only screen and (max-width: 740px) {
   .headerSellCard {
-    height: 700px;
+    height: 800px;
   }
   .header-img img {
     height: 300px;
     width: 100%;
   }
-  .header-sell {
+  .cardSell {
     width: 100%;
+    height: auto;
     top: auto;
     right: auto;
+    position: unset;
   }
   .carSelling-Steps .row {
     display: flex;
@@ -117,259 +119,4 @@ ol {
   .imgPeople {
     margin-top: 20px;
   }
-}
-/*head*/
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.m-auto {
-  margin: auto;
-}
-
-.pd {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.max-w-screen {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-/* nar */
-.text-w {
-  color: black;
-  font-weight: 600;
-}
-
-.text-w:hover {
-  color: rgb(75, 194, 234);
-}
-
-.buy {
-  position: relative;
-  display: inline-block;
-}
-
-.menu {
-  text-align: left;
-}
-
-.buy-hidden {
-  border: 1px rgb(217, 190, 190) solid;
-  border-radius: 0.4rem;
-  background-color: white;
-  position: absolute;
-  display: none;
-  width: 700px;
-}
-
-.buy:hover .buy-hidden {
-  display: flex;
-}
-
-.text-menu {
-  font-size: 16px;
-}
-
-.text-nav {
-  font-size: 14px;
-  display: block;
-  align-items: center;
-  padding: 10px;
-}
-
-.text-nav:hover {
-  background-color: rgb(209, 220, 227);
-}
-
-li a {
-  text-decoration: none;
-  color: black;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-/* right */
-.text-w1 {
-  font-weight: 700;
-}
-
-.text-h {
-  font-weight: 500;
-}
-
-.up {
-  width: 150px;
-  height: 50px;
-  color: white;
-  text-decoration: none;
-  background-color: orange;
-  text-align: center;
-  padding-top: 10px;
-  border-radius: 0.25rem;
-}
-
-.up:hover {
-  background-color: rgb(204, 141, 25);
-}
-
-.phone {
-  color: black;
-  text-decoration: none;
-}
-
-.user {
-  position: relative;
-  display: block;
-}
-
-.user-btn {
-  padding: 0px;
-  padding-bottom: 2px;
-}
-
-.user-hidden {
-  border: 1px rgb(217, 190, 190) solid;
-  border-radius: 0.4rem;
-  background-color: white;
-  display: none;
-  width: 120px;
-}
-
-.u-hidden {
-  text-align: left;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.u-hidden:hover {
-  background-color: rgb(209, 220, 227);
-}
-
-.user:hover .user-hidden {
-  background-color: white;
-  position: absolute;
-  display: block;
-}
-
-.footer {
-  background-color: rgb(9 37 61);
-  width: auto;
-}
-
-.footer-left {
-  width: 250px;
-}
-
-.container {
-  display: grid;
-  margin-top: auto;
-  justify-content: space-between;
-}
-
-.text-white > .d-flex > input {
-  width: 330px;
-}
-
-.input-btn {
-  width: 80px;
-  height: 50px;
-  background-color: rgb(11, 143, 243);
-}
-
-.text-md {
-  font-size: 14px;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.icon {
-  align-items: baseline;
-  margin-left: 0;
-  list-style: none;
-  gap: 2rem;
-  padding: 0px;
-}
-
-.list-st {
-  list-style: none;
-  padding: 0px;
-  width: 200px;
-}
-
-.text-ft {
-  color: rgb(165 183 198);
-}
-
-.text-sz {
-  font-size: 12px;
-}
-
-.imgOfCar > .fileText {
-  margin-bottom: 10px;
-}
-.imgOfCar > .inputFile {
-  display: none;
-}
-.imgOfCar > label {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #222;
-  margin-bottom: 10px;
-  font-size: 100px;
-  background: linear-gradient(45deg, blue, red);
-  cursor: pointer;
-}
-.imgOfCar > button {
-  padding: 20px 25px;
-  background: rgb(41, 100, 209);
-  color: white;
-  border: none;
-  margin-bottom: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
-}
-.imgOfCar > .bar {
-  height: 50px;
-  width: 500px;
-  background-color: #0000003d;
-  margin-bottom: 10px;
-}
-.imgOfCar > .progress {
-  background: linear-gradient(12deg, red, blue);
-  height: 100%;
-  width: 0px;
-}
-.imgOfCar > .uploadPercentage {
-  font-size: 25px;
-}
-.imgOfCar > img {
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  display: none;
-}
-.imgOfCar > .imageUploaded {
-  margin-top: 10px;
 }

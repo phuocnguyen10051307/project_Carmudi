@@ -230,9 +230,9 @@ function button() {
 }
 //fetch API province, districts
 const callAPIProvince = async () => {
-  const response = await fetch("http://localhost:3000/provinces");
+  const response = await fetch("http://localhost:5000/province");
   const callProvince = await response.json();
-  // console.log(callProvince.data.data);
+  // console.log(callProvince.data);
   const provinceSelect = document.getElementById("province");
   callProvince.data.data.forEach((el) => {
     const option = document.createElement("option");
@@ -241,9 +241,10 @@ const callAPIProvince = async () => {
     provinceSelect.appendChild(option);
   });
 };
+callAPIProvince();
 const callAPIDistrict = async () => {
   let codeProvince = document.getElementById("province").value;
-  const response = await fetch("http://localhost:3000/districts");
+  const response = await fetch("http://localhost:5000/districts");
   const callDistrict = await response.json();
   const districtSelect = document.getElementById("district");
   districtSelect.innerHTML = "";
@@ -259,227 +260,77 @@ const callAPIDistrict = async () => {
     }
   });
 };
-callAPIProvince();
 
-const showData= ()=> {
-  const carCompany = document.getElementById("carCompany").value;
-  const Vehicles = document.getElementById("vehicles").value;
-  const Version = document.getElementById("carVersion").value;
-  const Year = document.getElementById("year").value;
-  const Kilometer = document.getElementById("kilometer").value;
-  const Phone = document.getElementById("phone").value;
-  const Money = document.getElementById("money").value;
-  const Designs = document.getElementById("Designs").value;
-  const foamBox = document.getElementById("foamBox").value;
-  const fuel = document.getElementById("fuel").value;
-  const color = document.getElementById("color").value;
-  const chair = document.getElementById("chair").value;
-  const Name = document.getElementById("name").value;
-  const origin = document.getElementById("origin").value;
-  const nameCar = document.getElementById("nameCar").value;
-  const ImageURL = document.getElementById("img");
-  const Province = document.getElementById("province");
-  const valueProvince = Province.options[Province.selectedIndex].text;
-  const District = document.getElementById("district");
-  const valueDistrict = District.options[District.selectedIndex].text;
-  // const getData= {
-  //   Address: {
-  //     Province: valueProvince,
-  //     Districts: valueDistrict,
-  //   },
-  //   Personal: Name,
-  //   Phone: Phone,
-  //   CarType: carCompany,
-  //   Vehicles: Vehicles,
-  //   Version: Version,
-  //   Year: Year,
-  //   Kilometer: Kilometer,
-  //   Price: Money,
-  //   Style: Designs,
-  //   Transmission: foamBox,
-  //   Fuel: fuel,
-  //   Color: color,
-  //   Seats: chair,
-  //   Origin: origin,
-  //   Title: nameCar,
-  //   ImageUrl: imageUrl,
-  //   Province: valueProvince,
-  // };
+const showData = async () => {
   try {
-   axios.post("  http://localhost:3000/dataCar", {
-    Address:valueProvince,
-    Personal: Name,
-    Phone: Phone,
-    CarType: carCompany,
-    Vehicles: Vehicles,
-    Version: Version,
-    Year: Year,
-    Kilometer: Kilometer,
-    Price: Money,
-    Style: Designs,
-    Transmission: foamBox,
-    Fuel: fuel,
-    Color: color,
-    Seats: chair,
-    Origin: origin,
-    Title: nameCar,
-    ImageUrl: imageUrl,
-    Province: valueProvince,
-      headers: { "Content-type": "application/json; charset= UTF-8"}
-    })
+    const carCompany = document.getElementById("carCompany").value;
+    const Vehicles = document.getElementById("vehicles").value;
+    const Version = document.getElementById("carVersion").value;
+    const Year = document.getElementById("year").value;
+    const Kilometer = document.getElementById("kilometer").value;
+    const Phone = document.getElementById("phone").value;
+    const Money = document.getElementById("money").value;
+    const Designs = document.getElementById("Designs").value;
+    const foamBox = document.getElementById("foamBox").value;
+    const fuel = document.getElementById("fuel").value;
+    const color = document.getElementById("color").value;
+    const chair = document.getElementById("chair").value;
+    const Name = document.getElementById("name").value;
+    const origin = document.getElementById("origin").value;
+    const nameCar = document.getElementById("nameCar").value;
+    const ImageURL = document.getElementById("fileInp").value;
+    const Province = document.getElementById("province");
+    const valueProvince = Province.options[Province.selectedIndex]?.text;
+    const District = document.getElementById("district");
+    const valueDistrict = District.options[District.selectedIndex]?.text;
+
+  
+    const url = "http://localhost:5000/car";
+    const getData = {
+      Address: {
+        Province: valueProvince,
+        Districts: valueDistrict,
+      },
+      Personal: Name,
+      Phone: Phone,
+      CarType: carCompany,
+      Vehicles: Vehicles,
+      Version: Version,
+      Year: Year,
+      Kilometer: Kilometer,
+      Price: Money,
+      Style: Designs,
+      Transmission: foamBox,
+      Fuel: fuel,
+      Color: color,
+      Seats: chair,
+      Origin: origin,
+      Title: nameCar,
+      ImageUrl: ImageURL,
+    };
+
+    const response = await axios.post(url, getData);
+    console.log("Data posted successfully:", response.data);
+
     Toastify({
-      text: "Received information successfully ",
+      text: "Nhận thông tin thành công",
       className: "info",
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
-      }})
-    
+      }
+    }).showToast();
+
+    return response.data;
   } catch (error) {
-    console.log(error.massage);
+    console.error("Lỗi khi gửi dữ liệu:", error.message);
+
     Toastify({
-      text: "Error",
+      text: "Đã xảy ra lỗi",
       className: "infor",
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       }
     }).showToast();
-    
+    throw error;
   }
-
-
-  // Toastify({
-  //   text: "Received information successfully ",
-  //   className: "info",
-  //   style: {
-  //     background: "linear-gradient(to right, #00b09b, #96c93d)",
-  //   }
-  // }).showToast();
-  // console.log(getData);
-}
-// const showData = async () => {
-//   let carCompany = document.getElementById("carCompany").value;
-//   let Vehicles = document.getElementById("vehicles").value;
-//   let Version = document.getElementById("carVersion").value;
-//   let Year = document.getElementById("year").value;
-//   let Kilometer = document.getElementById("kilometer").value;
-//   let Phone = document.getElementById("phone").value;
-//   let Money = document.getElementById("money").value;
-//   let Designs = document.getElementById("Designs").value;
-//   let foamBox = document.getElementById("foamBox").value;
-//   let fuel = document.getElementById("fuel").value;
-//   let color = document.getElementById("color").value;
-//   let chair = document.getElementById("chair").value;
-//   let Name = document.getElementById("name").value;
-//   let origin = document.getElementById("origin").value;
-//   let nameCar = document.getElementById("nameCar").value;
-//   let Province = document.getElementById("province");
-//   let valueProvince = Province.options[Province.selectedIndex].text;
-//   let District = document.getElementById("district");
-//   let valueDistrict = District.options[District.selectedIndex].text;
-
-//   let getData = {
-//     Address: {
-//       Province: valueProvince,
-//       Districts: valueDistrict,
-//     },
-//     // Personal: Name,
-//     // Phone: Phone,
-//     // CarType: carCompany,
-//     // Vehicles: Vehicles,
-//     // Version: Version,
-//     // Year: Year,
-//     // Kilometer: Kilometer,
-//     // Price: Money,
-//     // Style: Designs,
-//     // Transmission: foamBox,
-//     // Fuel: fuel,
-//     // Color: color,
-//     // Seats: chair,
-//     // Origin: origin,
-//     // Title: nameCar,
-//     // ImageUrl: imageUrl,
-//     // Province: valueProvince,
-//   };
-
-//   try {
-//     await axios.post("http://localhost:3000/dataCar", getData, {
-//       Personal: Name,
-//       Phone: Phone,
-//       CarType: carCompany,
-//       Vehicles: Vehicles,
-//       Version: Version,
-//       Year: Year,
-//       Kilometer: Kilometer,
-//       Price: Money,
-//       Style: Designs,
-//       Transmission: foamBox,
-//       Fuel: fuel,
-//       Color: color,
-//       Seats: chair,
-//       Origin: origin,
-//       Title: nameCar,
-//       ImageUrl: imageUrl,
-//       Province: valueProvince,
-//       headers: { "Content-type": "application/json; charset=UTF-8" },
-//     });
-
-//     Toastify({
-//       text: "Received information successfully",
-//       className: "info",
-//       style: {
-//         background: "linear-gradient(to right, #00b09b, #96c93d)",
-//       },
-//     }).showToast();
-//   } catch (error) {
-//     Toastify({
-//       text: "Error",
-//       className: "info",
-//       style: {
-//         background: "linear-gradient(to right, #00b09b, #96c93d)",
-//       },
-//     }).showToast();
-//   }
-
-//   // return getData;
-// };
-
-// const categories = [...new Set(showInfor.map((item) => item.category))];
-
-// const displayItem = (items) => {
-//   document.getElementById("show").innerHTML = items
-//     .map((item) => {
-//       var {
-//         Version,
-//         Year,
-//         Kilometer,
-//         Price,
-//         Fuel,
-//         Color,
-//         Title,
-//         ImageUrl,
-//         icon1,
-//         icon2,
-//         icon3,
-//         icon4,
-//         icon5,
-//         Province,
-//       } = item;
-//       return `
-//       <div class="card">
-//         <img src="${ImageUrl}" class="card-img-top">
-//         <div class="card-body">
-//           <h5 class="card-title">${Title}</h5>
-//           <p class="card-text">${icon1} ${Year}</p>
-//           <p class="card-text">${icon2} ${Kilometer} km</p>
-//           <p class="card-text">${icon3} ${Fuel}</p>
-//           <p class="card-text">${icon4} ${Version}</p>
-//         </div>
-//         <div class="card-footer">
-//           <p class="card-text" style="font-size:20px; color:red;">${Price}</p>
-//           <p class="card-text" style="font-size:12px;">${icon5} ${Province}</p>
-//         </div>
-//       </div>
-//     `;
-//     })
-//     .join("");
-// };
+};

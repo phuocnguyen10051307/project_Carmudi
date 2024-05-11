@@ -29,7 +29,7 @@
     <div class="header-img">
       <img src="./assets/desktop-11.12.2023.webp" alt="">
     </div>
-    <div class="header-sell position-absolute cardSell">
+    <div class="header-sell  cardSell">
       <div class="card p-3">
         <div class="card-body">
           <h5 class="card-title">Nhập thông tin chi tiết của bạn và nhận giá xe của bạn ngay lập tức</h5>
@@ -172,6 +172,7 @@
                 <img alt="" class="img" />
               </div>
             </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -191,7 +192,7 @@
       <div class="row">
         <div class="col">
           <div class="card cardInfo">
-            <div class="card-body">
+            <div class="card-body pos">
               <div class="position-absolute top-0 end-0"><img src="./assets/corner.svg" alt=""></div>
               <span class="position-absolute text-white fw-bold">1</span>
               <div class="p-5 ps-0"><img src="../assets/calendar.svg" alt=""></div>
@@ -553,7 +554,7 @@
 <script src="javascripts/sellCarmedi.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!-- <script>
   var imageUrl = "";
   const firebaseConfig = {
