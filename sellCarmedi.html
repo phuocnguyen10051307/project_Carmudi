@@ -168,7 +168,7 @@
                 <div class="progress"></div>
               </div>
               <div class="uploadPercentage">0%</div>
-              <div class="imageUploaded">
+              <div class="imageUploaded" >
                 <img alt="" class="img" />
               </div>
             </div>
@@ -669,6 +669,8 @@
           if (url != "") {
             img.setAttribute("src", url);
             img.style.display = "block";
+            showData(url);
+
           }
         });
       }

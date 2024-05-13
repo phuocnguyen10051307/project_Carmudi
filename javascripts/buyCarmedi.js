@@ -157,33 +157,37 @@ range_Input.forEach((input) => {
 //     return `<button class="fil-p" onclick='filterItems(${id})'>${id}</button>`;
 //   })
 //   .join("");
-fetch('http://localhost:3000/dataCar')
-.then(response => response.json())
-.then(data => {
-    const carInfoDiv = document.getElementById('show');
-    data.car.forEach(carInfo => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4', 'mb-3');
-        card.innerHTML = `
-            <div class="card">
-                <img src="${carInfo.ImageUrl}" class="card-img-top">
+document.addEventListener("DOMContentLoaded", function() {
+  // Sử dụng fetch để lấy dữ liệu từ tệp JSON
+  fetch('db.json')
+    .then(response => response.json())
+    .then(data => {
+      // Duyệt qua mảng car và thêm dữ liệu vào HTML
+      const carList = document.getElementById('show');
+      data.car.forEach(car => {
+        const carDiv = document.createElement('div');
+        carDiv.classList.add('car');
+        carDiv.innerHTML = `
+        <div class="card">
+                <img src="${car.ImageUrl}" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">${carInfo.Title}</h5>
-                    <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${carInfo.Year}</p>
-                    <p class="card-text"><i class="bi bi-speedometer"></i> ${carInfo.Kilometer} km</p>
-                    <p class="card-text"><i class="bi bi-fuel-pump"></i> ${carInfo.Fuel}</p>
-                    <p class="card-text"><i class="bi bi-bezier2"></i> ${carInfo.foamBox}</p>
+                    <h5 class="card-title">${car.Title}</h5>
+                    <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+                    <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+                    <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+                    <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
                 </div>
                 <div class="card-footer">
-                    <p class="card-text" style="font-size:20px; color:red;">${carInfo.Price}</p>
-                    <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${carInfo.Address}</p>
+                    <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+                    <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
                 </div>
             </div>
         `;
-        carInfoDiv.appendChild(card);
-    });
-})
-.catch(error => console.error('Lỗi khi đọc tệp JSON:', error));
+        carList.appendChild(carDiv);
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
 // const itemsPerPage = 10; // Số lượng mục trên mỗi trang
 // let currentPage = 1; // Trang hiện tại
 
@@ -279,3 +283,101 @@ fetch('http://localhost:3000/dataCar')
 //   const thumb = rangeInput.nextElementSibling;
 //   thumb.style.left = percentage + "%";
 // });
+
+
+// let cars = []; 
+
+// async function getUser() {
+//     try {
+//         let data = await axios.get('http://localhost:5000/car');
+//         cars = data.data;
+//         renderCars(cars);
+//     } catch (e) {
+//         console.log(e);
+//     }
+// }
+
+// function renderCars(array) {
+//     let cardsContainer = document.getElementById('show');
+//     cardsContainer.innerHTML = ''; // Clear previous cards
+//     array.forEach(car => { 
+//         let card = document.createElement('div');
+//         card.classList.add('card');
+//         card.innerHTML = `
+//             <img src="${car.ImageUrl}" class="card-img-top">
+//             <div class="card-body">
+//                 <h5 class="card-title">${car.Title}</h5>
+//                 <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+//                 <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+//                 <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+//                 <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+//             </div>
+//             <div class="card-footer">
+//                 <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+//                 <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+//             </div>`;
+//         cardsContainer.appendChild(card);
+//     });
+// } 
+
+// function searchUser() {
+//     let valueSearchInput = document.getElementById('search').value;
+//     let filteredCars = cars.filter(car => {
+//         return car.Title.toUpperCase().includes(valueSearchInput.toUpperCase());
+//     });
+//     renderCars(filteredCars); 
+// }
+
+// // Load data when the page loads
+// getUser();
+// document.addEventListener('DOMContentLoaded', getUser);
+
+// let cars = [];
+
+// async function getUser() {
+//   try {
+//     let data = await axios.get('http://localhost:5000/car');
+//     cars = data.data;
+//     renderCars(cars);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+
+// function renderCars(array) {
+//   let cardsContainer = document.getElementById('show');
+//   cardsContainer.innerHTML = ''; // Clear previous cards
+//   array.forEach(car => { 
+//     let card = document.createElement('div');
+//     card.classList.add('card');
+//     card.innerHTML = `
+//       <img src="${car.ImageUrl}" class="card-img-top">
+//       <div class="card-body">
+//         <h5 class="card-title">${car.Title}</h5>
+//         <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+//         <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+//         <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+//         <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+//       </div>
+//       <div class="card-footer">
+//         <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+//         <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+//       </div>`;
+//     cardsContainer.appendChild(card);
+//   });
+// } 
+
+// function searchUser() {
+//   let valueSearchInput = document.getElementById('search').value;
+//   let filteredCars = cars.filter(car => {
+//     return car.Title.toUpperCase().includes(valueSearchInput.toUpperCase());
+//   });
+//   renderCars(filteredCars); 
+// }
+
+// function clearSearch() {
+//   document.getElementById('search').value = '';
+//   renderCars(cars);
+// }
+
+

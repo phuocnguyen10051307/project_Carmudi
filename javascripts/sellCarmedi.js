@@ -261,7 +261,7 @@ const callAPIDistrict = async () => {
   });
 };
 
-const showData = async () => {
+const showData = async (imageURL) => {
   try {
     const carCompany = document.getElementById("carCompany").value;
     const Vehicles = document.getElementById("vehicles").value;
@@ -278,7 +278,7 @@ const showData = async () => {
     const Name = document.getElementById("name").value;
     const origin = document.getElementById("origin").value;
     const nameCar = document.getElementById("nameCar").value;
-    const ImageURL = document.getElementById("fileInp").value;
+    // const ImageURL = url;
     const Province = document.getElementById("province");
     const valueProvince = Province.options[Province.selectedIndex]?.text;
     const District = document.getElementById("district");
@@ -306,7 +306,7 @@ const showData = async () => {
       Seats: chair,
       Origin: origin,
       Title: nameCar,
-      ImageUrl: ImageURL,
+      ImageUrl: imageURL,
     };
 
     const response = await axios.post(url, getData);
@@ -315,6 +315,7 @@ const showData = async () => {
     Toastify({
       text: "Nhận thông tin thành công",
       className: "info",
+      duration: 3000,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       }
@@ -327,6 +328,7 @@ const showData = async () => {
     Toastify({
       text: "Đã xảy ra lỗi",
       className: "infor",
+      duration: 3000,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       }
