@@ -91,6 +91,29 @@
       "Title": "",
       "ImageUrl": "C:\\fakepath\\OIP.jpg",
       "id": 4
+    },
+    {
+      "Address": {
+        "Province": "Bà Rịa - Vũng Tàu",
+        "Districts": "Vũng Tàu"
+      },
+      "Personal": "",
+      "Phone": "0868457129",
+      "CarType": "BMW",
+      "Vehicles": "2000",
+      "Version": "VT 300",
+      "Year": "2024",
+      "Kilometer": "2000",
+      "Price": "",
+      "Style": "Chọn kiểu dáng",
+      "Transmission": "Chọn hộp số",
+      "Fuel": "Chọn loại nhiên liệu",
+      "Color": "Chọn màu xe",
+      "Seats": "Chọn số ghế",
+      "Origin": "Chọn xuất xứ",
+      "Title": "",
+      "ImageUrl": "C:\\fakepath\\img1.webp",
+      "id": 5
     }
   ],
   "districts": {
