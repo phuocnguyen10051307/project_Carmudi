@@ -1,8 +1,9 @@
-const card = [{
+// hot new
+const hotnew = [{
     image: 'assets/img68.png',
     text: ' Mazda CX-30 vs Mazda CX-5: So sánh hai mẫu xe SUV của Mazda ',
     review: '  Mazda có lịch sử liên tục cập nhật và nâng cấp các mẫu xe của mình. Với sự tăng trưởng của phân khúc SUV trên toàn cầu, Mazda CX-30 và Mazda CX-5 có tiềm năng để tiếp tục cạnh tranh và ghi nhận thành công trong thị trường xe hơi. ',
-    isObject: true
+    isObject: "So sánh xe"
 },{
     image: 'assets/img69.png',
     text: ' So sánh Mazda CX-5 2023 với Toyota RAV4 2023 ',
@@ -19,18 +20,19 @@ const card = [{
 
 
 let cardItem = '';
-for(let i=0;i<card.length;i++){
-    if(card[i].isObject){
+for(let i=0;i<hotnew.length;i++){
+    if(hotnew[i].isObject){
         cardItem +=  `<div class="row">
         <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
         <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
+            <img  src="${hotnew[i].image}" class="img-fluid rounded-start h-100"  alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${card[i].text}</h5>
-            <p class="card-text">${card[i].review}</p>
+            <h5 class="card-title fw-bold" style="font-size:24px;">${hotnew[i].text}</h5>
+            <p class="card-text"  style="font-size:14px;">${hotnew[i].review}</p>
+            <p class="card-text"  style="font-size:14px; color:#7c7c7c;">${hotnew[i].isObject}</p>
             </div>
         </div>
         </div>
@@ -38,19 +40,20 @@ for(let i=0;i<card.length;i++){
         </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-        <div class="card mb-3" style="height: 500px;">
-            <img src="${card[i].image}" class="card-img-top w-100 h-100%" alt="...">
-            <div class="card-body d-flex flex-column justify-content-center px-3 py-3">
-                <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text">${card[i].review}</p>
+        <div class="card mb-3" style="height: 300px;">
+            <img src="${hotnew[i].image}" class="card-img-top w-100" style="height:150px" alt="...">
+            <div class="card-body d-flex flex-column justify-content-center" style="margin:0px;">
+                <h5 class="card-title fw-bold m-0" style="font-size:16px;">${hotnew[i].text}</h5>
+                <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${hotnew[i].review}</p>
             </div>
         </div>
     </div>
+    
     `;
     }
 }
 // console.log(cardItem);
-document.getElementById("infoCard").innerHTML = cardItem;
+document.getElementById("hotnew").innerHTML = cardItem;
 
 
 

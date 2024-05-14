@@ -29,9 +29,9 @@ for(let i=0;i<card.length;i++){
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${card[i].text}</h5>
-            <p class="card-text">${card[i].review}</p>
-            <p class="card-text">${card[i].status}</p>
+            <h5 class="card-title fw-bold" style="font-size:24px;">${card[i].text}</h5>
+            <p class="card-text" style="font-size:14px;">${card[i].review}</p>
+            <p class="card-text" style="font-size:14px; color:#7c7c7c;">${card[i].status}</p>
             </div>
         </div>
         </div>
@@ -39,11 +39,11 @@ for(let i=0;i<card.length;i++){
         </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-        <div class="card mb-3" style="height: 350px;">
+        <div class="card mb-3" style="height: 300px;">
             <img src="${card[i].image}" class="card-img-top w-100" style="height: 130px"  alt="...">
             <div class="card-body d-flex flex-column justify-content-center">
-                <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text" style="margin:0; max-height: 3em; overflow:hidden; text-overflow:ellipsis; white-space: nowrap">${card[i].review}</p>
+                <h5 class="card-title fw-bold" style="font-size:16px;">${card[i].text}</h5>
+                <p class="card-text" style="margin:0; max-height: 3em; overflow:hidden; text-overflow:ellipsis; white-space: nowrap; font-size:14px;">${card[i].review}</p>
             </div>
         </div>
     </div>
@@ -51,15 +51,15 @@ for(let i=0;i<card.length;i++){
     }
 }
 // console.log(cardItem);
-document.getElementById("infoCard").innerHTML = cardItem;
+document.getElementById("introduce").innerHTML = cardItem;
 
 
 
 
 
-//listCompare
+//listCar
 
-const listItem = [{
+const listcar = [{
     image: 'assets/img143.png',
     title: '  Hyundai trình làng robot sạc xe điện  ',
     content: ' Phát minh tối ưu này có thể xóa tan nỗi e ngại khi sử dụng ô tô điện của nhiều người tiêu dùng. Và cùng khiến họ có một cách nhìn tích cực hơn đối với những chiếc xe điện của các thương hiệu!  '
@@ -158,16 +158,16 @@ const listItem = [{
 }];
 
 let listCompa = "";
-for (let i = 0; i < listItem.length; i++) {
+for (let i = 0; i < listcar.length; i++) {
     listCompa += `<div class="card mb-3 border-0" style="max-width: 100%;">
                         <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="${listItem[i].image}" class="img-fluid rounded-start w-100 h-100%" alt="...">
+                            <img src="${listcar[i].image}" class="img-fluid rounded-start w-100 h-100%" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                            <h5 class="card-title">${listItem[i].title}</h5>
-                            <p class="card-text">${listItem[i].content}</p>
+                            <h5 class="card-title fw-bold" style="font-size:18px;">${listcar[i].title}</h5>
+                            <p class="card-text" style="font-size:14px;">${listcar[i].content}</p>
                             </div>
                         </div>
                         </div>
@@ -175,11 +175,11 @@ for (let i = 0; i < listItem.length; i++) {
                     <hr class="m-3">`    
 }
 
-document.getElementById("listCompare").innerHTML = listCompa;
+document.getElementById("listCar").innerHTML = listCompa;
 
 
 
-//new and read
+//bài viết đọc nhiều nhất
 const itemContentMost = [{
     image: 'assets/img167.png',
     id: '01',
@@ -220,7 +220,7 @@ for(let i=0;i<itemContentMost.length;i++){
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
-                    <h5 class="card-title">${itemContentMost[i].title}</h5>
+                    <h5 class="card-title fw-bold" style="font-size:15px;">${itemContentMost[i].title}</h5>
                     <p class="card-text"><small class="text-muted">${itemContentMost[i].year}</small></p>
                     </div>
                 </div>
@@ -230,11 +230,11 @@ for(let i=0;i<itemContentMost.length;i++){
     
 }
 
-document.getElementById("newInfor").innerHTML = readContentMost;
+document.getElementById("contentMost").innerHTML = readContentMost;
 
 // Video
-// promotion
-const promotion =[{
+
+const video =[{
     image: 'assets/img100.png',
     title:'  Cường "Đô La" drift khét mù trên chiếc Porsche hơn 20 tỷ đồng  ',
     static: true
@@ -259,12 +259,12 @@ const promotion =[{
 }];
 
 let listPromotion ="";
-for(let  i = 0; i<promotion.length;i++){
-    if(promotion[i].static){
+for(let  i = 0; i<video.length;i++){
+    if(video[i].static){
         listPromotion += `<div class="card mb-3 border-0">
-        <img src="${promotion[i].image}" class="card-img-top" alt="..." />
+        <img src="${video[i].image}" class="card-img-top" alt="..." />
         <div class="card-body">
-        <h5 class="card-title">${promotion[i].title}</h5>
+        <h5 class="card-title fw-bold" style="font-size:14px;">${video[i].title}</h5>
         </div>
     </div>`;
     }else{
@@ -272,14 +272,14 @@ for(let  i = 0; i<promotion.length;i++){
         <div class="row g-0">
         <div class="col-md-4">
             <img
-            src="${promotion[i].image}"
+            src="${video[i].image}"
             class="img-fluid rounded-start"
             alt="..."
             />
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${promotion[i].title}</h5>
+            <h5 class="card-title fw-bold" style="font-size:14px;">${video[i].title}</h5>
             </div>
         </div>
         </div>
@@ -287,7 +287,7 @@ for(let  i = 0; i<promotion.length;i++){
     }
 }
 
-document.getElementById("listPromotion").innerHTML = listPromotion; 
+document.getElementById("listVideo").innerHTML = listPromotion; 
 
 
 // hãng xe
@@ -304,7 +304,7 @@ const toyotaCarCompare = [{
 
 let itemToyotaCarCompare = "";
 for(let i=0;i<toyotaCarCompare.length;i++){
-    itemToyotaCarCompare += `<p>${toyotaCarCompare[i].name}</p>`;
+    itemToyotaCarCompare += `<p style="font-size:14px;">${toyotaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("toyotaCompare").innerHTML = itemToyotaCarCompare;
@@ -322,7 +322,7 @@ const mazdaCarCompare = [{
 
 let itemMazdaCarCompare = "";
 for(let i=0;i<mazdaCarCompare.length;i++){
-    itemMazdaCarCompare += `<p>${mazdaCarCompare[i].name}</p>`;
+    itemMazdaCarCompare += `<p style="font-size:14px;">${mazdaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("mazdaCompare").innerHTML = itemMazdaCarCompare;
@@ -340,7 +340,7 @@ const kiaCarCompare = [{
 
 let itemKiaCarCompare = "";
 for(let i=0;i<kiaCarCompare.length;i++){
-    itemKiaCarCompare += `<p>${kiaCarCompare[i].name}</p>`;
+    itemKiaCarCompare += `<p style="font-size:14px;">${kiaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("KIACompare").innerHTML = itemKiaCarCompare;
@@ -358,7 +358,7 @@ const fordCarCompare = [{
 
 let itemFordCarCompany = "";
 for(let i=0;i<fordCarCompare.length;i++){
-    itemFordCarCompany += `<p>${fordCarCompare[i].name}</p>`;
+    itemFordCarCompany += `<p style="font-size:14px;">${fordCarCompare[i].name}</p>`;
 }
 
 document.getElementById("FordCompare").innerHTML = itemFordCarCompany;
@@ -376,7 +376,7 @@ const huyndaiCarCompare = [{
 
 let itemHuyndaiCarCompare = "";
 for(let i=0;i<huyndaiCarCompare.length;i++){
-    itemHuyndaiCarCompare += `<p>${huyndaiCarCompare[i].name}</p>`;
+    itemHuyndaiCarCompare += `<p style="font-size:14px;">${huyndaiCarCompare[i].name}</p>`;
 }
 
 document.getElementById("huyndaiCompare").innerHTML = itemHuyndaiCarCompare;
@@ -395,7 +395,7 @@ const mitsubishiCarCompare = [{
 
 let itemMitsubishiCarCompare = "";
 for(let i=0;i<mitsubishiCarCompare.length;i++){
-    itemMitsubishiCarCompare += `<p>${mitsubishiCarCompare[i].name}</p>`;
+    itemMitsubishiCarCompare += `<p style="font-size:14px;">${mitsubishiCarCompare[i].name}</p>`;
 }
 
 document.getElementById("mitsubishiCompare").innerHTML = itemMitsubishiCarCompare;
@@ -413,7 +413,7 @@ const hondaCarCompare = [{
 
 let itemHondaCarCompare = "";
 for(let i=0;i<hondaCarCompare.length;i++){
-    itemHondaCarCompare += `<p>${hondaCarCompare[i].name}</p>`;
+    itemHondaCarCompare += `<p style="font-size:14px;">${hondaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("hondaCompare").innerHTML = itemHondaCarCompare;
@@ -431,7 +431,7 @@ const bmwCarCompare = [{
 
 let itemBMWCarCompare = "";
 for(let i=0;i<bmwCarCompare.length;i++){
-    itemBMWCarCompare += `<p>${bmwCarCompare[i].name}</p>`;
+    itemBMWCarCompare += `<p style="font-size:14px;">${bmwCarCompare[i].name}</p>`;
 }
 console.log(itemBMWCarCompare);
 document.getElementById("bmwCompare").innerHTML = itemBMWCarCompare;
