@@ -446,5 +446,14 @@ form {
 .form-control::placeholder {
   color: #aaa;
   font-size: 14px;
-  padding-left: 40px; /* Tùy chỉnh giá trị này theo ý muốn */
+  padding-left: 40px; 
+}
+
+.checkbox-wrapper {
+  display: flex; 
+  align-items: center; 
+}
+
+.checkbox-brand {
+  margin-right: 5px; 
 }

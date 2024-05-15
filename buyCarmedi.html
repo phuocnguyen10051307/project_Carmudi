@@ -307,30 +307,11 @@
               >
                 <div class="accordion-body d-flex flex-column">
                   <input type="text" placeholder="Tìm kiếm" />
-                  <div class="boxCarCompany">
-                    <input type="checkbox">Acura</ipnut>
-                    <input type="checkbox" >Audi</ipnut>
-                    <input type="checkbox" >Baic</ipnut>
-                    <input type="checkbox" >Bentley</ipnut>
-                    <input type="checkbox" >Bmw</ipnut>
-                    <input type="checkbox" >Chery</ipnut>
-                    <input type="checkbox" >Chevrolet</ipnut>
-                    <input type="checkbox" >Daihatsu</ipnut>
-                    <input type="checkbox" >Fiat</ipnut>
-                    <input type="checkbox" >Ford</ipnut>
-                    <input type="checkbox" >Foton</ipnut>
-                    <input type="checkbox" >Gaz</ipnut>
-                    <input type="checkbox" >Haval</ipnut>
-                    <input type="checkbox" >Hino</ipnut>
-                    <input type="checkbox" >Honda</ipnut>
-                    <input type="checkbox" >Huyndai</ipnut>
-                    <input type="checkbox" >Infiniti</ipnut>
-                    <input type="checkbox" >Isuzu</ipnut>
-                    <input type="checkbox" >Jaguar</ipnut>
-                    <input type="checkbox" >Kia</ipnut>
-                    <input type="checkbox" >Land Rover</ipnut>
-                    <input type="checkbox" >Lexus</ipnut>
-                    <input type="checkbox" >Luxgen</ipnut>
+                  <div class="container">
+                    <div id="checkboxProvince" class="row">
+
+                    </div>
+                    <!-- checkbox -->
                   </div>
                 </div>
               </div>
@@ -354,7 +335,7 @@
                 data-bs-parent="#accordionFlushExample"
               >
                 <div class="accordion-body">
-                  <input type="text" placeholder="Tìm kiếm" />
+                  <input type="text" id="searchInput" placeholder="Tìm kiếm" />
                 </div>
               </div>
             </div>
@@ -961,13 +942,10 @@
             </div>
           </div>
         </ul>
-        <div >
+        <div class="search-show ms-auto w-75 d-flex flex-column">
           <label for="search"></label><input type="text" id="search" placeholder="Search" oninput="searchUser()"> 
           <div id="show"></div>
         </div>
-        
-      
-        
       </div>
     </div>
     <footer class="footer">
@@ -1191,5 +1169,6 @@
       }
     </script>
     <script type="module" src="./javascripts/buyCarmedi.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>

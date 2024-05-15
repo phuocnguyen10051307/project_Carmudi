@@ -310,6 +310,7 @@ const showData = async (imageURL) => {
     };
 
     const response = await axios.post(url, getData);
+    
     console.log("Data posted successfully:", response.data);
 
     Toastify({

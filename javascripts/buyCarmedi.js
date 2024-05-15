@@ -101,3 +101,77 @@ const checkInput = () => {
   }
 };
 
+
+// checkbox Province
+
+
+
+
+const getProvinceApi = async () => {
+  try {
+    const response = await axios.get("http://localhost:5000/province", {
+      headers: {
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "Expires": "0"
+      }
+    });
+    const provinces = response.data.data.data;
+
+    const checkboxContainer = document.getElementById("checkboxProvince");
+
+    const provincesArray = Array.isArray(provinces) ? provinces : [provinces];
+
+    provincesArray.forEach(province => {
+      const checkboxDiv = document.createElement("div"); 
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "checkbox-brand";
+      checkbox.value = province.name;
+
+      const textNode = document.createTextNode(province.name);
+
+      checkboxDiv.appendChild(checkbox);
+      checkboxDiv.appendChild(textNode);
+
+      checkboxDiv.classList.add("checkbox-wrapper");
+
+      checkboxContainer.appendChild(checkboxDiv);
+    });
+
+  } catch (error) {
+    console.error('Có lỗi xảy ra:', error);
+  }
+}
+
+getProvinceApi();
+
+
+
+// chọn một checkbox ở hãng xe dòng xe sẽ hiển thị dưới thanh tìm kiếm
+const searchInput = document.getElementById("searchInput");
+
+const checkboxContainer = document.getElementById("checkboxProvince");
+
+checkboxContainer.addEventListener('change', function(event) {
+
+    if (event.target.matches('.checkbox-brand')) {
+        if (event.target.checked) {
+          searchInput.value = event.target.value;
+        } else {
+          searchInput.value = "";
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
