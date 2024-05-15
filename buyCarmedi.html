@@ -943,7 +943,8 @@
           </div>
         </ul>
         <div class="search-show ms-auto w-75 d-flex flex-column">
-          <label for="search"></label><input type="text" id="search" placeholder="Search" oninput="searchUser()"> 
+          <label for="search"></label><input type="text" id="search" placeholder="Search" oninput="searchUser()">
+          <button onclick="fetchData()">Search</button>
           <div id="show"></div>
         </div>
       </div>
@@ -1123,24 +1124,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-      document.addEventListener('DOMContentLoaded', getUser);
-  
-      let cars = [];
-  
-      async function getUser() {
-        try {
-          let data = await axios.get('http://localhost:5000/car');
-          cars = data.data;
-          renderCars(cars);
-        } catch (e) {
-          console.log(e);
-        }
+
+
+      const fetchData = async () => {
+        const response = await fetch("http://localhost:5000/car")
+        const callDataCars = await response.json();
+        // renderCars(callDataCars);
+        filterByAddress(callDataCars);
       }
-  
+      fetchData();
+
       function renderCars(array) {
         let cardsContainer = document.getElementById('show');
         cardsContainer.innerHTML = ''; // Clear previous cards
-        array.forEach(car => { 
+        array.forEach((car) => { 
           let card = document.createElement('div');
           card.classList.add('card');
           card.innerHTML = `
@@ -1159,14 +1156,18 @@
           cardsContainer.appendChild(card);
         });
       } 
-  
-      function searchUser() {
-        let valueSearchInput = document.getElementById('search').value;
-        let filteredCars = cars.filter(car => {
-          return car.Title.toUpperCase().includes(valueSearchInput.toUpperCase());
-        });
-        renderCars(filteredCars); 
+
+      let value = ""
+      let listData = [];
+      function filterByAddress(data) {
+        value = document.getElementById('search').value;
+        if(value != "") {
+          listData = data.filter((el) => el.Address.Province == value)
+          renderCars(listData);
+        }
+        else renderCars(data);
       }
+  
     </script>
     <script type="module" src="./javascripts/buyCarmedi.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

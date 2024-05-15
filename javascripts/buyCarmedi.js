@@ -40,37 +40,37 @@ range_Input.forEach((input) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Sử dụng fetch để lấy dữ liệu từ tệp JSON
-  fetch('db.json')
-    .then(response => response.json())
-    .then(data => {
-      // Duyệt qua mảng car và thêm dữ liệu vào HTML
-      const carList = document.getElementById('show');
-      data.car.forEach(car => {
-        const carDiv = document.createElement('div');
-        carDiv.classList.add('car');
-        carDiv.innerHTML = `
-        <div class="card">
-                <img src="${car.ImageUrl}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${car.Title}</h5>
-                    <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
-                    <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
-                    <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
-                    <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
-                </div>
-                <div class="card-footer">
-                    <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
-                    <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
-                </div>
-            </div>
-        `;
-        carList.appendChild(carDiv);
-      });
-    })
-    .catch(error => console.error('Error fetching data:', error));
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Sử dụng fetch để lấy dữ liệu từ tệp JSON
+//   fetch('db.json')
+//     .then(response => response.json())
+//     .then(data => {
+//       // Duyệt qua mảng car và thêm dữ liệu vào HTML
+//       const carList = document.getElementById('show');
+//       data.car.forEach(car => {
+//         const carDiv = document.createElement('div');
+//         carDiv.classList.add('car');
+//         carDiv.innerHTML = `
+//         <div class="card">
+//                 <img src="${car.ImageUrl}" class="card-img-top">
+//                 <div class="card-body">
+//                     <h5 class="card-title">${car.Title}</h5>
+//                     <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+//                     <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+//                     <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+//                     <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+//                 </div>
+//                 <div class="card-footer">
+//                     <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+//                     <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+//                 </div>
+//             </div>
+//         `;
+//         carList.appendChild(carDiv);
+//       });
+//     })
+//     .catch(error => console.error('Error fetching data:', error));
+// });
 
 
 
@@ -125,6 +125,7 @@ const getProvinceApi = async () => {
       checkbox.type = "checkbox";
       checkbox.className = "checkbox-brand";
       checkbox.value = province.name;
+      checkbox.onclick = fetchData;
 
       const textNode = document.createTextNode(province.name);
 
@@ -146,7 +147,7 @@ getProvinceApi();
 
 
 // chọn một checkbox ở hãng xe dòng xe sẽ hiển thị dưới thanh tìm kiếm
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("search");
 
 const checkboxContainer = document.getElementById("checkboxProvince");
 
