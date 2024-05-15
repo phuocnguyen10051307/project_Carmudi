@@ -68,9 +68,9 @@
 #li-tag {
   width: 300px;
 }
-.container {
+/* .container {
   width: 500px;
-}
+} */
 .container .pagination ul {
   margin: 20px 30px;
 }
@@ -270,7 +270,6 @@ li a {
 .container {
   display: grid;
   margin-top: auto;
-  justify-content: space-between;
 }
 
 .text-white > .d-flex > input {

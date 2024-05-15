@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js@1.11.0/dist/toastify.min.css" />
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-/>
-</head>
-<body style="display:flex;">
-  <div class="pagination" style="width:200px;height:200px;background-color: red;;"></div>
-  <div>
-    <label for="search"></label><input type="text" id="search" placeholder="Search" oninput="searchUser()"> 
-    <div id="show"></div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js@1.11.0"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', getUser);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js@1.11.0/dist/toastify.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body style="display: flex">
+    <div
+      class="pagination"
+      style="width: 200px; height: 200px; background-color: red"
+    ></div>
+    <div>
+      <label for="search"></label
+      ><input
+        type="text"
+        id="search"
+        placeholder="Search"
+        oninput="searchUser()"
+      />
+      <div id="show"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js@1.11.0"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", getUser);
 
-    let cars = [];
+      let cars = [];
 
-    async function getUser() {
-      try {
-        let data = await axios.get('http://localhost:5000/car');
-        cars = data.data;
-        renderCars(cars);
-      } catch (e) {
-        console.log(e);
+      async function getUser() {
+        try {
+          let data = await axios.get("http://localhost:5000/car");
+          cars = data.data;
+          renderCars(cars);
+        } catch (e) {
+          console.log(e);
+        }
       }
-    }
 
-    function renderCars(array) {
-      let cardsContainer = document.getElementById('show');
-      cardsContainer.innerHTML = ''; // Clear previous cards
-      array.forEach(car => { 
-        let card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `
+      function renderCars(array) {
+        let cardsContainer = document.getElementById("show");
+        cardsContainer.innerHTML = ""; // Clear previous cards
+        array.forEach((car) => {
+          let card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
           <img src="${car.ImageUrl}" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">${car.Title}</h5>
@@ -56,19 +75,21 @@
             <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
             <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
           </div>`;
-        cardsContainer.appendChild(card);
-      });
-    } 
+          cardsContainer.appendChild(card);
+        });
+      }
 
-    function searchUser() {
-      let valueSearchInput = document.getElementById('search').value;
-      let filteredCars = cars.filter(car => {
-        return car.Title.toUpperCase().includes(valueSearchInput.toUpperCase());
-      });
-      renderCars(filteredCars); 
-    }
-  </script>
-      <script
+      function searchUser() {
+        let valueSearchInput = document.getElementById("search").value;
+        let filteredCars = cars.filter((car) => {
+          return car.Fuel.toUpperCase().includes(
+            valueSearchInput.toUpperCase()
+          );
+        });
+        renderCars(filteredCars);
+      }
+    </script>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
@@ -84,10 +105,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-</body>
+  </body>
 </html>
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -194,6 +213,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html> -->
-
-
-
