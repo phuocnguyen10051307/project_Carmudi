@@ -306,7 +306,7 @@ const toyotaCarCompare = [{
 
 let itemToyotaCarCompare = "";
 for(let i=0;i<toyotaCarCompare.length;i++){
-    itemToyotaCarCompare += `<p>${toyotaCarCompare[i].name}</p>`;
+    itemToyotaCarCompare += `<p style="font-size:14px">${toyotaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("toyotaCompare").innerHTML = itemToyotaCarCompare;
@@ -342,7 +342,7 @@ const kiaCarCompare = [{
 
 let itemKiaCarCompare = "";
 for(let i=0;i<kiaCarCompare.length;i++){
-    itemKiaCarCompare += `<p>${kiaCarCompare[i].name}</p>`;
+    itemKiaCarCompare += `<p style="font-size:14px">${kiaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("KIACompare").innerHTML = itemKiaCarCompare;
@@ -360,7 +360,7 @@ const fordCarCompare = [{
 
 let itemFordCarCompany = "";
 for(let i=0;i<fordCarCompare.length;i++){
-    itemFordCarCompany += `<p>${fordCarCompare[i].name}</p>`;
+    itemFordCarCompany += `<p style="font-size:14px">${fordCarCompare[i].name}</p>`;
 }
 
 document.getElementById("FordCompare").innerHTML = itemFordCarCompany;
@@ -378,7 +378,7 @@ const huyndaiCarCompare = [{
 
 let itemHuyndaiCarCompare = "";
 for(let i=0;i<huyndaiCarCompare.length;i++){
-    itemHuyndaiCarCompare += `<p>${huyndaiCarCompare[i].name}</p>`;
+    itemHuyndaiCarCompare += `<p style="font-size:14px">${huyndaiCarCompare[i].name}</p>`;
 }
 
 document.getElementById("huyndaiCompare").innerHTML = itemHuyndaiCarCompare;
@@ -397,7 +397,7 @@ const mitsubishiCarCompare = [{
 
 let itemMitsubishiCarCompare = "";
 for(let i=0;i<mitsubishiCarCompare.length;i++){
-    itemMitsubishiCarCompare += `<p>${mitsubishiCarCompare[i].name}</p>`;
+    itemMitsubishiCarCompare += `<p style="font-size:14px">${mitsubishiCarCompare[i].name}</p>`;
 }
 
 document.getElementById("mitsubishiCompare").innerHTML = itemMitsubishiCarCompare;
@@ -415,7 +415,7 @@ const hondaCarCompare = [{
 
 let itemHondaCarCompare = "";
 for(let i=0;i<hondaCarCompare.length;i++){
-    itemHondaCarCompare += `<p>${hondaCarCompare[i].name}</p>`;
+    itemHondaCarCompare += `<p style="font-size:14px">${hondaCarCompare[i].name}</p>`;
 }
 
 document.getElementById("hondaCompare").innerHTML = itemHondaCarCompare;
@@ -433,7 +433,7 @@ const bmwCarCompare = [{
 
 let itemBMWCarCompare = "";
 for(let i=0;i<bmwCarCompare.length;i++){
-    itemBMWCarCompare += `<p>${bmwCarCompare[i].name}</p>`;
+    itemBMWCarCompare += `<p style="font-size:14px">${bmwCarCompare[i].name}</p>`;
 }
 console.log(itemBMWCarCompare);
 document.getElementById("bmwCompare").innerHTML = itemBMWCarCompare;

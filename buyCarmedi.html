@@ -950,7 +950,7 @@
       </div>
     </div>
     <footer class="footer">
-      <div class="d-flex justify-content- flex-wrap py-5 px-4">
+      <div class="d-flex justify-content- flex-wrap py-5 px-4" style="margin-left: 150px; gap: 100px;">
         <div class="footer-left">
           <a href="">
             <img src="./assets/logo-carmudi-white.png" alt="" />
@@ -1101,7 +1101,7 @@
           Quận 1, Thành Phố Hồ Chí Minh, Việt Nam. ©2023 by Car Classifieds
           Limited Liability Company.<br />
           Carmudi Vietnam là một thành viên của
-          <a href="https://fram.asia/">fram^ Group</a>
+          <a class="text-decoration-none" style="color: rgb(165 183 198);" href="https://fram.asia/"><span class="fw-bold text-white">fram^ </span>Group</a>
         </p>
       </div>
     </footer>
@@ -1129,8 +1129,9 @@
       const fetchData = async () => {
         const response = await fetch("http://localhost:5000/car")
         const callDataCars = await response.json();
-        // renderCars(callDataCars);
-        filterByAddress(callDataCars);
+        
+        // filterByAddress(callDataCars);
+        renderCars(callDataCars);
       }
       fetchData();
 

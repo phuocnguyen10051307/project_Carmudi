@@ -452,8 +452,14 @@ form {
 .checkbox-wrapper {
   display: flex; 
   align-items: center; 
+  text-transform: capitalize;
 }
 
 .checkbox-brand {
   margin-right: 5px; 
 }
+
+#button-addon2{
+  background-color: rgb(24 110 182);
+}
+

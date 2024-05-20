@@ -60,15 +60,14 @@ body{
 .navbar.fixed-top {
     position: fixed; 
     top: 0;
+    height: 70px;
     width: 100%;
     z-index: 1000; 
 }
 
-/* .title{
-    padding-top: 100px;
-} */
-
-
+#button-addon2{
+    background-color: rgb(24 110 182);
+}
 
 
 

@@ -45,35 +45,40 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch('http://localhost:5000/car')
     .then(response => response.json())
     .then(data => {
-      // Duyệt qua mảng car và thêm dữ liệu vào HTML
-      
-      const result = data.reverse();
 
-      const carList = document.getElementById('show');
-      result.car.forEach(car => {
-        const carDiv = document.createElement('div');
-        carDiv.classList.add('car');
-        carDiv.innerHTML = `
-        <div class="card">
-                <img src="${car.ImageUrl}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${car.Title}</h5>
-                    <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
-                    <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
-                    <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
-                    <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
-                </div>
-                <div class="card-footer">
-                    <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
-                    <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
-                </div>
+      if (Array.isArray(data)) {
+        const carList = document.getElementById('show');
+        
+        carList.innerHTML = '';
+
+        data.forEach(car => {
+          const carDiv = document.createElement('div');
+          carDiv.classList.add('car');
+          carDiv.innerHTML = `
+            <div class="card">
+              <img src="${car.ImageUrl}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">${car.Title}</h5>
+                <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+                <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+                <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+                <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+              </div>
+              <div class="card-footer">
+                <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+                <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+              </div>
             </div>
-        `;
-        carList.appendChild(carDiv);
-      });
+          `;
+          carList.appendChild(carDiv);
+        });
+      } else {
+        console.error("Expected an array but got:", data);
+      }
     })
     .catch(error => console.error('Error fetching data:', error));
 });
+
 
 
 
