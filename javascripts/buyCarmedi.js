@@ -42,12 +42,15 @@ range_Input.forEach((input) => {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Sử dụng fetch để lấy dữ liệu từ tệp JSON
-  fetch('db.json')
+  fetch('http://localhost:5000/car')
     .then(response => response.json())
     .then(data => {
       // Duyệt qua mảng car và thêm dữ liệu vào HTML
+      
+      const result = data.reverse();
+
       const carList = document.getElementById('show');
-      data.car.forEach(car => {
+      result.car.forEach(car => {
         const carDiv = document.createElement('div');
         carDiv.classList.add('car');
         carDiv.innerHTML = `

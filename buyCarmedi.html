@@ -1163,7 +1163,7 @@
       function searchUser() {
         let valueSearchInput = document.getElementById('search').value;
         let filteredCars = cars.filter(car => {
-          return car.Title.toUpperCase().includes(valueSearchInput.toUpperCase());
+          return car.Address.Province.toUpperCase().includes(valueSearchInput.toUpperCase());
         });
         renderCars(filteredCars); 
       }
