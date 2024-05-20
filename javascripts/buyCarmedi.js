@@ -128,6 +128,7 @@ const getProvinceApi = async () => {
       checkbox.type = "checkbox";
       checkbox.className = "checkbox-brand";
       checkbox.value = province.name;
+      checkbox.onclick = fetchData;
 
       const textNode = document.createTextNode(province.name);
 
@@ -149,7 +150,7 @@ getProvinceApi();
 
 
 // chọn một checkbox ở hãng xe dòng xe sẽ hiển thị dưới thanh tìm kiếm
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("search");
 
 const checkboxContainer = document.getElementById("checkboxProvince");
 

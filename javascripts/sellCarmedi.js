@@ -280,9 +280,9 @@ const showData = async (imageURL) => {
     const nameCar = document.getElementById("nameCar").value;
     // const ImageURL = url;
     const Province = document.getElementById("province");
-    const valueProvince = Province.options[Province.selectedIndex]?.text;
+    const valueProvince = Province.options[Province.selectedIndex].text;
     const District = document.getElementById("district");
-    const valueDistrict = District.options[District.selectedIndex]?.text;
+    const valueDistrict = District.options[District.selectedIndex].text;
 
   
     const url = "http://localhost:5000/car";
