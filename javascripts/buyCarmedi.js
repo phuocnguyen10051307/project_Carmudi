@@ -1,44 +1,59 @@
 const range_Input = document.querySelectorAll(".range-input input"),
-  priceInput = document.querySelectorAll(".price-input input"),
-  range = document.querySelector(".slider .progress");
-let priceGap = 1000;
-
-priceInput.forEach((input) => {
-  input.addEventListener("input", (e) => {
-    let minPrice = parseInt(priceInput[0].value),
-      maxPrice = parseInt(priceInput[1].value);
-
-    if (maxPrice - minPrice >= priceGap && maxPrice <= range_Input[1].max) {
-      if (e.target.className === "input-min") {
-        range_Input[0].value = minPrice;
-        range.style.left = (minPrice / range_Input[0].max) * 100 + "%";
-      } else {
-        range_Input[1].value = maxPrice;
-        range.style.right = 100 - (maxPrice / range_Input[1].max) * 100 + "%";
-      }
-    }
-  });
-});
-
-range_Input.forEach((input) => {
-  input.addEventListener("input", (e) => {
+    priceInput = document.querySelectorAll(".price-input input"),
+    range = document.querySelector(".slider .progress");
+    let priceGap = 1; // 1 year
+  
+  // Function to update the progress bar position
+  function updateProgressBar() {
     let minVal = parseInt(range_Input[0].value),
       maxVal = parseInt(range_Input[1].value);
-
-    if (maxVal - minVal < priceGap) {
-      if (e.target.className === "range-min") {
-        range_Input[0].value = maxVal - priceGap;
-      } else {
-        range_Input[1].value = minVal + priceGap;
+    
+    // console.log(minVal + " " + maxVal);
+  
+    range.style.left = ((minVal - 2000) / (parseInt(range_Input[0].max) - 2000)) * 100 + "%";
+    range.style.right = 100 - ((maxVal - 2020) / (parseInt(range_Input[1].max) - 2020)) * 100 + "%";
+  }
+  
+  // Event listener for price input fields
+  priceInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minPrice = parseInt(priceInput[0].value),
+        maxPrice = parseInt(priceInput[1].value);
+  
+      if (maxPrice - minPrice >= priceGap && maxPrice <= parseInt(range_Input[1].max)) {
+        if (e.target.className === "input-min") {
+          range_Input[0].value = minPrice;
+        } else {
+          range_Input[1].value = maxPrice;
+        }
+        updateProgressBar();
       }
-    } else {
-      priceInput[0].value = minVal;
-      priceInput[1].value = maxVal;
-      range.style.left = (minVal / range_Input[0].max) * 100 + "%";
-      range.style.right = 100 - (maxVal / range_Input[1].max) * 100 + "%";
-    }
+    });
   });
-});
+  
+  // Event listener for range input fields
+  range_Input.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minVal = parseInt(range_Input[0].value),
+        maxVal = parseInt(range_Input[1].value);
+  
+      if (maxVal - minVal < priceGap) {
+        if (e.target.className === "range-min") {
+          range_Input[0].value = maxVal - priceGap;
+        } else {
+          range_Input[1].value = minVal + priceGap;
+        }
+      } else {
+        priceInput[0].value = minVal;
+        priceInput[1].value = maxVal;
+      }
+      updateProgressBar();
+    });
+  });
+  
+  // Initial call to set the progress bar position
+  updateProgressBar();
+
 
 document.addEventListener("DOMContentLoaded", function() {
   // Sử dụng fetch để lấy dữ liệu từ tệp JSON
