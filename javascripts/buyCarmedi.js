@@ -1,163 +1,104 @@
-// const arr = [
-//   {
-//     name: "Hãng xe, dòng xe",
-//     icon: '<i class="bi bi-building-check"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Địa điểm",
-//     icon: '<i class="bi bi-geo-alt"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Giá",
-//     icon: '<i class="bi bi-cash"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Năm sản xuất",
-//     icon: '<i class="bi bi-calendar-event-fill"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Số Km",
-//     icon: '<i class="bi bi-speedometer"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Kiểu dáng",
-//     icon: '<i class="bi bi-car-front-fill"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Nhiên liệu",
-//     icon: '<i class="bi bi-fuel-pump"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Hộp số",
-//     icon: '<i class="bi bi-bezier2"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Màu sắc",
-//     icon: '<i class="bi bi-palette"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Số Chỗ ngồi",
-//     icon: '<i class="bi bi-usb-plug"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-//   {
-//     name: "Đăng bởi",
-//     icon: '<i class="bi bi-person-circle"></i>',
-//     down: '<i class="bi bi-chevron-down"></i>',
-//   },
-// ];
-// let liTag = "";
-// for (let i = 0; i < arr.length; i++) {
-//   liTag += `<li class="list-group-item"><span class='ab'>${arr[i].icon}</span> ${arr[i].name}  <span class='abc'>${arr[i].down}</span></li>`;
-// }
-// document.getElementById("li-tag").innerHTML = liTag;
-const showInfor = [
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-  {
-    img: "./assets/car1.jpg",
-    tittle:
-      "2022 MG MG 5 STD (Tiêu chuẩn)- TRUNG TÂM MUA BÁN XE CŨ MG CHÍNH HÃNG",
-    year: "2022",
-    km: "20000",
-    fuel: "Xăng",
-    gear: "Tự động",
-    icon1: '<i class="bi bi-calendar-event-fill"></i>',
-    icon2: '<i class="bi bi-speedometer"></i>',
-    icon3: '<i class="bi bi-fuel-pump"></i>',
-    icon4: '<i class="bi bi-bezier2"></i>',
-    icon5: '<i class="bi bi-geo-alt"></i>',
-    money: "425 Triệu",
-    address: "Hồ Chí Minh - quận 6",
-  },
-];
+// range input
+const rangeInput = document.querySelectorAll(".range-input input"),
+    yearInput = document.querySelectorAll(".year-input input"),
+    progress = document.querySelector(".slider .progress");
+
+let yearGap = 1; 
+
+function updateProgress() {
+    let minVal = parseInt(rangeInput[0].value),
+        maxVal = parseInt(rangeInput[1].value);
+    progress.style.left = ((minVal - 2000) / (rangeInput[0].max - 2000)) * 100 + "%";
+    progress.style.right = 100 - ((maxVal - 2000) / (rangeInput[1].max - 2000)) * 100 + "%";
+}
+
+yearInput.forEach(input => {
+    input.addEventListener("input", e => {
+        let minVal = parseInt(yearInput[0].value),
+            maxVal = parseInt(yearInput[1].value);
+        
+        if ((maxVal - minVal >= yearGap) && maxVal <= 2024 && minVal >= 2000) {
+            if (e.target.className === "input-min") {
+                rangeInput[0].value = minVal;
+                progress.style.left = ((minVal - 2000) / (rangeInput[0].max - 2000)) * 100 + "%";
+            } else {
+                rangeInput[1].value = maxVal;
+                progress.style.right = 100 - ((maxVal - 2000) / (rangeInput[1].max - 2000)) * 100 + "%";
+            }
+        }
+    });
+});
+
+rangeInput.forEach(input => {
+    input.addEventListener("input", e => {
+        let minVal = parseInt(rangeInput[0].value),
+            maxVal = parseInt(rangeInput[1].value);
+        
+        if (maxVal - minVal < yearGap) {
+            if (e.target.className === "range-min") {
+                rangeInput[0].value = maxVal - yearGap;
+            } else {
+                rangeInput[1].value = minVal + yearGap;
+            }
+        } else {
+            yearInput[0].value = minVal;
+            yearInput[1].value = maxVal;
+            progress.style.left = ((minVal - 2000) / (rangeInput[0].max - 2000)) * 100 + "%";
+            progress.style.right = 100 - ((maxVal - 2000) / (rangeInput[1].max - 2000)) * 100 + "%";
+        }
+    });
+});
+
+updateProgress();
+
+// hàm tìm kiếm theo năm sản xuất
+const searchYearCar = async () => {
+  const minYear = parseInt(rangeInput[0].value);
+  const maxYear = parseInt(rangeInput[1].value);
+
+  try {
+      const response = await fetch(`http://localhost:5000/car`);
+      const data = await response.json();
+
+      // Lọc danh sách sản phẩm dựa trên khoảng thời gian
+      const filteredProducts = data.filter(product => {
+          const year = parseInt(product.Year);
+          return year >= minYear && year <= maxYear;
+      });
+
+      // Sau khi nhận được dữ liệu từ API và lọc sản phẩm, cập nhật giao diện người dùng
+      updateProductList(filteredProducts);
+  } catch (error) {
+      console.error('Lỗi khi lấy dữ liệu từ API:', error);
+  }
+};
+
+const updateProductList = (products) => {
+  const productList = document.getElementById('show');
+  productList.innerHTML = '';
+
+  products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+      productDiv.innerHTML = `
+          <div class="card">
+              <img src="${product.ImageUrl}" class="card-img-top">
+              <div class="card-body">
+                  <h5 class="card-title">${product.Title}</h5>
+                  <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
+                  <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
+                  <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
+                  <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
+              </div>
+              <div class="card-footer">
+                  <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
+                  <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
+              </div>
+          </div>
+      `;
+      productList.appendChild(productDiv);
+  });
+};
 
 // let perPage = 6;
 // let currentPage =1;
@@ -186,8 +127,25 @@ const showInfor = [
 //     document.getElementById("show").innerHTML = divCard;
 //   })
 
-// }
-// renderProduct();
+rangeInput.forEach(input => {
+  input.addEventListener('input', searchYearCar);
+});
+
+
+searchYearCar();
+
+// range km 
+
+
+
+
+
+// hàm hiển thị danh sách sản phẩm có trong json
+document.addEventListener("DOMContentLoaded", function() {
+  // Sử dụng fetch để lấy dữ liệu từ tệp JSON
+  fetch('http://localhost:5000/car')
+    .then(response => response.json())
+    .then(data => {
 
 let divCard = "";
 for (let i = 0; i < showInfor.length; i++) {

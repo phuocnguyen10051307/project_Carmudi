@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./test.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="slider">
+      <div class="progress"></div>
+    </div>
+    <div class="range-input">
+      <input
+        type="range"
+        class="range-min"
+        min="0"
+        max="500000"
+        value="0"
+        step="1000"
+      />
+      <input
+        type="range"
+        class="range-max"
+        min="0"
+        max="500000"
+        value="500000"
+        step="1000"
+      />
+    </div>
+    <div class="minAndMax">
+      <span>Min</span>
+      <span>Max</span>
+    </div>
+    <div class="price-input">
+      <div class="field">
+        <input type="number" class="input-min" value="0" />
+        <span>Km</span>
+      </div>
+      <div class="separator">-</div>
+      <div class="field">
+        <input type="number" class="input-max" value="500000" />
+        <span>Km</span>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const range_Input = document.querySelectorAll(".range-input input"),
+          priceInput = document.querySelectorAll(".price-input input"),
+          range = document.querySelector(".slider .progress"),
+          minValueDisplay = document.querySelector(".minAndMax div:first-child"),
+          maxValueDisplay = document.querySelector(".minAndMax div:last-child");
+
+    let priceGap = 1000; // 1000 km
+
+    function updateProgress() {
+      let minVal = parseInt(range_Input[0].value);
+      let maxVal = parseInt(range_Input[1].value);
+      range.style.left = (minVal / 500000) * 100 + "%";
+      range.style.right = 100 - (maxVal / 500000) * 100 + "%";
+      minValueDisplay.textContent = minVal + "Km";
+      maxValueDisplay.textContent = maxVal + "Km";
+    }
+
+    priceInput.forEach((input) => {
+      input.addEventListener("input", (e) => {
+        let minPrice = parseInt(priceInput[0].value);
+        let maxPrice = parseInt(priceInput[1].value);
+
+        if (maxPrice - minPrice >= priceGap && maxPrice <= parseInt(range_Input[1].max)) {
+          if (e.target.className === "input-min") {
+            range_Input[0].value = minPrice;
+          } else {
+            range_Input[1].value = maxPrice;
+          }
+          updateProgress();
+        }
+      });
+    });
+
+    range_Input.forEach((input) => {
+      input.addEventListener("input", (e) => {
+        let minVal = parseInt(range_Input[0].value);
+        let maxVal = parseInt(range_Input[1].value);
+
+        if (maxVal - minVal < priceGap) {
+          if (e.target.className === "range-min") {
+            range_Input[0].value = maxVal - priceGap;
+          } else {
+            range_Input[1].value = minVal + priceGap;
+          }
+        } else {
+          priceInput[0].value = minVal;
+          priceInput[1].value = maxVal;
+        }
+        updateProgress();
+      });
+    });
+
+    
+    updateProgress();
+  </script>/-strong/-heart:>:o:-((:-h</body>
+</html>
