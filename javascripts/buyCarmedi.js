@@ -1,4 +1,3 @@
-
 const wrappers = document.querySelectorAll(".wrapper");
 
 wrappers.forEach(wrapper => {
@@ -108,6 +107,8 @@ const searchPriceCar = async () => {
     }
 };
 
+
+//hàm dùng chung update lại trang
 const updateProductList = (products) => {
     const productList = document.getElementById("show");
     productList.innerHTML = '';
@@ -119,7 +120,7 @@ const updateProductList = (products) => {
 
     products.forEach(product => {
         const productDiv = document.createElement('div');
-        productDiv.classList.add('product');
+        productDiv.classList.add('product', "col-lg-4", "col-md-6", "mb-4");
         productDiv.innerHTML = `
             <div class="card">
                 <img src="${product.ImageUrl}" class="card-img-top">
@@ -154,15 +155,52 @@ wrappers.forEach((wrapper, index) => {
 
 searchPriceCar();
 
+// hàm phân trang 
 
+const perPage = 9; 
+let currentPage = 1; 
+let filteredCars = []; 
 
+// Hàm xử lý khi chuyển trang
+function handlePageNumber(num) { 
+  currentPage = num; 
+  const start = (currentPage - 1) * perPage; 
+  const end = currentPage * perPage; 
+  updateProductList(filteredCars.slice(start, end)); 
+}
 
+// Đảm bảo rằng hàm handlePageNumber có phạm vi toàn cầu
+window.handlePageNumber = handlePageNumber; 
+
+// Hàm tạo ra các số trang và hiển thị chúng
+function renderPageNumber() { 
+  const totalPage = Math.ceil(filteredCars.length / perPage); 
+  let paginationElement = "";
+  for (let i = 1; i <= totalPage; i++) { 
+    paginationElement += `<li class="page-item ms-2 border border-2 rounded"><a class="page-link" href="#" onclick="handlePageNumber(${i})">${i}</a></li>`;
+  }
+  document.getElementById(
+    "pagination"
+  ).innerHTML = `<ul class="pagination">${paginationElement}</ul>`;
+}
+
+async function fetchCarData() { 
+  try {
+    const response = await fetch("http://localhost:5000/car");
+    const data = await response.json();
+    filteredCars = data; 
+    updateProductList(filteredCars.slice(0, perPage)); 
+    renderPageNumber(); 
+  } catch (error) {
+    console.error("Error fetching car data:", error);
+  }
+}
+window.onload = fetchCarData;
 
 
 
 // hàm hiển thị danh sách sản phẩm có trong json
 document.addEventListener("DOMContentLoaded", function() {
-  // Sử dụng fetch để lấy dữ liệu từ tệp JSON
   fetch('http://localhost:5000/car')
     .then(response => response.json())
     .then(data => {
