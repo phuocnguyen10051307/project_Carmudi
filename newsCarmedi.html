@@ -20,11 +20,12 @@
     <link rel="stylesheet" href="./style/newsCarmedi.css" />
   </head>
   <body>
+    <!-- navbar menu -->
     <div class="row">
       <div class="col-12">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="./buyCarmedi.html"
               ><img
                 loading="lazy"
                 id="headerLogo"
@@ -77,10 +78,10 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: black" href="#">So sánh xe</a>
+                  <a class="nav-link" style="color: black" href="./compareCarsCarmedi.html">So sánh xe</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: black" href="#">Đánh giá xe</a>
+                  <a class="nav-link" style="color: black" href="./carReviewCarmedi.html">Đánh giá xe</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -106,10 +107,10 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: black" href="#">Thị trường</a>
+                  <a class="nav-link" style="color: black" href="./market.html">Thị trường</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: black" href="#">Bảng giá xe</a>
+                  <a class="nav-link" style="color: black" href="./priceCarmedi.html">Bảng giá xe</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" style="color: black" href="#">Thư viện ảnh</a>
@@ -133,7 +134,7 @@
     </div>
     <div class="content container" style="margin-top: 100px;">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 p-0">
           <h2>
             <span style="color: orange; font-size: 30px">I</span>
             <a
@@ -145,16 +146,17 @@
           </h2>
         </div>
   
-        <!-- card -->
+        <!-- tin nổi bật -->
         <div class="row">
-          <div class="col-12">
-            <div id="infoCard" class="row"></div>
+          <div class="col-12 p-0">
+            <div id="hotnewcar" class="row"></div>
+            <hr class="w-100" style="border-bottom: 1px solid #ebebeb;">
           </div>
         </div>
       </div>
       <!-- tin đề xuất -->
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 p-0">
             <div
             class="newCard p-3 bg-opacity-20 overflow-hidden mt-3 mb-3"
             style="background-color: rgba(246, 126, 18, 0.2)"
@@ -174,7 +176,7 @@
                     >Tin đề xuất cho bạn</a
                   >
                 </h2>
-                <div id="carouselItem"></div>
+                <div id="suggestnew"></div>
               </div>
               <button
                 class="carousel-control-prev bg-secondary top-50 d-flex align-items-center rounded-circle"
@@ -206,16 +208,15 @@
           <!-- content left -->
           <!-- title -->
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">
                     <h2 >
-                      <span style="color: orange; font-size: 30px">I</span>
+                      <span class="fw-bold fs-3" style="color: orange;">I</span>
                       <a
                         href="#"
-                        class="text-decoration-none fs-5 fw-bold"
-                        style="color: black"
+                        class="text-decoration-none fw-bold text-dark" style="font-size: 24px;"
                         >Tư vấn</a
                       >
                     </h2>
@@ -238,8 +239,8 @@
                       </li>
                     </ul>
                     <span
-                      class="navbar-text"
-                      style="color: #1d70b8; font-weight: bold"
+                      class="navbar-text fw-bold"
+                      style="color: #1d70b8; font-size: 14px;"
                       >Xem tất cả</span
                     >
                   </div>
@@ -249,15 +250,15 @@
           </div>
           <!-- nội dung nhỏ bên trong -->
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 p-0">
               <div class="card">
                 <img src="./assets/img13.webp" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title fs-4">
-                    Mách bạn 7 kinh nghiệm sử dụng ô tô bền đẹp đúc kết từ bác
-                    tài "cứng'
+                  <h5 class="card-title fw-bold" style="font-size: 20px;">
+                    <a href="" class="text-decoration-none text-dark">Mách bạn 7 kinh nghiệm sử dụng ô tô bền đẹp đúc kết từ bác
+                      tài "cứng'</a>
                   </h5>
-                  <p class="card-text fs-6">
+                  <p class="card-text" style="font-size: 14px;">
                     Sử dụng ô tô sao cho bền luôn là quan tâm hàng đầu của mỗi
                     bác tài. Từ những bác tài dày dặn kinh nghiệm truyền lại,
                     Carmudi xin tổng hợp 7 kinh nghiệm sử dụng ô tô giúp "xế
@@ -266,20 +267,20 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div id="optionCard"></div>
+            <div class="col-md-6 pe-0">
+              <div id="advisecar"></div>
             </div>
           </div>
-          <!-- nhận xét chung như so sánh và đánh giá xe -->
+          <!-- so sánh và đánh giá xe -->
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <div class="row mt-2">
                 <div class="col-md-6">
                   <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                       <a class="navbar-brand" href="#">
                         <h2 >
-                          <span style="color: orange; font-size: 30px">I</span>
+                          <span class="fw-bold fs-3" style="color: orange;">I</span>
                           <a
                             href="#"
                             class="text-decoration-none fs-5 fw-bold text-dark"
@@ -293,21 +294,21 @@
                         style="margin-left: 60px;"
                       >
                         <span
-                          class="navbar-text"
-                          style="color: #1d70b8; font-weight: bold;"
+                          class="navbar-text fw-bold"
+                          style="color: #1d70b8; font-size: 14px;"
                           >Xem tất cả</span
                         >
                       </div>
                     </div>
                   </nav>
-                  <div id="viewCard1"></div>
+                  <div id="comparecar"></div>
                 </div>
                 <div class="col-md-6">
                   <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                       <a class="navbar-brand" href="#">
                         <h2 >
-                          <span style="color: orange; font-size: 30px">I</span>
+                          <span class="fw-bold fs-3" style="color: orange;">I</span>
                           <a
                             href="#"
                             class="text-decoration-none fs-5 fw-bold"
@@ -322,22 +323,22 @@
                         style="margin-left: 60px"
                       >
                         <span
-                          class="navbar-text"
-                          style="color: #1d70b8; font-weight: bold"
+                          class="navbar-text fw-bold"
+                          style="color: #1d70b8; font-size: 14px;"
                           >Xem tất cả</span
                         >
                       </div>
                     </div>
                   </nav>
-                  <div id="viewCard2"></div>
+                  <div id="reviewcar"></div>
                 </div>
               </div>
             </div>
           </div>
           <!-- video -->
-          <div class="row">
+          <div class="row" style="background-color: #051625">
             <div class="col-12 bg-dark rounded-3">
-              <div class="row">
+              <div class="row" style="background-color: #051625">
                 <div class="col-12">
                   <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -351,22 +352,22 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarText">
-                            <span class="navbar-text text-primary fw-bold ms-auto">Xem tất cả</span>
+                            <span class="navbar-text text-primary fw-bold ms-auto" style="font-size: 14px;">Xem tất cả</span>
                         </div>
                     </div>
                 </nav>
                 </div>
               </div>
               <!-- nội dung nhỏ bên trong -->
-              <div class="row">
+              <div class="row" style="background-color: #051625">
                 <div class="col-md-6">
-                  <div class="card bg-dark ms-3">
+                  <div class="card ms-3" style="background-color: #051625">
                     <img src="assets/img36.webp" class="card-img-top" />
-                    <div class="card-body" style="color: #a5b7c6">
-                      <h5 class="card-title">
-                        Tại sao Ford Focus "ế vẫn hoàn ế" tại Việt Nam?
+                    <div class="card-body" style="color: #a5b7c6;">
+                      <h5 class="card-title fw-bold" style="font-size: 20px;">
+                        <a href="" class="text-decoration-none text-dark">Tại sao Ford Focus "ế vẫn hoàn ế" tại Việt Nam?</a>
                       </h5>
-                      <p class="card-text">
+                      <p class="card-text" style="font-size: 14px;">
                         Tất cả những nỗ lực của Ford Việt Nam dường như vẫn chưa
                         mang lại nhiều kết quả khi Focus dù được nâng cấp, giảm
                         giá các kiểu nhưng vẫn “ế hoàn ế” tại Việt Nam.
@@ -382,7 +383,7 @@
           </div>
           <!-- tin tức -->
           <div class="row mt-2">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">
@@ -422,14 +423,14 @@
           </div>
           <!-- nội dung nhỏ bên trong -->
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 p-0">
               <div class="card">
                 <img src="assets/img43.webp" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">
-                    Honda e:Ny1: Crossover điện đầy tiềm năng từ Honda
+                  <h5 class="card-title fw-bold" style="font-size: 20px;">
+                    <a href="#" class="text-decoration-none text-dark">Honda e:Ny1: Crossover điện đầy tiềm năng từ Honda</a>
                   </h5>
-                  <p class="card-text">
+                  <p class="card-text" style="font-size: 14px;">
                     Honda có thể đã gia nhập phân khúc xe điện một chút muộn so
                     với một số đối thủ cạnh tranh. Tuy nhiên, những kế hoạch gần
                     đây của hãng đã chứng tỏ sự tăng cường tập trung mạnh mẽ vào
@@ -439,13 +440,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div id="listCar"></div>
+            <div class="col-md-6 pe-0">
+              <div id="newcar"></div>
             </div>
           </div>
           <!-- new sale car -->
           <div class="row mt-2">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
@@ -567,7 +568,7 @@
                       >
                     </h2>
                   </legend>
-                  <div id="newInfor"></div>
+                  <div id="newread"></div>
                 </fieldset>
               </form>
             </div>
@@ -603,25 +604,25 @@
         <div class="row">
           <div class="col-3">
             <div>
-              <h3>Xe Toyota</h3>
+              <h3 style="font-size: 18px;">Xe Toyota</h3>
               <div id="toyota"></div>
             </div>
           </div>
           <div class="col-3">
             <div>
-              <h3>Xe KIA</h3>
+              <h3 style="font-size: 18px;">Xe KIA</h3>
               <div id="KIA"></div>
             </div>
           </div>
           <div class="col-3">
             <div>
-              <h3>Xe Huyndai</h3>
+              <h3 style="font-size: 18px;">Xe Huyndai</h3>
               <div id="huyndai"></div>
             </div>
           </div>
           <div class="col-3">
             <div>
-              <h3>Xe Honda</h3>
+              <h3 style="font-size: 18px;">Xe Honda</h3>
               <div id="honda"></div>
             </div>
           </div>
@@ -632,25 +633,25 @@
           <div class="row">
             <div class="col-3">
               <div>
-                <h3>Xe Mazda</h3>
+                <h3 style="font-size: 18px;">Xe Mazda</h3>
                 <div id="mazda"></div>
               </div>
             </div>
             <div class="col-3">
               <div>
-                <h3>Xe Ford</h3>
+                <h3 style="font-size: 18px;">Xe Ford</h3>
                 <div id="Ford"></div>
               </div>
             </div>
             <div class="col-3">
               <div>
-                <h3>Xe Mitsubishi</h3>
+                <h3 style="font-size: 18px;">Xe Mitsubishi</h3>
                 <div id="mitsubishi"></div>
               </div>
             </div>
             <div class="col-3">
               <div>
-                <h3>Xe BMW</h3>
+                <h3 style="font-size: 18px;">Xe BMW</h3>
                 <div id="bmw"></div>
               </div>
             </div>
@@ -667,6 +668,163 @@
     </div>
 
     <!-- nơi thêm footer -->
+    <footer class="footer">
+      <div class="d-flex justify-content- flex-wrap py-5 px-4" style="margin-left: 150px; gap: 100px;">
+        <div class="footer-left">
+          <a href="">
+            <img src="./assets/logo-carmudi-white.png" alt="" />
+          </a>
+          <p class="mt-5 text-white text-md">
+            Carmudi - nền tảng hàng đầu trong lĩnh vực xe cũ tại Việt Nam. Cam
+            kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh
+            chóng và đáng tin cậy.
+          </p>
+          <ul class="icon d-flex">
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-white">
+          <p>Đăng ký nhận bản tin</p>
+          <p class="text-md">
+            Nhận bản tin để không bỏ lỡ thông tin và khuyến mãi của Carmudi
+          </p>
+          <div class="d-flex flex-wrap">
+            <input
+              type="email"
+              class="form-control input"
+              placeholder="Nhập vào email của bạn"
+              aria-label="Nhập vào email của bạn"
+              aria-describedby="button-addon2"
+            />
+            <button
+              class="btn btn-outline-secondary input-btn text-white"
+              type="button"
+              id="button-addon2"
+            >
+              Gửi
+            </button>
+          </div>
+          <div class="d-flex flex-wrap pt-5">
+            <div>
+              <div>
+                <h2>Dịch vụ</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-decoration-none text-md">Mua xe ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Bán xe ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Trở thành cộng tác viên</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Báo giá cửa hàng</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Hỗ trợ</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Mua bảo hiểm ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Trả góp mua xe</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Câu hỏi thường gặp</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Liên hệ</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Về Carmudi</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Giới thiệu công ty</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Tin tức</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md"
+                    >Chính sách quyền riêng tư</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Điều khoản sử dụng</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Cơ hội làm việc</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">Chứng nhận Carmudi</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Công ty thành viên</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md"
+                    >OtoS - Trang đăng tin bán</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-ft text-decoration-none  text-md">xe uy tín tại Việt Nam</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-5 px-4">
+        <p class="text-center text-sz text-ft">
+          CÔNG TY TNHH XE CLASSIFIEDS. Hotline: 0938119439 (Toàn quốc) Số ĐKKD:
+          0312648170<br />
+          Địa chỉ: Tầng 6, Toà nhà Mê Linh Point, 2 Ngô Đức Kế, Phường Bến Nghé,
+          Quận 1, Thành Phố Hồ Chí Minh, Việt Nam. ©2023 by Car Classifieds
+          Limited Liability Company.<br />
+          Carmudi Vietnam là một thành viên của
+          <a class="text-decoration-none" style="color: rgb(165 183 198);" href="https://fram.asia/"><span class="fw-bold text-white">fram^ </span>Group</a>
+        </p>
+      </div>
+    </footer>
+
 
     <!--nhúng js -->
     <script

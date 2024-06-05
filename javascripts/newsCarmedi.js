@@ -1,36 +1,43 @@
-const card = [{
+// tin nổi bật
+
+const hotNew = [{
     image: 'assets/img1.webp',
     text: ' Giá xe Mercedes-Benz GLA 2024: Giá lăn bánh, Thông số và Ưu đãi cập nhật mới tháng 03/2024 ',
     review: ' Khám phá bảng giá xe Mercedes GLA năm 2024 và đừng bỏ lỡ cơ hội tận hưởng những ưu đãi đặc biệt, độc quyền trong tháng 03/2024. Tìm hiểu về các chương trình khuyến mãi và giảm giá hấp dẫn, để có cơ hội sở hữu mẫu xe Mercedes GLA 2023 mà bạn luôn mong đợi! ',
+    smalltext: 'Bảng giá xe ô tô',
     isObject: true
 },{
     image: 'assets/img2.webp',
     text: ' Giá xe Mercedes A-Class 2024: Ưu đãi đặc biệt tháng 03/2024 ',
-    review: ' Khám phá danh sách giá xe Mercedes A Class 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe Mercedes A Class với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này. '
+    review: ' Khám phá danh sách giá xe Mercedes A Class 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe Mercedes A Class với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này. ',
+    smalltext: 'Bảng giá xe ô tô',
 },{
     image: 'assets/img3.webp',
     text: ' Giá xe BMW Z4 2024: Ưu đãi đặc biệt tháng 03/2024 ',
-    review: ' Khám phá danh sách giá xe BMW Z4 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe BMW Z4 với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này '
+    review: ' Khám phá danh sách giá xe BMW Z4 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe BMW Z4 với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này ',
+    smalltext: 'Bảng giá xe ô tô',
 },{
     image: 'assets/img4.webp',
     text: ' Giá xe Volvo V60 2024: Ưu đãi đặc biệt tháng 03/2024 ',
-    review: ' Khám phá danh sách giá xe Volvo V60 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe Volvo V60 với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này. '
+    review: ' Khám phá danh sách giá xe Volvo V60 2024 và tận hưởng ưu đãi đặc biệt tháng 03/2024. Đừng bỏ lỡ cơ hội mua xe Volvo V60 với các chương trình khuyến mãi hấp dẫn đang chờ bạn trong tháng này. ',
+    smalltext: 'Bảng giá xe ô tô',
 }];
 
 
 let cardItem = '';
-for(let i=0;i<card.length;i++){
-    if(card[i].isObject){
+for(let i=0;i<hotNew.length;i++){
+    if(hotNew[i].isObject){
         cardItem +=  `<div class="row">
-        <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
+        <div class="card mb-3 p-0 border-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
         <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
+            <img src="${hotNew[i].image}" class="img-fluid rounded-start h-100" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${card[i].text}</h5>
-            <p class="card-text">${card[i].review}</p>
+            <h5 class="card-title fw-bold" style="font-size:24px"><a href="" class="text-decoration-none text-dark">${hotNew[i].text}</a></h5>
+            <p class="card-text" style="font-size:14px">${hotNew[i].review}</p>
+            <p class="card-text" style="font-size:14px; color:#7c7c7c;"><a href="#" class="text-decoration-none text-dark">${hotNew[i].smalltext}</a></p>
             </div>
         </div>
         </div>
@@ -38,24 +45,24 @@ for(let i=0;i<card.length;i++){
         </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-        <div class="card mb-3 " style="height: 500px;">
-            <img src="${card[i].image}" class="card-img-top" style="width: 100%; height: 250px;" alt="...">
-            <div class="card-body px-3 py-3">
-                <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text">${card[i].review}</p>
+        <div class="card mb-3 border-0" style="height: 500px;">
+            <img src="${hotNew[i].image}" class="card-img-top" style="width: 100%; height: 250px;" alt="...">
+            <div class="card-body pt-2 p-0">
+                <h5 class="card-title fw-bold" style="font-size:16px"><a href="#" class="text-decoration-none text-dark">${hotNew[i].text}</a></h5>
+                <p class="card-text" style="font-size:14px">${hotNew[i].review}</p>
+                <p class="card-text" style="font-size:14px; color:#7c7c7c;"><a href="#" class="text-decoration-none text-dark">${hotNew[i].smalltext}</a></p>
             </div>
         </div>
     </div>
     `;
     }
 }
-// console.log(cardItem);
-document.getElementById("infoCard").innerHTML = cardItem;
+document.getElementById("hotnewcar").innerHTML = cardItem;
 
 
 
-// card carousel
-const newCard = [{
+// tin đề xuất
+const suggestednew = [{
     image: 'assets/img9.webp',
     title: ' Giữ xe luôn trong trạng thái tốt nhất nhờ việc thay nhớt đúng chuẩn ',
     content: ' Khi nói đến bảo dưỡng xe hơi, việc thay nhớt thường được đề cập nhiều. Nhưng tại sao lại quan trọng đến vậy? Bài viết này sẽ đưa ra những thông tin cần thiết về tần suất thay nhớt cho ô tô và tại sao điều này lại mang ý nghĩa quan trọng đối với sức khỏe của động cơ của bạn. '
@@ -107,17 +114,17 @@ const newCard = [{
 
 
 let cardCarousel = '';
-for (let i = 0; i < newCard.length; i += 4) {
+for (let i = 0; i < suggestednew.length; i += 4) {
     cardCarousel += `<div class="carousel-item${i === 0 ? ' active' : ''}">
         <div class="row mb-md-4 mb-sm-3">`;
 
-    for (let j = i; j < i + 4 && j < newCard.length; j++) {
+    for (let j = i; j < i + 4 && j < suggestednew.length; j++) {
         cardCarousel += `<div class="col-md-3">
             <div class="card" style="height: 300px; width: 250px;">
-                <img src="${newCard[j].image}" class="card-img-top" style="width: 100%; height: 150px;" alt="..." />
+                <img src="${suggestednew[j].image}" class="card-img-top" style="width: 100%; height: 150px;" alt="..." />
                 <div class="card-body">
-                    <h5 class="card-title fs-6 fw-bold">${newCard[j].title}</h5>
-                    <p class="card-text fs-6" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap">${newCard[j].content}</p>
+                    <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${suggestednew[j].title}</a></h5>
+                    <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap; font-size:14px">${suggestednew[j].content}</p>
                 </div>
             </div>
         </div>`;
@@ -126,13 +133,13 @@ for (let i = 0; i < newCard.length; i += 4) {
     cardCarousel += `</div></div>`;
 }
 
-document.getElementById("carouselItem").innerHTML = cardCarousel;
+document.getElementById("suggestnew").innerHTML = cardCarousel;
 
 
 
-//optioncard
+//tư vấn
 
-const option = [{
+const advisecar = [{
     image: 'assets/img14.webp',
     content: ' Tổng hợp thảm lót sàn ô tô 6D đẹp được ưa chuộng nhất thị trường hiện nay '
 },{
@@ -148,15 +155,15 @@ const option = [{
 
 let optionCard = "";
 
-for (let i = 0; i < option.length; i++) {
-    optionCard += `<div class="card mb-3" style="max-width: 540px;">
+for (let i = 0; i < advisecar.length; i++) {
+    optionCard += `<div class="card mb-3" style="max-width: 540px; height:100px;">
             <div class="row g-0">
             <div class="col-md-4">
-                <img src="${option[i].image}" class="img-fluid rounded-start" alt="...">
+                <img src="${advisecar[i].image}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title fs-5">${option[i].content}</h5>
+                <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${advisecar[i].content}</a></h5>
                 </div>
             </div>
             </div>
@@ -164,10 +171,10 @@ for (let i = 0; i < option.length; i++) {
 }
 // console.log(optionCard);
 
-document.getElementById("optionCard").innerHTML = optionCard;
+document.getElementById("advisecar").innerHTML = optionCard;
 
 // so sánh xe
-const viewCard = [{
+const comparecar = [{
     image:'assets/img18.webp',
     title: ' Sự khác biệt của hệ thống giữa các dòng xe Audi và BMW, Mercedes Benz',
     content: 'Việc tìm hiểu sự khác biệt giữa các dòng xe của các hãng ô tô như Audi, BMW và Mercedes-Benz là rất quan trọng và cần thiết để giúp người tiêu dùng có thể lựa chọn được chiếc xe phù hợp với nhu cầu và sở thích của mình mà không phải đối mặt với những rủi ro không đáng có.'
@@ -184,28 +191,28 @@ const viewCard = [{
 
 let newCard1 =" ";
 
-for(let i=0; i<viewCard.length;i++){
+for(let i=0; i<comparecar.length;i++){
 
-    if(viewCard[i].content){
-        newCard1 += `<div class="col-md-12">
-            <div class="card mb-3">
-            <img src="${viewCard[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
+    if(comparecar[i].content){
+        newCard1 += `<div class="col-md-12" >
+            <div class="card mb-3" style="height:500px">
+            <img src="${comparecar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
             <div class="card-body">
-                <h5 class="card-title fs-4">${viewCard[i].title}</h5>
-                <p class="card-text fs-6">${viewCard[i].content}
+                <h5 class="card-title fw-bold" style="font-size:20px;"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
+                <p class="card-text" style="font-size:14px;">${comparecar[i].content}
                 </p>
             </div>
             </div>
         </div>`;
     }else{
-        newCard1 += `<div class="card mb-3" style="max-width: 100%;">
+        newCard1 += `<div class="card mb-3" style="max-width: 100%; height:100px">
                     <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${viewCard[i].image}" class="img-fluid rounded-start" alt="...">
+                        <img src="${comparecar[i].image}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title fs-6">${viewCard[i].title}</h5>
+                        <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
                         </div>
                     </div>
                     </div>
@@ -214,13 +221,11 @@ for(let i=0; i<viewCard.length;i++){
     
 }
 
-// console.log(newCard1);
-
-document.getElementById("viewCard1").innerHTML = newCard1;
+document.getElementById("comparecar").innerHTML = newCard1;
 
 // đánh giá xe
 
-const commentCar = [{
+const reviewCar = [{
     image: 'assets/img19.webp',
     title: 'MG7 2024: Sedan hạng C ra mắt tại Trung Quốc - Thông số kỹ thuật, giá bán',
     content: 'MG7 đã thu hút rất nhiều người tiêu dùng trẻ với thiết kế crossover, sức mạnh vượt trội, nội thất công nghệ cùng những điểm mạnh khác của sản phẩm'
@@ -237,27 +242,27 @@ const commentCar = [{
 
 let comment ='';
 
-for (let i = 0; i < commentCar.length; i++) {
-    if(commentCar[i].content){
-        comment += `<div class="col-md-12">
-            <div class="card mb-3">
-            <img src="${commentCar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
+for (let i = 0; i < reviewCar.length; i++) {
+    if(reviewCar[i].content){
+        comment += `<div class="col-md-12"> 
+            <div class="card mb-3" style="height:500px">
+            <img src="${reviewCar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
             <div class="card-body">
-                <h5 class="card-title fs-4">${commentCar[i].title}</h5>
-                <p class="card-text fs-6">${commentCar[i].content}
+                <h5 class="card-title fw-bold" style="font-size:20px;"><a href="" class="text-decoration-none text-dark">${reviewCar[i].title}</a></h5>
+                <p class="card-text" style="font-size:14px">${reviewCar[i].content}
                 </p>
             </div>
             </div>
         </div>`;
     }else{
-        comment += `<div class="card mb-3" style="max-width: 100%;">
+        comment += `<div class="card mb-3" style="max-width: 100%; height:100px;">
                     <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${commentCar[i].image}" class="img-fluid rounded-start" alt="...">
+                        <img src="${reviewCar[i].image}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class="card-title fs-6">${commentCar[i].title}</h5>
+                        <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${reviewCar[i].title}</a></h5>
                         </div>
                     </div>
                     </div>
@@ -266,10 +271,10 @@ for (let i = 0; i < commentCar.length; i++) {
     
 }
 
-document.getElementById("viewCard2").innerHTML = comment;
+document.getElementById("reviewcar").innerHTML = comment;
 
 
-// list sell car
+// top 10 xe bán chạy nhất
 
 const listSellCar = [{
     image: 'assets/img26.webp',
@@ -329,12 +334,12 @@ for(let i=0;i<listSellCar.length;i++){
         <div class="row g-0">
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title fs-5">${listSellCar[i].namecar}</h5>
-            <p class="card-text fs-6">
+            <h5 class="card-title fw-bold" style="font-size:16px;"><a href="" class="text-decoration-none text-dark">${listSellCar[i].namecar}</a></h5>
+            <p class="card-text fw-bold" style="font-size:16px; color:#1d70b8;">
                 ${listSellCar[i].price}
             </p>
             <p class="card-text">
-                <small class="text-muted fs-6">${listSellCar[i].sales}</small>
+                <small class="text-muted" style="font-size:14px; color:#7c7c7c;">${listSellCar[i].sales}</small>
             </p>
             </div>
         </div>
@@ -347,7 +352,7 @@ for(let i=0;i<listSellCar.length;i++){
 // console.log(viewcar2);
 document.getElementById("mostSale").innerHTML = viewcar2;
 
-// next video
+// video
 const video = [{
     image: 'assets/img37.webp',
     content: ' Honda City giảm giá cạnh tranh Toyota Vios '
@@ -371,7 +376,7 @@ for(let i=0;i<video.length;i++){
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title fs-6" style="color:#a5b7c6">${video[i].content}</h5>
+                <h5 class="card-title" style="color:#a5b7c6; font-size:16px"><a href="" class="text-decoration-none text-dark">${video[i].content}</a></h5>
                 </div>
             </div>
             </div>
@@ -411,7 +416,7 @@ for(let i=0;i<newRead.length;i++){
         contentNew += `<div class="card mb-3">
                 <img src="${newRead[i].image}" class="card-img-top" alt="..." />
                 <div class="card-body">
-                <h5 class="card-title"><span style="margin-right: 10px; color:#7c7c7c">${newRead[i].id}</span>${newRead[i].title}</h5>
+                <h5 class="card-title fw-bold" style="font-size:15px;"><span style="margin-right: 10px; color:#7c7c7c">${newRead[i].id}</span><a href="" class="text-decoration-none text-dark">${newRead[i].title}</a></h5>
                 </div>
             </div>`;
     }else{
@@ -429,7 +434,7 @@ for(let i=0;i<newRead.length;i++){
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
-                        <h5 class="card-title fs-6">${newRead[i].title}</h5>
+                        <h5 class="card-title fw-bold" style="font-size:14px"><a href="" class="text-decoration-none text-dark">${newRead[i].title}</a></h5>
                         </div>
                     </div>
                     </div>
@@ -437,9 +442,9 @@ for(let i=0;i<newRead.length;i++){
     }
 }
 
-document.getElementById("newInfor").innerHTML = contentNew;
+document.getElementById("newread").innerHTML = contentNew;
 
-// new car 
+// tin tức  
 const car = [{
     image:'assets/img45.webp',
     title: ' Mazda MX-5 Kizuna 2023 trình làng Anh Quốc với mui xe đặc biệt ',
@@ -463,14 +468,14 @@ for(let i =0;i<car.length;i++){
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                    <h5 class="card-title fs-6">${car[i].title}</h5>
+                    <h5 class="card-title fw-bold" style="font-size:16px;"><a href="" class="text-decoration-none text-dark">${car[i].title}</a></h5>
                     </div>
                 </div>
                 </div>
             </div>`;
 }
 
-document.getElementById("listCar").innerHTML = itemCar;
+document.getElementById("newcar").innerHTML = itemCar;
 
 // promotion
 const promotion =[{
@@ -503,7 +508,7 @@ for(let  i = 0; i<promotion.length;i++){
         listPromotion += `<div class="card mb-3">
         <img src="${promotion[i].image}" class="card-img-top" alt="..." />
         <div class="card-body">
-        <h5 class="card-title">${promotion[i].title}</h5>
+        <h5 class="card-title fw-bold" style="font-size:15px;"><a href="" class="text-decoration-none text-dark">${promotion[i].title}</a></h5>
         </div>
     </div>`;
     }else{
@@ -518,7 +523,7 @@ for(let  i = 0; i<promotion.length;i++){
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title fs-6">${promotion[i].title}</h5>
+            <h5 class="card-title fw-bold" style="font-size:14px;"><a href="" class="text-decoration-none text-dark">${promotion[i].title}</a></h5>
             </div>
         </div>
         </div>
@@ -598,7 +603,7 @@ for(let i=0;i<saleCar.length;i++){
     <div class="card mb-3 d-flex" style="flex-basis: calc(33.33% - 20px); flex-direction: column; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <img src="${saleCar[i].image}" class="card-img-top" alt="..." style="width: 100%; height: 170px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
         <div class="card-body" style="padding: 15px;">
-            <h5 class="card-title fs-6">${saleCar[i].name}</h5>
+            <h5 class="card-title fs-6"><a href="" class="text-decoration-none text-dark">${saleCar[i].name}</a></h5>
             <p class="card-text"><small class="text-muted fs-6">${saleCar[i].trip}</small></p>
             <p class="card-text fs-6" style="color:red; font-weight: bold;">${saleCar[i].price}</p>
         </div>
@@ -622,7 +627,7 @@ const toyotaCar = [{
 
 let itemToyotaCar = "";
 for(let i=0;i<toyotaCar.length;i++){
-    itemToyotaCar += `<p>${toyotaCar[i].name}</p>`;
+    itemToyotaCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${toyotaCar[i].name}</a></p>`;
 }
 
 document.getElementById("toyota").innerHTML = itemToyotaCar;
@@ -640,7 +645,7 @@ const mazdaCar = [{
 
 let itemMazdaCar = "";
 for(let i=0;i<toyotaCar.length;i++){
-    itemMazdaCar += `<p>${mazdaCar[i].name}</p>`;
+    itemMazdaCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${mazdaCar[i].name}</a></p>`;
 }
 
 document.getElementById("mazda").innerHTML = itemMazdaCar;
@@ -658,7 +663,7 @@ const kiaCar = [{
 
 let itemKiaCar = "";
 for(let i=0;i<kiaCar.length;i++){
-    itemKiaCar += `<p>${kiaCar[i].name}</p>`;
+    itemKiaCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${kiaCar[i].name}</a></p>`;
 }
 
 document.getElementById("KIA").innerHTML = itemKiaCar;
@@ -676,7 +681,7 @@ const fordCar = [{
 
 let itemFordCar = "";
 for(let i=0;i<fordCar.length;i++){
-    itemFordCar += `<p>${fordCar[i].name}</p>`;
+    itemFordCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${fordCar[i].name}</a></p>`;
 }
 
 document.getElementById("Ford").innerHTML = itemFordCar;
@@ -694,7 +699,7 @@ const huyndaiCar = [{
 
 let itemHuyndaiCar = "";
 for(let i=0;i<huyndaiCar.length;i++){
-    itemHuyndaiCar += `<p>${huyndaiCar[i].name}</p>`;
+    itemHuyndaiCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${huyndaiCar[i].name}</a></p>`;
 }
 
 document.getElementById("huyndai").innerHTML = itemHuyndaiCar;
@@ -713,7 +718,7 @@ const mitsubishiCar = [{
 
 let itemMitsubishiCar = "";
 for(let i=0;i<mitsubishiCar.length;i++){
-    itemMitsubishiCar += `<p>${mitsubishiCar[i].name}</p>`;
+    itemMitsubishiCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${mitsubishiCar[i].name}</a></p>`;
 }
 
 document.getElementById("mitsubishi").innerHTML = itemMitsubishiCar;
@@ -731,7 +736,7 @@ const hondaCar = [{
 
 let itemHondaCar = "";
 for(let i=0;i<hondaCar.length;i++){
-    itemHondaCar += `<p>${hondaCar[i].name}</p>`;
+    itemHondaCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${hondaCar[i].name}</a></p>`;
 }
 
 document.getElementById("honda").innerHTML = itemHondaCar;
@@ -749,7 +754,7 @@ const bmwCar = [{
 
 let itemBMWCar = "";
 for(let i=0;i<bmwCar.length;i++){
-    itemBMWCar += `<p>${bmwCar[i].name}</p>`;
+    itemBMWCar += `<p><a href="#" class="text-decoration-none text-dark" style="font-size:14px;">${bmwCar[i].name}</a></p>`;
 }
 
 document.getElementById("bmw").innerHTML = itemBMWCar;
