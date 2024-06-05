@@ -1,8 +1,9 @@
-const card = [{
+// hot new
+const hotnew = [{
     image: 'assets/img68.png',
     text: ' Mazda CX-30 vs Mazda CX-5: So sánh hai mẫu xe SUV của Mazda ',
     review: '  Mazda có lịch sử liên tục cập nhật và nâng cấp các mẫu xe của mình. Với sự tăng trưởng của phân khúc SUV trên toàn cầu, Mazda CX-30 và Mazda CX-5 có tiềm năng để tiếp tục cạnh tranh và ghi nhận thành công trong thị trường xe hơi. ',
-    isObject: true
+    isObject: "So sánh xe"
 },{
     image: 'assets/img69.png',
     text: ' So sánh Mazda CX-5 2023 với Toyota RAV4 2023 ',
@@ -19,18 +20,19 @@ const card = [{
 
 
 let cardItem = '';
-for(let i=0;i<card.length;i++){
-    if(card[i].isObject){
+for(let i=0;i<hotnew.length;i++){
+    if(hotnew[i].isObject){
         cardItem +=  `<div class="row">
         <div class="card mb-3 p-0" style="max-width: 100%; margin-left:12px">
         <div class="row g-0">
-        <div class="col-md-4">
-            <img src="${card[i].image}" class="img-fluid rounded-start h-100" alt="...">
+        <div class="col-md-7">
+            <img  src="${hotnew[i].image}" class="img-fluid rounded-start h-100"  alt="...">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-5">
             <div class="card-body">
-            <h5 class="card-title">${card[i].text}</h5>
-            <p class="card-text">${card[i].review}</p>
+            <h5 class="card-title fw-bold" style="font-size:24px;"><a href="#" class="text-decoration-none text-dark">${hotnew[i].text}</a></h5>
+            <p class="card-text"  style="font-size:14px;">${hotnew[i].review}</p>
+            <p class="card-text"  style="font-size:14px; color:#7c7c7c;">${hotnew[i].isObject}</p>
             </div>
         </div>
         </div>
@@ -38,19 +40,20 @@ for(let i=0;i<card.length;i++){
         </div>`;
     }else{
         cardItem += `<div class="col-md-4">
-        <div class="card mb-3" style="height: 500px;">
-            <img src="${card[i].image}" class="card-img-top w-100 h-100%" alt="...">
-            <div class="card-body d-flex flex-column justify-content-center px-3 py-3">
-                <h5 class="card-title">${card[i].text}</h5>
-                <p class="card-text">${card[i].review}</p>
+        <div class="card mb-3" style="height: 300px;">
+            <img src="${hotnew[i].image}" class="card-img-top w-100" style="height:150px" alt="...">
+            <div class="card-body d-flex flex-column justify-content-center" style="margin:0px;">
+                <h5 class="card-title fw-bold m-0" style="font-size:16px;"><a href="#" class="text-decoration-none text-dark">${hotnew[i].text}</a></h5>
+                <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${hotnew[i].review}</p>
             </div>
         </div>
     </div>
+    
     `;
     }
 }
 // console.log(cardItem);
-document.getElementById("infoCard").innerHTML = cardItem;
+document.getElementById("hotnew").innerHTML = cardItem;
 
 
 
@@ -165,7 +168,7 @@ for (let i = 0; i < listItem.length; i++) {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                            <h5 class="card-title">${listItem[i].title}</h5>
+                            <h5 class="card-title"><a href="#" class="text-decoration-none text-dark">${listItem[i].title}</a></h5>
                             <p class="card-text">${listItem[i].content}</p>
                             </div>
                         </div>
@@ -219,7 +222,7 @@ for(let i=0;i<itemContentMost.length;i++){
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
-                    <h5 class="card-title">${itemContentMost[i].title}</h5>
+                    <h5 class="card-title"><a href="#" class="text-decoration-none text-dark fw-bold" style="font-size:15px;">${itemContentMost[i].title}</a></h5>
                     <p class="card-text"><small class="text-muted">${itemContentMost[i].year}</small></p>
                     </div>
                 </div>
@@ -263,7 +266,7 @@ for(let  i = 0; i<promotion.length;i++){
         listPromotion += `<div class="card mb-3 border-0">
         <img src="${promotion[i].image}" class="card-img-top" alt="..." />
         <div class="card-body">
-        <h5 class="card-title">${promotion[i].title}</h5>
+        <h5 class="card-title"><a href="#" class="text-decoration-none text-dark fw-bold" style="font-size:15px;">${promotion[i].title}</a></h5>
         </div>
     </div>`;
     }else{
@@ -278,7 +281,7 @@ for(let  i = 0; i<promotion.length;i++){
         </div>
         <div class="col-md-8">
             <div class="card-body">
-            <h5 class="card-title">${promotion[i].title}</h5>
+            <h5 class="card-title"><a href="#" class="text-decoration-none text-dark fw-bold" style="font-size:15px;">${promotion[i].title}</a></h5>
             </div>
         </div>
         </div>
@@ -303,7 +306,7 @@ const toyotaCarCompare = [{
 
 let itemToyotaCarCompare = "";
 for(let i=0;i<toyotaCarCompare.length;i++){
-    itemToyotaCarCompare += `<p>${toyotaCarCompare[i].name}</p>`;
+    itemToyotaCarCompare += `<p style="font-size:14px"><a href="#" class="text-decoration-none text-dark">${toyotaCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("toyotaCompare").innerHTML = itemToyotaCarCompare;
@@ -321,7 +324,7 @@ const mazdaCarCompare = [{
 
 let itemMazdaCarCompare = "";
 for(let i=0;i<mazdaCarCompare.length;i++){
-    itemMazdaCarCompare += `<p>${mazdaCarCompare[i].name}</p>`;
+    itemMazdaCarCompare += `<p style="font-size:14px"><a href="#" class="text-decoration-none text-dark">${mazdaCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("mazdaCompare").innerHTML = itemMazdaCarCompare;
@@ -339,7 +342,7 @@ const kiaCarCompare = [{
 
 let itemKiaCarCompare = "";
 for(let i=0;i<kiaCarCompare.length;i++){
-    itemKiaCarCompare += `<p>${kiaCarCompare[i].name}</p>`;
+    itemKiaCarCompare += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${kiaCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("KIACompare").innerHTML = itemKiaCarCompare;
@@ -357,7 +360,7 @@ const fordCarCompare = [{
 
 let itemFordCarCompany = "";
 for(let i=0;i<fordCarCompare.length;i++){
-    itemFordCarCompany += `<p>${fordCarCompare[i].name}</p>`;
+    itemFordCarCompany += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${fordCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("FordCompare").innerHTML = itemFordCarCompany;
@@ -375,7 +378,7 @@ const huyndaiCarCompare = [{
 
 let itemHuyndaiCarCompare = "";
 for(let i=0;i<huyndaiCarCompare.length;i++){
-    itemHuyndaiCarCompare += `<p>${huyndaiCarCompare[i].name}</p>`;
+    itemHuyndaiCarCompare += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${huyndaiCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("huyndaiCompare").innerHTML = itemHuyndaiCarCompare;
@@ -394,7 +397,7 @@ const mitsubishiCarCompare = [{
 
 let itemMitsubishiCarCompare = "";
 for(let i=0;i<mitsubishiCarCompare.length;i++){
-    itemMitsubishiCarCompare += `<p>${mitsubishiCarCompare[i].name}</p>`;
+    itemMitsubishiCarCompare += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${mitsubishiCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("mitsubishiCompare").innerHTML = itemMitsubishiCarCompare;
@@ -412,7 +415,7 @@ const hondaCarCompare = [{
 
 let itemHondaCarCompare = "";
 for(let i=0;i<hondaCarCompare.length;i++){
-    itemHondaCarCompare += `<p>${hondaCarCompare[i].name}</p>`;
+    itemHondaCarCompare += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${hondaCarCompare[i].name}</a></p>`;
 }
 
 document.getElementById("hondaCompare").innerHTML = itemHondaCarCompare;
@@ -430,7 +433,7 @@ const bmwCarCompare = [{
 
 let itemBMWCarCompare = "";
 for(let i=0;i<bmwCarCompare.length;i++){
-    itemBMWCarCompare += `<p>${bmwCarCompare[i].name}</p>`;
+    itemBMWCarCompare += `<p style="font-size:14px"> <a href="#" class="text-decoration-none text-dark">${bmwCarCompare[i].name}</a></p>`;
 }
 console.log(itemBMWCarCompare);
 document.getElementById("bmwCompare").innerHTML = itemBMWCarCompare;
