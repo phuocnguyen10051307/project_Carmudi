@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chia đôi giao diện</title>
+    <style>
+      .wrapper {
+        width: 600px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px 25px 40px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .half {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .slider {
+        height: 5px;
+        position: relative;
+        background: #ddd;
+        border-radius: 5px;
+      }
+
+      .slider .progress {
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        background: #17a2b8;
+      }
+
+      .range-input {
+        position: relative;
+      }
+
+      .range-input input {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        top: -5px;
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        height: 17px;
+        width: 17px;
+        border-radius: 50%;
+        background: #17a2b8;
+        pointer-events: auto;
+        -webkit-appearance: none;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        height: 17px;
+        width: 17px;
+        border: none;
+        border-radius: 50%;
+        background: #17a2b8;
+        pointer-events: auto;
+        -moz-appearance: none;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .price-input {
+        width: 100%;
+        display: flex;
+        margin: 10px 0 35px;
+      }
+
+      .price-input .field {
+        display: flex;
+        width: 100%;
+        height: 45px;
+        align-items: center;
+      }
+
+      .field input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        font-size: 19px;
+        margin-left: 12px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #999;
+        -moz-appearance: textfield;
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .price-input .separator {
+        width: 130px;
+        display: flex;
+        font-size: 19px;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper d-flex">
+      <div class="half">
+        <div class="slider">
+          <div class="progress"></div>
+        </div>
+        <div class="range-input">
+          <input
+            type="range"
+            class="range-min"
+            min="2000"
+            max="2020"
+            value="2000"
+            step="1"
+          />
+          <input
+            type="range"
+            class="range-max"
+            min="2020"
+            max="2024"
+            value="2024"
+            step="1"
+          />
+        </div>
+        <div
+          class="minAndMax d-flex justify-content-around fw-bold text-capitalize fs-6"
+          style="margin-top: 20px"
+        >
+          <span>Min</span>
+          <span>Max</span>
+        </div>
+      </div>
+      <div class="half">
+        <div class="price-input">
+          <div class="field">
+            <input type="number" class="input-min" value="2000" />
+          </div>
+          <div class="separator">-</div>
+          <div class="field">
+            <input type="number" class="input-max" value="2024" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const range_Input = document.querySelectorAll(".range-input input"),
+        priceInput = document.querySelectorAll(".price-input input"),
+        range = document.querySelector(".slider .progress");
+      let priceGap = 1; // 1 year
+
+      // Function to update the progress bar position
+      function updateProgressBar() {
+        let minVal = parseInt(range_Input[0].value),
+          maxVal = parseInt(range_Input[1].value);
+
+        let minPercent = ((minVal - 2000) / (2020 - 2000)) * 50;
+        let maxPercent = 50 + ((maxVal - 2020) / (2024 - 2020)) * 50;
+
+        range.style.left = minPercent + "%";
+        range.style.width = maxPercent - minPercent + "%";
+      }
+
+      // Event listener for price input fields
+      priceInput.forEach((input) => {
+        input.addEventListener("input", (e) => {
+          let minPrice = parseInt(priceInput[0].value),
+            maxPrice = parseInt(priceInput[1].value);
+
+          if (
+            maxPrice - minPrice >= priceGap &&
+            maxPrice <= parseInt(range_Input[1].max)
+          ) {
+            if (e.target.className === "input-min") {
+              range_Input[0].value = minPrice;
+            } else {
+              range_Input[1].value = maxPrice;
+            }
+            updateProgressBar();
+          }
+        });
+      });
+
+      // Event listener for range input fields
+      range_Input.forEach((input) => {
+        input.addEventListener("input", (e) => {
+          let minVal = parseInt(range_Input[0].value),
+            maxVal = parseInt(range_Input[1].value);
+
+          if (maxVal - minVal < priceGap) {
+            if (e.target.className === "range-min") {
+              range_Input[0].value = maxVal - priceGap;
+            } else {
+              range_Input[1].value = minVal + priceGap;
+            }
+          } else {
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+          }
+          updateProgressBar();
+        });
+      });
+
+      // Initial call to set the progress bar position
+      updateProgressBar();
+    </script>
+  </body>
+</html>

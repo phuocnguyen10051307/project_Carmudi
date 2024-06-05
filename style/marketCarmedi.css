@@ -76,3 +76,36 @@ body{
 .slibar{
     display: block;
 }
+
+
+
+.list-st {
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+}
+
+.footer {
+    background-color: rgb(9 37 61);
+    width: auto;
+}
+
+.footer-left {
+    width: 250px;
+}
+
+.text-ft {
+    color: rgb(165 183 198);
+}
+
+.text-sz {
+    font-size: 12px;
+}
+
+.text-white > .d-flex > input {
+    width: 330px;
+}
+
+#button-addon2{
+    background-color: rgb(24 110 182);
+}
