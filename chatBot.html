@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/OIP.sxQ_G2jsbQ5FwmN_fMeJXwHaHa?rs=1&pid=ImgDetMain" sizes="96x96">
+    <title>ChatBox Cars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<style>
+    body {
+        background: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) center center fixed no-repeat;
+        height: 100%;
+    }
+</style>
+
+<script>
+    function clickBtn(id) {
+        setTimeout(() => {
+            const btns = document.getElementsByClassName("btn-dark");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].disabled = true; // Vô hiệu hóa tất cả các nút
+            }
+        }, 500)
+        const values = document.getElementById(id).value;
+        const questionContainer = document.getElementById("questionContainer");
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question", "fw-bold", "fs-5", "mb-3", "d-flex", "justify-content-end", "align-items-center");
+        questionDiv.innerHTML = `${values} <i class="bi bi-person-fill" style = "font-size: 30px"></i>`;
+        questionContainer.appendChild(questionDiv);
+        getAnswer(values)
+    }
+
+
+    let question = ["Làm sao để bán xe ở trên Carmudi?", "Thủ tục bán xe có phức tạp không?", "Xe bán trên Carmudi có bị lỗ không?", "Mua xe trên Carmudi có được lợi ích gì so với mua xe ở chỗ khác?"]
+    let answer = [
+        "Hãy bấm vào mục Bán Xe trên thanh công cụ và sau đó làm theo hướng dẫn của Carmudi để không bị mất quyền lợi nhé!😄",
+        "Thủ tục không phức tạp nhé bạn iu, chỉ cần làm theo các bước mà Carmudi đã hướng dẫn thì bạn có thể đăng bán xe được rồi nhé!👉♥️",
+        "Câu trả lời là không nhé~! Nếu bạn bán xe trên đây, chúng tôi bảo đảm sẽ giúp bạn bán được xe với mức giá sát nhất với giá trị ban đầu của chiếc xe!",
+        "Việc mua xe trên Carmudi sẽ giúp bạn tránh khỏi các rắc rối không đáng có như thủ tục và các giấy tờ liên quan sẽ dược bên chúng tôi lo liệu hoàn toàn, bạn chỉ cần xem và xác nhận nữa thôi!😚😇"
+    ]
+    function getAnswer(arr) {
+        setTimeout(() => {
+            const questionContainer = document.getElementById("questionContainer");
+            const questionDiv = document.createElement("div");
+            questionDiv.classList.add("answer", "fw-bold", "fs-5", "w-75", "d-block", "align-items-center");
+            for (let i = 0; i < question.length; i++) {
+                if (arr == question[i]) {
+                    question.splice(i, 1)
+                    questionDiv.innerHTML = `<i class="bi bi-robot me-2" style = "font-size: 30px"></i> ${answer[i]}`;
+                    answer.splice(i, 1)
+                    questionContainer.appendChild(questionDiv);
+                }
+            }
+        }, 1500)
+        printQuestion();
+    }
+
+    function printQuestion() {
+        setTimeout(() => {
+            if (question.length < 1) {
+                const messageBot = document.getElementById("questionContainer")
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("mt-5", "fw-bold", "fs-5", "d-flex", "align-items-center", "text-white")
+                messageDiv.innerHTML = `<i class="bi bi-robot me-2" style="font-size: 30px"></i> Bạn còn thắc mắc nào nữa không? Nếu còn xin hãy gửi câu hỏi qua địa chỉ mail<a href = "#">anhthongdepzai@gmail.com</a>nhé♥️`;
+                messageBot.appendChild(messageDiv);
+            }
+            else {
+                const messageBot = document.getElementById("questionContainer")
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("mt-5", "fw-bold", "fs-5", "d-flex", "align-items-center")
+                messageDiv.innerHTML = `<i class="bi bi-robot me-2" style="font-size: 30px"></i> Bạn còn thắc mắc nào nữa không?`;
+                messageBot.appendChild(messageDiv);
+                // in ra button câu hỏi
+                const questionContainer = document.getElementById("questionContainer");
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question-AI", "fw-5", "fs-5", "w-75");
+                if (question.length < 3) {
+                    for (let i = 0; i < question.length; i++) {
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.classList.add("btn", "btn-dark", "mb-2", "me-2");
+                        btn.id = `${question[i]}`;
+                        btn.value = question[i];
+                        btn.textContent = question[i];
+                        btn.onclick = function () {
+                            clickBtn(this.id);
+                        };
+                        questionDiv.appendChild(btn)
+                    }
+                    questionContainer.appendChild(questionDiv);
+                }
+                else {
+                    for (let i = 0; i < 3; i++) {
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.classList.add("btn", "btn-dark", "mb-2", "me-2");
+                        btn.id = `${question[i]}`;
+                        btn.value = question[i];
+                        btn.textContent = question[i];
+                        btn.onclick = function () {
+                            clickBtn(this.id);
+                        };
+                        questionDiv.appendChild(btn)
+                    }
+                    questionContainer.appendChild(questionDiv);
+                }
+            }
+            window.scroll(0, document.documentElement.scrollHeight);
+        }, 2500)
+    }
+</script>
+
+<body>
+
+    <div class="chat-popup container mb-5" id="myForm">
+        <div class="mt-5 d-flex align-items-center fw-5 fs-5 w-75">
+            <i class="bi bi-robot me-2" style="font-size: 30px"></i><b>Hey xin chào, bạn có vấn đề gì cần giải đáp?</b>
+        </div>
+        <div class="question-AI fw-5 fs-5 w-75">
+            <button type="button" class="btn btn-dark mb-2" id="0" value="Làm sao để bán xe ở trên Carmudi?"
+                onclick="clickBtn(this.id)">Làm sao để bán xe ở trên Carmudi?</button>
+            <button type="button" class="btn btn-dark mb-2" id="1" value="Thủ tục bán xe có phức tạp không?"
+                onclick="clickBtn(this.id)">Thủ tục bán xe có phức tạp không?</button>
+            <button type="button" class="btn btn-dark mb-2" id="2" value="Xe bán trên Carmudi có bị lỗ không?"
+                onclick="clickBtn(this.id)">Xe bán trên Carmudi có bị lỗ không?</button>
+        </div>
+        <div id="questionContainer" class="mt-3"></div>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+</html>
