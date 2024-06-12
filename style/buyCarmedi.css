@@ -465,6 +465,32 @@ form {
 }
 
 
+/* CSS chat bot */
+.chatbot{
+  background: #E3F2FD;
+  right: 40px;
+  bottom: 100px;
+  overflow: hidden;
+  width: 420px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.chatbox{
+  overflow-y: auto;
+  padding: 30px 20px 70px;
+}
+
+#send-btn{
+  height: 40px;
+  line-height: 40px;
+  color: #724ae8;
+  visibility: hidden;
+}
+
+.chat-input textarea:valid ~ #send-btn{
+  visibility: visible;
+}
+
 /* Default styles for desktop */
 #filter-icon,
 .border-bottom,
