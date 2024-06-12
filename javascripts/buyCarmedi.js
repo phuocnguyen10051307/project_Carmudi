@@ -341,6 +341,39 @@ function filterBySeats() {
   filterCars()
 }
 
+
+let users = [];
+let filteredUsers = [];
+let currentPage = 1;
+const perPage = 10;
+
+async function fetchData() {
+  try {
+    const response = await axios.get('http://localhost:5000/car');
+    users = response.data;
+    filteredUsers = [...users];
+    renderCars(filteredUsers.slice(0, perPage));
+    renderPageNumbers();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+function handlePageNumber(num) {
+  currentPage = num;
+  const perUser = filteredUsers.slice((currentPage - 1) * perPage, currentPage * perPage);
+  renderCars(perUser);
+}
+
+function renderPageNumbers() {
+  const totalPage = Math.ceil(filteredUsers.length / perPage);
+  let paginationHTML = '';
+  for (let i = 1; i <= totalPage; i++) {
+    paginationHTML += `<li onclick="handlePageNumber(${i})">${i}</li>`;
+  }
+  document.getElementById('pagination').innerHTML = paginationHTML;
+}
+
 function renderCars(array) {
   const cardsContainer = document.getElementById("show");
   cardsContainer.innerHTML = ""; // Clear previous cards
@@ -348,21 +381,21 @@ function renderCars(array) {
     const card = document.createElement("div");
     card.classList.add("card", "me-3", "mb-3");
     card.innerHTML = `
-    <div class="card">
-          <img src="${car.ImageUrl}" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title" style="height: 40px;">${car.Title}</h5>
-              <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
-              <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
-              <br>
-              <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
-              <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
-          </div>
-          <div class="card-footer">
-            <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
-            <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
-          </div>
-        </div>`;
+      <div class="card">
+        <img src="${car.ImageUrl}" class="card-img-top" alt="${car.Title}">
+        <div class="card-body">
+          <h5 class="card-title" style="height: 40px;">${car.Title}</h5>
+          <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+          <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+          <br>
+          <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+          <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+          <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+        </div>
+      </div>`;
     cardsContainer.appendChild(card);
   });
 }
@@ -374,32 +407,34 @@ function searchUser() {
   renderPageNumbers();
 }
 
-    function sortUsers(sortType) {
-      if (sortType === "asc") {
-        filteredUsers.sort((a, b) => a.id - b.id);
-      } else if (sortType === "desc") {
-        filteredUsers.sort((a, b) => b.id - a.id);
-      } else if (sortType === "price_asc") {
-        filteredUsers.sort((a, b) => parseFloat(a.Price) - parseFloat(b.Price));
-      } else if (sortType === "price_desc") {
-        filteredUsers.sort((a, b) => parseFloat(b.Price) - parseFloat(a.Price));
-      } else if (sortType === "km_asc") {
-        filteredUsers.sort((a, b) => parseFloat(a.Kilometer) - parseFloat(b.Kilometer));
-      } else if (sortType === "km_desc") {
-        filteredUsers.sort((a, b) => parseFloat(b.Kilometer) - parseFloat(a.Kilometer));
-      } else if (sortType === "year_asc") {
-        filteredUsers.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
-      } else if (sortType === "year_desc") {
-        filteredUsers.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
-      }
-      handlePageNumber(1);
-      renderPageNumbers();
-    }
+function sortUsers(sortType) {
+  if (sortType === "asc") {
+    filteredUsers.sort((a, b) => a.id - b.id);
+  } else if (sortType === "desc") {
+    filteredUsers.sort((a, b) => b.id - a.id);
+  } else if (sortType === "price_asc") {
+    filteredUsers.sort((a, b) => parseFloat(a.Price) - parseFloat(b.Price));
+  } else if (sortType === "price_desc") {
+    filteredUsers.sort((a, b) => parseFloat(b.Price) - parseFloat(a.Price));
+  } else if (sortType === "km_asc") {
+    filteredUsers.sort((a, b) => parseFloat(a.Kilometer) - parseFloat(b.Kilometer));
+  } else if (sortType === "km_desc") {
+    filteredUsers.sort((a, b) => parseFloat(b.Kilometer) - parseFloat(a.Kilometer));
+  } else if (sortType === "year_asc") {
+    filteredUsers.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
+  } else if (sortType === "year_desc") {
+    filteredUsers.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
+  }
+  
+  handlePageNumber(1);
+  renderPageNumbers();
+}
 
 document.getElementById('showSortDiv').addEventListener('click', function() {
   const sortDiv = document.getElementById('sortDiv');
   sortDiv.style.display = sortDiv.style.display === 'none' ? 'block' : 'none';
 });
+
 document.addEventListener("click", function(event) {
   const sortDiv = document.getElementById('sortDiv');
   const showSortDiv = document.getElementById('showSortDiv');

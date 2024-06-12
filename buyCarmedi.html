@@ -657,29 +657,26 @@
           <div class="text-car">Mua bán oto - Xe ô tô cũ - Xe hơi mới toàn quốc</div>
           <div class="text-r d-flex">
             <p>Sắp xếp:</p>
-            <label id="showSortDiv">Liên quan nhất</label>
-            <div id="sortDiv">
+            <span id="showSortDiv">Liên quan nhất</span>
+            <div id="sortDiv" class="position:absolute;">
                 <p>Ngày đăng</p>
-                <div class="option form-" onclick="sortUsers('desc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới nhất</div>
-                <div class="option" onclick="sortUsers('asc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ nhất</div>
+                <div class="option form-" onclick="sortUsers('desc', 'Ngày đăng: Mới nhất')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới nhất</div>
+                <div class="option" onclick="sortUsers('asc', 'Ngày đăng: Cũ nhất')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ nhất</div>
                 <br>
                 <p>Giá</p>
-                <div class="option" onclick="sortUsers('price_asc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
-                <div class="option" onclick="sortUsers('price_desc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
+                <div class="option" onclick="sortUsers('price_asc', 'Giá: Tăng dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
+                <div class="option" onclick="sortUsers('price_desc', 'Giá: Giảm dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
                 <br>
                 <p>Số Km</p>
-                <div class="option" onclick="sortUsers('km_asc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
-                <div class="option" onclick="sortUsers('km_desc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
+                <div class="option" onclick="sortUsers('km_asc', 'Số Km: Tăng dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
+                <div class="option" onclick="sortUsers('km_desc', 'Số Km: Giảm dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
                 <br>
                 <p>Năm sản xuất</p>
-                <div class="option" onclick="sortUsers('year_asc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới đến cũ</div>
-                <div class="option" onclick="sortUsers('year_desc')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ đến mới </div>
+                <div class="option" onclick="sortUsers('year_asc', 'Năm sản xuất: Cũ đến mới')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ đến mới</div>
+                <div class="option" onclick="sortUsers('year_desc', 'Năm sản xuất: Mới đến cũ')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới đến cũ </div>
             </div>
           </div>
-        
-
         </div>
-        <br>
         <br>
         <div id="show" class="ms-3"></div>
         <div id="pagination"></div>
