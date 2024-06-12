@@ -110,36 +110,38 @@ const searchPriceCar = async () => {
 
 //hàm dùng chung update lại trang
 const updateProductList = (products) => {
-    const productList = document.getElementById("show");
-    productList.innerHTML = '';
+  const productList = document.getElementById("show");
+  productList.innerHTML = '';
 
-    if (products.length === 0) {
-        productList.innerHTML = '<p>No products found matching the criteria.</p>';
-        return;
-    }
+  if (products.length === 0) {
+      productList.innerHTML = '<p>No products found matching the criteria.</p>';
+      return;
+  }
 
-    products.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('product', "col-lg-4", "col-md-6", "mb-4");
-        productDiv.innerHTML = `
-            <div class="card">
-                <img src="${product.ImageUrl}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${product.Title}</h5>
-                    <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
-                    <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
-                    <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
-                    <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
-                </div>
-                <div class="card-footer">
-                    <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
-                    <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
-                </div>
-            </div>
-        `;
-        productList.appendChild(productDiv);
-    });
+  products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product', 'col-lg-4', 'col-md-6', 'col-sm-12','mb-4');
+      productDiv.innerHTML = `
+          <div class="card product-card w-100 m-auto" style='max-width:300px'>
+              <img src="${product.ImageUrl}" class="card-img-top w-100">
+              <div class="card-body">
+                  <h5 class="card-title">${product.Title}</h5>
+                  <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
+                  <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
+                  <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
+                  <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
+              </div>
+              <div class="card-footer">
+                  <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
+                  <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
+              </div>
+          </div>
+      `;
+      productList.appendChild(productDiv);
+  });
 };
+
+
 
 wrappers.forEach((wrapper, index) => {
     const rangeInputs = wrapper.querySelectorAll(".range-input input");
@@ -327,5 +329,20 @@ checkboxContainer.addEventListener('change', function(event) {
           searchInput.value = "";
         }
     }
+});
+
+// reponsive
+document.addEventListener('DOMContentLoaded', function() {
+  const filterIcon = document.getElementById('filter-icon');
+  const searchPanel = document.getElementById('search-panel');
+  const closeButton = document.getElementById('close-btn');
+
+  filterIcon.addEventListener('click', function() {
+    searchPanel.classList.add('open');
+  });
+
+  closeButton.addEventListener('click', function() {
+    searchPanel.classList.remove('open');
+  });
 });
 

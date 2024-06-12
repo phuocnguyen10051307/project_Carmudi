@@ -262,14 +262,14 @@ const video =[{
 let listPromotion ="";
 for(let  i = 0; i<video.length;i++){
     if(video[i].static){
-        listPromotion += `<div class="card mb-3 border-0">
+        listPromotion += `<div class="card mb-3 border-0 border-bottom">
         <img src="${video[i].image}" class="card-img-top" alt="..." />
         <div class="card-body">
         <h5 class="card-title fw-bold" style="font-size:15px;"><a href="#" class="text-decoration-none text-dark">${video[i].title}</a></h5>
         </div>
     </div>`;
     }else{
-        listPromotion += `<div class="card mb-3 border-0" style="max-width: 540px">
+        listPromotion += `<div class="card mb-3 border-0 border-bottom" style="max-width: 540px">
         <div class="row g-0">
         <div class="col-md-4">
             <img

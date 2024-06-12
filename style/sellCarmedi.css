@@ -96,6 +96,23 @@ ol {
 }
 
 @media only screen and (max-width: 740px) {
+  .logoNav{
+    margin-left: 50%;
+  }
+
+  .menuNav{
+    position: fixed;
+    top: 20px;
+  }
+
+  .rightNav{
+    display: none;
+  }
+
+  #account{
+    display: none;
+  }
+  
   .headerSellCard {
     height: 800px;
   }
@@ -124,5 +141,10 @@ ol {
   }
   .imgPeople {
     margin-top: 20px;
+  }
+
+  .footer-item{
+    margin-left: 0px;
+    
   }
 }

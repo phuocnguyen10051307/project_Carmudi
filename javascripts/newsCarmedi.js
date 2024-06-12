@@ -114,26 +114,26 @@ const suggestednew = [{
 
 
 let cardCarousel = '';
-for (let i = 0; i < suggestednew.length; i += 4) {
-    cardCarousel += `<div class="carousel-item${i === 0 ? ' active' : ''}">
-        <div class="row mb-md-4 mb-sm-3">`;
+    for (let i = 0; i < suggestednew.length; i += 4) {
+        cardCarousel += `<div class="carousel-item${i === 0 ? ' active' : ''}">
+            <div class="row">`;
 
-    for (let j = i; j < i + 4 && j < suggestednew.length; j++) {
-        cardCarousel += `<div class="col-md-3">
-            <div class="card" style="height: 300px; width: 250px;">
-                <img src="${suggestednew[j].image}" class="card-img-top" style="width: 100%; height: 150px;" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${suggestednew[j].title}</a></h5>
-                    <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap; font-size:14px">${suggestednew[j].content}</p>
-                </div>
-            </div>
-        </div>`;
+        for (let j = i; j < i + 4 && j < suggestednew.length; j++) {
+            cardCarousel += `<div class="col-lg-3 col-md-4 col-12 mb-3">
+                            <div class="card h-100" style="width: 100%;">
+                                <img src="${suggestednew[j].image}" class="card-img-top" style="height:150px" alt="..." />
+                                <div class="card-body">
+                                <h5 class="card-title fw-bold" style="font-size:16px"><a href="#" class="text-decoration-none text-dark">${suggestednew[j].title}</a></h5>
+                                <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space: nowrap; font-size:14px">${suggestednew[j].content}</p>
+                                </div>
+                            </div>
+                            </div>`;
+        }
+
+        cardCarousel += `</div></div>`;
     }
 
-    cardCarousel += `</div></div>`;
-}
-
-document.getElementById("suggestnew").innerHTML = cardCarousel;
+    document.getElementById("suggestnew").innerHTML = cardCarousel;
 
 
 
@@ -156,18 +156,18 @@ const advisecar = [{
 let optionCard = "";
 
 for (let i = 0; i < advisecar.length; i++) {
-    optionCard += `<div class="card mb-3" style="max-width: 540px; height:100px;">
-            <div class="row g-0">
-            <div class="col-md-4">
-                <img src="${advisecar[i].image}" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${advisecar[i].content}</a></h5>
-                </div>
-            </div>
-            </div>
-        </div>`;
+    optionCard += `<div class="card mb-3 border-0" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${advisecar[i].image}" class="img-fluid rounded-start w-100" style="height:90px" alt="...">
+                            </div>
+                            <div class="col-md-8 mb-2 border-bottom">
+                                <div class="card-body">
+                                <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${advisecar[i].content}</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
 }
 // console.log(optionCard);
 
@@ -195,28 +195,28 @@ for(let i=0; i<comparecar.length;i++){
 
     if(comparecar[i].content){
         newCard1 += `<div class="col-md-12" >
-            <div class="card mb-3" style="height:500px">
-            <img src="${comparecar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
-            <div class="card-body">
-                <h5 class="card-title fw-bold" style="font-size:20px;"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
-                <p class="card-text" style="font-size:14px;">${comparecar[i].content}
-                </p>
-            </div>
-            </div>
-        </div>`;
-    }else{
-        newCard1 += `<div class="card mb-3" style="max-width: 100%; height:100px">
-                    <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="${comparecar[i].image}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                        <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
+                        <div class="card mb-3" style="height:500px">
+                            <img src="${comparecar[i].image}" class="card-img-top" style = "with:100px; height:250px" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold" style="font-size:20px;"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
+                                <p class="card-text" style="font-size:14px;">${comparecar[i].content}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                </div>`;
+                    </div>`;
+    }else{
+        newCard1 += `<div class="card mb-5 border-0 border-bottom" style="max-width: 100%;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${comparecar[i].image}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8 ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${comparecar[i].title}</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
     }
     
 }
@@ -255,18 +255,18 @@ for (let i = 0; i < reviewCar.length; i++) {
             </div>
         </div>`;
     }else{
-        comment += `<div class="card mb-3" style="max-width: 100%; height:100px;">
-                    <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="${reviewCar[i].image}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                        <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${reviewCar[i].title}</a></h5>
+        comment += `<div class="card mb-5 border-0 border-bottom" style="max-width: 100%; ">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${reviewCar[i].image}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8 ">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold" style="font-size:16px"><a href="" class="text-decoration-none text-dark">${reviewCar[i].title}</a></h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                </div>`;
+                    </div>`;
     }
     
 }
@@ -330,24 +330,24 @@ const listSellCar = [{
 
 let viewcar2 = "";
 for(let i=0;i<listSellCar.length;i++){
-    viewcar2 += `<div class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-        <div class="col-md-8">
-            <div class="card-body">
-            <h5 class="card-title fw-bold" style="font-size:16px;"><a href="" class="text-decoration-none text-dark">${listSellCar[i].namecar}</a></h5>
-            <p class="card-text fw-bold" style="font-size:16px; color:#1d70b8;">
-                ${listSellCar[i].price}
-            </p>
-            <p class="card-text">
-                <small class="text-muted" style="font-size:14px; color:#7c7c7c;">${listSellCar[i].sales}</small>
-            </p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <img src="${listSellCar[i].image}" class="img-fluid rounded-start" alt="..." />
-        </div>
-        </div>
-    </div>`
+    viewcar2 += `<div class="card mb-3 border-0" style="max-width: 540px">
+                    <div class="row g-0 border-bottom">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title fw-bold" style="font-size:16px;"><a href="" class="text-decoration-none text-dark">${listSellCar[i].namecar}</a></h5>
+                            <p class="card-text fw-bold" style="font-size:16px; color:#1d70b8;">
+                                ${listSellCar[i].price}
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted" style="font-size:14px; color:#7c7c7c;">${listSellCar[i].sales}</small>
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="${listSellCar[i].image}" class="img-fluid rounded-start" alt="..." />
+                        </div>
+                    </div>
+                </div>`
 }
 // console.log(viewcar2);
 document.getElementById("mostSale").innerHTML = viewcar2;
@@ -376,7 +376,7 @@ for(let i=0;i<video.length;i++){
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title" style="color:#a5b7c6; font-size:16px"><a href="" class="text-decoration-none text-dark">${video[i].content}</a></h5>
+                <h5 class="card-title" style="font-size:16px"><a href="#" class="text-decoration-none" style="color:#a5b7c6">${video[i].content}</a></h5>
                 </div>
             </div>
             </div>
@@ -413,14 +413,14 @@ let contentNew = "";
 
 for(let i=0;i<newRead.length;i++){
     if(newRead[i].static){
-        contentNew += `<div class="card mb-3">
+        contentNew += `<div class="card mb-3 border-0 border-bottom">
                 <img src="${newRead[i].image}" class="card-img-top" alt="..." />
                 <div class="card-body">
                 <h5 class="card-title fw-bold" style="font-size:15px;"><span style="margin-right: 10px; color:#7c7c7c">${newRead[i].id}</span><a href="" class="text-decoration-none text-dark">${newRead[i].title}</a></h5>
                 </div>
             </div>`;
     }else{
-        contentNew += `<div class="card mb-3" style="max-width: 540px">
+        contentNew += `<div class="card mb-3 border-0 border-bottom" style="max-width: 540px">
                     <div class="row g-0">
                     <div class="col-md-1" style ="color:#7c7c7c">
                         <p style="font-weight: bold">${newRead[i].id}</p>
@@ -505,19 +505,20 @@ const promotion =[{
 let listPromotion ="";
 for(let  i = 0; i<promotion.length;i++){
     if(promotion[i].static){
-        listPromotion += `<div class="card mb-3">
+        listPromotion += `<div class="card mb-3 border-0 border-bottom">
         <img src="${promotion[i].image}" class="card-img-top" alt="..." />
         <div class="card-body">
         <h5 class="card-title fw-bold" style="font-size:15px;"><a href="" class="text-decoration-none text-dark">${promotion[i].title}</a></h5>
         </div>
     </div>`;
     }else{
-        listPromotion += `<div class="card mb-3" style="max-width: 540px">
+        listPromotion += `<div class="card mb-3 border-0 border-bottom" style="max-width: 540px">
         <div class="row g-0">
         <div class="col-md-4">
             <img
             src="${promotion[i].image}"
             class="img-fluid rounded-start"
+            
             alt="..."
             />
         </div>
@@ -598,20 +599,21 @@ const saleCar = [{
 }];
 
 let listCarsale = "";
-for(let i=0;i<saleCar.length;i++){
-    listCarsale += `
-    <div class="card mb-3 d-flex" style="flex-basis: calc(33.33% - 20px); flex-direction: column; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <img src="${saleCar[i].image}" class="card-img-top" alt="..." style="width: 100%; height: 170px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-        <div class="card-body" style="padding: 15px;">
-            <h5 class="card-title fs-6"><a href="" class="text-decoration-none text-dark">${saleCar[i].name}</a></h5>
-            <p class="card-text"><small class="text-muted fs-6">${saleCar[i].trip}</small></p>
-            <p class="card-text fs-6" style="color:red; font-weight: bold;">${saleCar[i].price}</p>
-        </div>
-    </div>`;
+    for (let i = 0; i < saleCar.length; i++) {
+      listCarsale += `
+        <div class="col-lg-4 col-md-6 col-12 mb-3" style="height:300px">
+          <div class="card h-100">
+            <img src="${saleCar[i].image}" class="card-img-top h-50" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fs-6"><a href="#" class="text-decoration-none text-dark">${saleCar[i].name}</a></h5>
+              <p class="card-text"><small class="text-muted fs-6">${saleCar[i].trip}</small></p>
+              <p class="card-text fs-6" style="color: red; font-weight: bold;">${saleCar[i].price}</p>
+            </div>
+          </div>
+        </div>`;
+    }
 
-}
-
-document.getElementById("listSaleCars").innerHTML = listCarsale;
+    document.getElementById("listSaleCars").innerHTML = listCarsale;
 
 // hãng xe
 // toyota
