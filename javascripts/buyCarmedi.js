@@ -120,7 +120,7 @@ const updateProductList = (products) => {
 
   products.forEach(product => {
       const productDiv = document.createElement('div');
-      productDiv.classList.add('product', 'col-lg-4', 'col-md-6', 'col-sm-12','mb-4');
+      productDiv.classList.add('product', 'col-lg-4', 'col-md-6', 'col-sm-12','col-12','mb-4');
       productDiv.innerHTML = `
           <div class="card product-card w-100 m-auto" style='max-width:300px'>
               <img src="${product.ImageUrl}" class="card-img-top w-100">
