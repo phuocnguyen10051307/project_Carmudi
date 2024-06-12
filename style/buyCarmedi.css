@@ -441,3 +441,30 @@ input[type="range"]::-moz-range-thumb{
   background-color: rgb(24 110 182);
 }
 
+
+
+
+
+
+#sortDiv {
+  width:300px;
+  display: none; /* Ẩn bảng mặc định */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  z-index: 1;
+  position:absolute;
+  background-color: white;
+  border-radius: 30px;
+  right:140px;
+  top:-150px;
+}
+.option {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+}
+.option:hover {
+  background-color: #f0f0f0;
+}

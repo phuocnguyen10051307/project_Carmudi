@@ -366,3 +366,49 @@ function renderCars(array) {
     cardsContainer.appendChild(card);
   });
 }
+
+function searchUser() {
+  const valueSearchInput = document.getElementById('search').value.toUpperCase();
+  filteredUsers = users.filter(user => user.Title.toUpperCase().includes(valueSearchInput));
+  handlePageNumber(1);
+  renderPageNumbers();
+}
+
+    function sortUsers(sortType) {
+      if (sortType === "asc") {
+        filteredUsers.sort((a, b) => a.id - b.id);
+      } else if (sortType === "desc") {
+        filteredUsers.sort((a, b) => b.id - a.id);
+      } else if (sortType === "price_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Price) - parseFloat(b.Price));
+      } else if (sortType === "price_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Price) - parseFloat(a.Price));
+      } else if (sortType === "km_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Kilometer) - parseFloat(b.Kilometer));
+      } else if (sortType === "km_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Kilometer) - parseFloat(a.Kilometer));
+      } else if (sortType === "year_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
+      } else if (sortType === "year_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
+      }
+      handlePageNumber(1);
+      renderPageNumbers();
+    }
+
+document.getElementById('showSortDiv').addEventListener('click', function() {
+  const sortDiv = document.getElementById('sortDiv');
+  sortDiv.style.display = sortDiv.style.display === 'none' ? 'block' : 'none';
+});
+document.addEventListener("click", function(event) {
+  const sortDiv = document.getElementById('sortDiv');
+  const showSortDiv = document.getElementById('showSortDiv');
+  if (!sortDiv.contains(event.target) && !showSortDiv.contains(event.target)) {
+    sortDiv.style.display = 'none';
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData();
+});
+
