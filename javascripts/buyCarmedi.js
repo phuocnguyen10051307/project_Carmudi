@@ -271,6 +271,7 @@ function searchUser() {
 
 let oBject = {
   address: [],
+  style: [],
   fuel: [],
   transmission: [],
   color: [],
@@ -279,17 +280,24 @@ let oBject = {
 
 function filterCars() {
   let filterArray = carData.filter((car) => {
-    return( oBject.address.length
-      ? oBject.address.includes(car.Address.Province.toUpperCase())
-      : []) && (oBject.fuel.length
-      ? oBject.fuel.includes(car.Fuel.toUpperCase())
-      : []) && (oBject.transmission.length
-      ? oBject.transmission.includes(car.Transmission.toUpperCase())
-      : []) && (oBject.color.length
-      ? oBject.color.includes(car.Color.toUpperCase())
-      : []) && (oBject.seat.length
-      ? oBject.seat.includes(car.Seats.toUpperCase())
-      : []);
+    return (
+      (oBject.address.length
+        ? oBject.address.includes(car.Address.Province.toUpperCase())
+        : []) &&
+      (oBject.style.length
+        ? oBject.style.includes(car.Style.toUpperCase())
+        : []) &&
+      (oBject.fuel.length
+        ? oBject.fuel.includes(car.Fuel.toUpperCase())
+        : []) &&
+      (oBject.transmission.length
+        ? oBject.transmission.includes(car.Transmission.toUpperCase())
+        : []) &&
+      (oBject.color.length
+        ? oBject.color.includes(car.Color.toUpperCase())
+        : []) &&
+      (oBject.seat.length ? oBject.seat.includes(car.Seats.toUpperCase()) : [])
+    );
   });
   renderCars(filterArray);
 }
@@ -300,7 +308,16 @@ function filterByAddress() {
     checkbox.value.toUpperCase()
   );
   oBject.address = selecterAddress;
-  filterCars()
+  filterCars();
+}
+
+function filterByStyle() {
+  const checkboxes = document.querySelectorAll(".checkbox-style:checked");
+  const selectedStyle = Array.from(checkboxes).map((checkbox) => 
+    checkbox.value.toUpperCase()
+  );
+  oBject.style = selectedStyle;
+  filterCars();
 }
 
 function filterByFuel() {
@@ -309,7 +326,7 @@ function filterByFuel() {
     checkbox.value.toUpperCase()
   );
   oBject.fuel = selectedFuel;
-  filterCars()
+  filterCars();
 }
 
 function filterByTransmission() {
@@ -320,7 +337,7 @@ function filterByTransmission() {
     checkbox.value.toUpperCase()
   );
   oBject.transmission = selectedTransmission;
-  filterCars()
+  filterCars();
 }
 
 function filterByColor() {
@@ -329,7 +346,7 @@ function filterByColor() {
     checkbox.value.toUpperCase()
   );
   oBject.color = selectedColor;
-  filterCars()
+  filterCars();
 }
 
 function filterBySeats() {
@@ -338,7 +355,7 @@ function filterBySeats() {
     checkbox.value.toUpperCase()
   );
   oBject.seat = selectedSeats;
-  filterCars()
+  filterCars();
 }
 
 function renderCars(array) {
